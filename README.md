@@ -12,3 +12,9 @@ Information aggregation is powered by stonks/backend.
 * [x] Dashboard: View total stats for all assets
 * [ ] Bitpanda: Details about your bitpanda assets
 * [ ] ETH: Details about your ETH Wallets
+
+## Dev Setup 🛠
+```bash
+yarn
+yarn dev --open
+```
