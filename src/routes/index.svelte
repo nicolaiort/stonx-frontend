@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
-
 	import Statscard from '$lib/Statscard.svelte';
-	import axios from 'axios';
 
 	const baseurl = 'http://localhost:8083';
 	$: current_indices = [];
