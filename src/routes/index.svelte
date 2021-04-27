@@ -1,23 +1,21 @@
 <script lang="ts">
-	import { ApiClient } from '$lib/ApiClient';
 	import Statscard from '$lib/Statscard.svelte';
 
-	const baseurl = 'http://localhost:8083';
 	$: current_indices = [];
 	$: current_wallets = [];
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
-	promises.push(
-		ApiClient.getIndices().then((res) => {
-			current_indices = res;
-		})
-	);
-	promises.push(
-		ApiClient.getCrypto().then((res) => {
-			current_wallets = res;
-		})
-	);
+	// promises.push(
+	// 	ApiClient.getIndices().then((res) => {
+	// 		current_indices = res;
+	// 	})
+	// );
+	// promises.push(
+	// 	ApiClient.getCrypto().then((res) => {
+	// 		current_wallets = res;
+	// 	})
+	// );
 </script>
 
 <div class="mx-10 my-2">
