@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { ApiClient } from '$lib/ApiClient';
+
 	import Statscard from '$lib/Statscard.svelte';
 	import axios from 'axios';
 
@@ -9,13 +11,13 @@
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
-		axios.get(`${baseurl}/rest/bitpanda/assets/index`).then((res) => {
-			current_indices = res.data;
+		ApiClient.getIndices().then((res) => {
+			current_indices = res;
 		})
 	);
 	promises.push(
-		axios.get(`${baseurl}/rest/bitpanda/assets/crypto`).then((res) => {
-			current_wallets = res.data;
+		ApiClient.getCrypto().then((res) => {
+			current_wallets = res;
 		})
 	);
 </script>
