@@ -16,4 +16,12 @@ export class ApiClient {
         const res = await axios.get(`${baseurl}/rest/bitpanda/assets/index`, axiosoptions);
         return res.data;
     }
+
+    static async login(email: string, password: string): Promise<any> {
+        const res = await axios.post(`${baseurl}/rest/auth/login`, {
+            "email": email,
+            "password": password
+        });
+        console.log(res.data.token);
+    }
 }
