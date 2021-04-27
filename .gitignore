@@ -3,3 +3,5 @@ node_modules
 /.svelte
 /build
 /functions
+*.lock
+pagage.lock.json
