@@ -22,8 +22,8 @@
 				src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwikimeme.it%2Fwp-content%2Fuploads%2F2020%2F03%2Fstonks-template-meme.jpg"
 				alt="enoshima profile"
 			/>
-			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold capitalize">
-				Welcome {UserStore.state.email}
+			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold">
+				Welcome {UserStore.state.username}
 			</h2>
 			<span class="text-sm dark:text-gray-300">
 				<span class="font-semibold text-green-600 dark:text-green-300"> Admin </span>

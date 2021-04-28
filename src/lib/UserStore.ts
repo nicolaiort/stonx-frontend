@@ -5,6 +5,7 @@ const userStore = () => {
     const state = {
         token: undefined,
         email: undefined,
+        username: undefined,
         isLoggedIn: false,
         refreshInterval: undefined
     };
@@ -24,6 +25,7 @@ const userStore = () => {
             update((state) => {
                 state.token = authresponse.token;
                 state.email = authresponse.email;
+                state.username = authresponse.username || authresponse.email;
                 state.isLoggedIn = true;
                 //
                 localForage.setItem("userdata", authresponse);
