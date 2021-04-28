@@ -1,7 +1,6 @@
 <script lang="ts">
-	export let coin_name: string = 'BTC';
-	export let coin_amount: number = 420.69;
-	export let coin_fiat: number = 69;
+	export let index_name: string = 'Crypto69';
+	export let index_amount: number = 420.69;
 </script>
 
 <div class="mt-8 flex px-4 py-4 justify-between bg-white dark:bg-gray-600 shadow-xl rounded-lg">
@@ -10,20 +9,23 @@
 	<div class="flex justify-between">
 		<!-- Left side -->
 
-		<span class="h-12 w-12 rounded-full object-cover">TODO:</span>
+		<span class="h-12 w-12 rounded-full object-cover"
+			><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+				><path fill="none" d="M0 0h24v24H0z" /><path
+					fill="currentColor"
+					d="M4 5v14h16V5H4zM3 3h18a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1zm11.793 6.793L13 8h5v5l-1.793-1.793-3.864 3.864-2.121-2.121-2.829 2.828-1.414-1.414 4.243-4.243 2.121 2.122 2.45-2.45z"
+				/></svg
+			></span
+		>
 
 		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">
-			<span>Token name</span>
-			<span class="mt-2 text-black dark:text-gray-200"> {coin_name} </span>
+			<span>Index name</span>
+			<span class="mt-2 text-black dark:text-gray-200"> {index_name} </span>
 		</div>
 
 		<div class="ml-12 flex flex-col capitalize text-gray-600 dark:text-gray-400">
-			<span>Current Amount</span>
-			<span class="mt-2 text-black dark:text-gray-200"> {coin_amount} </span>
-		</div>
-		<div class="ml-12 flex flex-col capitalize text-gray-600 dark:text-gray-400">
-			<span>Current Value(Fiat)</span>
-			<span class="mt-2 text-black dark:text-gray-200"> {coin_fiat.toFixed(2)} €</span>
+			<span>Current Value (Fiat)</span>
+			<span class="mt-2 text-black dark:text-gray-200"> {index_amount.toFixed(2)} €</span>
 		</div>
 	</div>
 

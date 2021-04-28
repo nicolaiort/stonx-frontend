@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import IndexCard from '$lib/IndexCard.svelte';
 	import Walletcard from '$lib/Walletcard.svelte';
 
 	$: current_indices = [];
@@ -46,14 +47,20 @@
 		{#await promises[0] && promises[1]}
 			<p>Loading data....</p>
 		{:then}
-			{#each current_wallets as wallet}
-				<Walletcard
-					bind:coin_name={wallet.token}
-					bind:coin_amount={wallet.balance}
-					bind:coin_fiat={wallet.fiat}
-				/>
-			{/each}
-			<hr />
+			<div class="border-b dark:border-gray-600">
+				{#each current_wallets as wallet}
+					<Walletcard
+						bind:coin_name={wallet.token}
+						bind:coin_amount={wallet.balance}
+						bind:coin_fiat={wallet.fiat}
+					/>
+				{/each}
+			</div>
+			<div>
+				{#each current_indices as index}
+					<IndexCard bind:index_name={index.token} bind:index_amount={index.balance} />
+				{/each}
+			</div>
 		{/await}
 	</div>
 </div>
