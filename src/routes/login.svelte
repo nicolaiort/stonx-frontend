@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import UserStore from '$lib/UserStore';
 	let username: string = '';
 	let password: string = '';
 
-	function login() {
-		ApiClient.login(username, password);
+	async function login() {
+		let login = await ApiClient.login(username, password);
+		UserStore.login(login);
 	}
 
 	function handleKeydown(e) {
