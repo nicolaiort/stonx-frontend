@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ApiClient } from '$lib/ApiClient';
 	import Statscard from '$lib/Statscard.svelte';
 
 	$: current_indices = [];
@@ -6,16 +7,16 @@
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
-	// promises.push(
-	// 	ApiClient.getIndices().then((res) => {
-	// 		current_indices = res;
-	// 	})
-	// );
-	// promises.push(
-	// 	ApiClient.getCrypto().then((res) => {
-	// 		current_wallets = res;
-	// 	})
-	// );
+	promises.push(
+		ApiClient.getIndices().then((res) => {
+			current_indices = res;
+		})
+	);
+	promises.push(
+		ApiClient.getCrypto().then((res) => {
+			current_wallets = res;
+		})
+	);
 </script>
 
 <div class="mx-10 my-2">

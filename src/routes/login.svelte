@@ -3,6 +3,7 @@
 	import UserStore from '$lib/UserStore';
 	let username: string = '';
 	let password: string = '';
+	UserStore.init();
 
 	async function login() {
 		let login = await ApiClient.login(username, password);
@@ -73,6 +74,11 @@
 				</button>
 			</div>
 		</div>
+		<button
+			on:click={() => {
+				console.log(UserStore.state.isLoggedIn);
+			}}>Test</button
+		>
 		<!-- <div class="mt-2">
 					<a
 						href="/forgot_password"

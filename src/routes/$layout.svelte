@@ -8,12 +8,13 @@
 	$: isLoggedIn = false;
 
 	UserStore.init();
-	const unsubscribe = UserStore.subscribe((value) => console.log(value));
+	const unsubscribe = UserStore.subscribe((value) => {
+		isLoggedIn = value.isLoggedIn;
+	});
 
 	onDestroy(unsubscribe);
 </script>
 
-{isLoggedIn}
 {#if isLoggedIn}
 	<Sidebar>
 		<slot />

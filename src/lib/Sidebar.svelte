@@ -1,3 +1,7 @@
+<script lang="ts">
+	import UserStore from './UserStore';
+</script>
+
 <div class="h-screen w-full flex overflow-hidden">
 	<nav class="flex flex-col bg-gray-200 dark:bg-gray-900 w-64 px-12 pt-4 pb-6">
 		<!-- SideNavBar -->
@@ -14,7 +18,9 @@
 				src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwikimeme.it%2Fwp-content%2Fuploads%2F2020%2F03%2Fstonks-template-meme.jpg"
 				alt="enoshima profile"
 			/>
-			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold capitalize">Welcome Niggl</h2>
+			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold capitalize">
+				Welcome {UserStore.state.email}
+			</h2>
 			<span class="text-sm dark:text-gray-300">
 				<span class="font-semibold text-green-600 dark:text-green-300"> Admin </span>
 			</span>

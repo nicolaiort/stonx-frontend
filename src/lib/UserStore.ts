@@ -16,7 +16,7 @@ const userStore = () => {
             localForage.config({
                 name: 'stonks',
                 version: 1.0,
-                storeName: 'stonks',
+                storeName: 'stonks_frontend',
                 description: 'Stonks Dashboard'
             });
         },
