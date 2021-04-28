@@ -2,19 +2,19 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import Statscard from '$lib/Statscard.svelte';
 
-	$: current_indices = [];
-	$: current_wallets = [];
+	$: bitpanda_indices = [];
+	$: bitpanda_wallets = [];
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
 		ApiClient.getIndices().then((res) => {
-			current_indices = res;
+			bitpanda_indices = res;
 		})
 	);
 	promises.push(
 		ApiClient.getCrypto().then((res) => {
-			current_wallets = res;
+			bitpanda_wallets = res;
 		})
 	);
 </script>
@@ -32,11 +32,11 @@
 		{:then}
 			<div>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> {current_wallets.length} </span>
+					<span class="text-green-500 dark:text-green-200"> {bitpanda_wallets.length} </span>
 					Coins on bitpanda
 				</span>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> {current_indices.length} </span>
+					<span class="text-green-500 dark:text-green-200"> {bitpanda_indices.length} </span>
 					Indices on bitpanda
 				</span>
 				<span>
@@ -52,7 +52,7 @@
 		{:then}
 			<Statscard
 				title="Bitpanda Tokens"
-				value={current_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
+				value={bitpanda_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
 				><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
 					><path fill="none" d="M0 0h24v24H0z" /><path
 						fill="currentColor"
@@ -62,7 +62,7 @@
 			</Statscard>
 			<Statscard
 				title="Bitpanda Index"
-				value={current_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
+				value={bitpanda_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
 			>
 				<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
 					><path fill="none" d="M0 0h24v24H0z" /><path

@@ -3,19 +3,19 @@
 	import IndexCard from '$lib/IndexCard.svelte';
 	import Walletcard from '$lib/Walletcard.svelte';
 
-	$: current_indices = [];
-	$: current_wallets = [];
+	$: bitpanda_indices = [];
+	$: bitpanda_wallets = [];
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
 		ApiClient.getIndices().then((res) => {
-			current_indices = res;
+			bitpanda_indices = res;
 		})
 	);
 	promises.push(
 		ApiClient.getCrypto().then((res) => {
-			current_wallets = res;
+			bitpanda_wallets = res;
 		})
 	);
 </script>
@@ -33,11 +33,11 @@
 		{:then}
 			<div>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> {current_wallets.length} </span>
+					<span class="text-green-500 dark:text-green-200"> {bitpanda_wallets.length} </span>
 					Coins on bitpanda
 				</span>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> {current_indices.length} </span>
+					<span class="text-green-500 dark:text-green-200"> {bitpanda_indices.length} </span>
 					Indices on bitpanda
 				</span>
 			</div>
@@ -48,7 +48,7 @@
 			<p>Loading data....</p>
 		{:then}
 			<div class="border-b dark:border-gray-600">
-				{#each current_wallets as wallet}
+				{#each bitpanda_wallets as wallet}
 					<Walletcard
 						bind:coin_name={wallet.token}
 						bind:coin_amount={wallet.balance}
@@ -57,7 +57,7 @@
 				{/each}
 			</div>
 			<div>
-				{#each current_indices as index}
+				{#each bitpanda_indices as index}
 					<IndexCard bind:index_name={index.token} bind:index_amount={index.balance} />
 				{/each}
 			</div>
