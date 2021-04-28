@@ -4,17 +4,23 @@
 
 	$: bitpanda_indices = [];
 	$: bitpanda_wallets = [];
+	$: current_wallets = [];
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
-		ApiClient.getIndices().then((res) => {
+		ApiClient.getBitpandaIndices().then((res) => {
 			bitpanda_indices = res;
 		})
 	);
 	promises.push(
-		ApiClient.getCrypto().then((res) => {
+		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
+		})
+	);
+	promises.push(
+		ApiClient.getEthWallets().then((res) => {
+			current_wallets = res;
 		})
 	);
 </script>
@@ -40,7 +46,7 @@
 					Indices on bitpanda
 				</span>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> 22 </span>
+					<span class="text-green-500 dark:text-green-200"> {current_wallets.length} </span>
 					Other wallets
 				</span>
 			</div>
@@ -71,6 +77,17 @@
 					/></svg
 				></Statscard
 			>
+			<Statscard
+				title="ETH Wallets"
+				value={current_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
+			>
+				<svg width="48" height="48" viewBox="0 0 384 384" xmlns="http://www.w3.org/2000/svg"
+					><path
+						fill="currentColor"
+						d="M190.398 265.586V147.133L74.7 197.813zm0-126.598V-.094L78.426 188.036zm7.457-139.14v139.14l113.543 49.739zm0 147.285V265.59l115.782-67.742zm-7.457 237.554v-95.273L75.477 222.13zm7.457 0L312.777 222.13l-114.922 67.285zm0 0"
+					/></svg
+				>
+			</Statscard>
 		{/await}
 	</div>
 </div>

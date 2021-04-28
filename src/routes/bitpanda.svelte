@@ -9,12 +9,12 @@
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
-		ApiClient.getIndices().then((res) => {
+		ApiClient.getBitpandaIndices().then((res) => {
 			bitpanda_indices = res;
 		})
 	);
 	promises.push(
-		ApiClient.getCrypto().then((res) => {
+		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
 		})
 	);

@@ -7,7 +7,7 @@
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
-		ApiClient.getCrypto().then((res) => {
+		ApiClient.getEthWallets().then((res) => {
 			current_wallets = res;
 		})
 	);
@@ -26,7 +26,7 @@
 		{:then}
 			<div>
 				<span>
-					<span class="text-green-500 dark:text-green-200"> TODO: </span>
+					<span class="text-green-500 dark:text-green-200"> {current_wallets.length} </span>
 					Wallets
 				</span>
 			</div>

@@ -3,15 +3,22 @@ import UserStore from './UserStore';
 let baseurl: string = 'http://localhost:8083';
 
 export class ApiClient {
-    static async getCrypto(): Promise<any> {
+    static async getBitpandaCrypto(): Promise<any> {
         const res = await axios.get(`${baseurl}/rest/bitpanda/assets/crypto`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
         return res.data;
     }
 
-    static async getIndices(): Promise<any> {
+    static async getBitpandaIndices(): Promise<any> {
         const res = await axios.get(`${baseurl}/rest/bitpanda/assets/index`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
+    static async getEthWallets(): Promise<any> {
+        const res = await axios.get(`${baseurl}/rest/wallets/eth`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
         return res.data;

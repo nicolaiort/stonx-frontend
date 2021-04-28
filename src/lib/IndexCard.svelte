@@ -3,7 +3,7 @@
 	export let index_amount: number = 420.69;
 </script>
 
-<div class="mt-8 flex px-4 py-4 justify-between bg-white dark:bg-gray-600 shadow-xl rounded-lg">
+<div class="mt-4 flex px-4 py-4 justify-between bg-white dark:bg-gray-600 shadow-xl rounded-lg">
 	<!-- Card -->
 
 	<div class="flex justify-between">
