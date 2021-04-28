@@ -1,9 +1,22 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
 	import UserStore from '$lib/UserStore';
+	import localForage from 'localforage';
+	import { onMount } from 'svelte';
+
 	let username: string = '';
 	let password: string = '';
 	UserStore.init();
+
+	onMount(() => {
+		localForage.getItem('userdata', (err, value: any) => {
+			if (value) {
+				if (value.token) {
+					UserStore.login(value);
+				}
+			}
+		});
+	});
 
 	async function login() {
 		let login = await ApiClient.login(username, password);
