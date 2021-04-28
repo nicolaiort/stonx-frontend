@@ -87,11 +87,6 @@
 				</button>
 			</div>
 		</div>
-		<button
-			on:click={() => {
-				console.log(UserStore.state.isLoggedIn);
-			}}>Test</button
-		>
 		<!-- <div class="mt-2">
 					<a
 						href="/forgot_password"
