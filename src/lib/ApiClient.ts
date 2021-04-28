@@ -4,8 +4,6 @@ let baseurl: string = 'http://localhost:8083';
 
 export class ApiClient {
     static async getCrypto(): Promise<any> {
-        console.log("here")
-        console.log(UserStore.state.token)
         const res = await axios.get(`${baseurl}/rest/bitpanda/assets/crypto`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
