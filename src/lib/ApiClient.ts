@@ -23,7 +23,7 @@ export class ApiClient {
             "email": email,
             "password": password
         });
-        console.log(res.data)
+        console.log("called login")
         return res.data;
     }
 }

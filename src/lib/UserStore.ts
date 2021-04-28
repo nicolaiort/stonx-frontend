@@ -1,8 +1,6 @@
 import { writable } from 'svelte/store';
 import localForage from 'localforage';
 
-export let users = writable([]);
-export let tracks = writable([]);
 const userStore = () => {
     const state = {
         token: undefined,
