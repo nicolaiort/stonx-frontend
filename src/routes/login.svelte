@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
 	import UserStore from '$lib/UserStore';
-	import localForage from 'localforage';
+	import * as localForage from 'localforage';
 	import { onMount } from 'svelte';
 
 	let username: string = '';
