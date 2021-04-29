@@ -1,4 +1,5 @@
 <script lang="ts">
+	import AddWalletModal from '$lib/AddWalletModal.svelte';
 	import { ApiClient } from '$lib/ApiClient';
 	import Walletcard from '$lib/Walletcard.svelte';
 
@@ -32,6 +33,7 @@
 			</div>
 		{/await}
 	</div>
+	<AddWalletModal />
 	<div class="mt-4">
 		{#await promises[0] && promises[1]}
 			<p>Loading data....</p>
