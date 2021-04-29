@@ -19,7 +19,7 @@
 		})
 	);
 	promises.push(
-		ApiClient.getEthWallets().then((res) => {
+		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
 		})
 	);

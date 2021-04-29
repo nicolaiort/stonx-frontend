@@ -26,8 +26,8 @@ export class ApiClient {
         return res.data;
     }
 
-    static async getEthWallets(): Promise<any> {
-        const res = await axios.get(`${baseurl}/rest/wallets/eth`, {
+    static async getWallets(): Promise<any> {
+        const res = await axios.get(`${baseurl}/rest/wallets`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
         return res.data;

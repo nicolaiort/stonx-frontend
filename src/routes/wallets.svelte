@@ -7,7 +7,7 @@
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
 	promises.push(
-		ApiClient.getEthWallets().then((res) => {
+		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
 		})
 	);
