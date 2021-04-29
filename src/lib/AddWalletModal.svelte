@@ -19,9 +19,18 @@
 	function submit() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
-			ApiClient.createWallet(wallet_address, wallet_token);
-			console.log(wallet_token);
+			modal_open = false;
+			ApiClient.createWallet(wallet_address, wallet_token).then((result) => {
+				processed_last_submit = true;
+				close();
+			});
 		}
+	}
+
+	function close() {
+		modal_open = false;
+		wallet_address = '';
+		wallet_token = '';
 	}
 </script>
 
@@ -70,6 +79,25 @@
 											on:select={(selectedValue) => (wallet_token = selectedValue.detail.value)}
 											showChevron={true}
 											MultiSelection={false}
+										/>
+									</div>
+									<div class="col-span-6">
+										<label
+											for="address"
+											class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+											>Address</label
+										>
+										<input
+											use:focus
+											autocomplete="off"
+											placeholder="address"
+											class:border-red-500={wallet_address == ''}
+											class:focus:border-red-500={wallet_address == ''}
+											class:focus:ring-red-500={wallet_address == ''}
+											bind:value={wallet_address}
+											type="text"
+											name="address"
+											class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-200 rounded-md p-2"
 										/>
 									</div>
 								</div>
