@@ -3,6 +3,8 @@
 	import Select from 'svelte-select';
 
 	export let modal_open = true;
+	export let current_wallets = [];
+
 	function focus(el) {
 		el.focus();
 	}
@@ -22,6 +24,7 @@
 			modal_open = false;
 			ApiClient.createWallet(wallet_address, wallet_token).then((result) => {
 				processed_last_submit = true;
+				current_wallets.push(result);
 				close();
 			});
 		}
