@@ -25,9 +25,9 @@
 			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold">
 				Welcome {UserStore.state.username}
 			</h2>
-			<span class="text-sm dark:text-gray-300">
+			<!-- <span class="text-sm dark:text-gray-300">
 				<span class="font-semibold text-green-600 dark:text-green-300"> Admin </span>
-			</span>
+			</span> -->
 		</div>
 
 		<ul class="mt-2 text-gray-600">
