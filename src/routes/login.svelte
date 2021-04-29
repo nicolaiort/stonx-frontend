@@ -32,12 +32,7 @@
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-700">
 	<div class="max-w-md w-full py-12 px-6" role="main">
-		<img
-			style="height:10rem;"
-			class="mx-auto"
-			src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwikimeme.it%2Fwp-content%2Fuploads%2F2020%2F03%2Fstonks-template-meme.jpg"
-			alt=""
-		/>
+		<img style="height:10rem;" class="mx-auto" src="/stonx.jpg" alt="" />
 		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonksclient</p>
 		<p class="mt-6 text-sm text-center dark:text-gray-300">Login</p>
 		<div>

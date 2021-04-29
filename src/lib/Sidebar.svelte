@@ -17,11 +17,7 @@
 
 		<div class="mt-8">
 			<!-- User info -->
-			<img
-				class="h-20 w-20 rounded-full object-fit"
-				src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwikimeme.it%2Fwp-content%2Fuploads%2F2020%2F03%2Fstonks-template-meme.jpg"
-				alt="enoshima profile"
-			/>
+			<img class="h-20 w-20 rounded-full object-fit" src="/stonx.jpg" alt="enoshima profile" />
 			<h2 class="mt-4 text-xl dark:text-gray-300 font-extrabold">
 				Welcome {UserStore.state.username}
 			</h2>
