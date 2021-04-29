@@ -106,7 +106,6 @@
 								</div>
 							</div>
 						</div>
-						{wallet_token}
 					</div>
 					<div class="bg-white dark:bg-gray-600 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
 						<button
