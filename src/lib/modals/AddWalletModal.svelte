@@ -25,6 +25,7 @@
 			ApiClient.createWallet(wallet_address, wallet_token).then((result) => {
 				processed_last_submit = true;
 				current_wallets.push(result);
+				current_wallets = current_wallets;
 				close();
 			});
 		}
