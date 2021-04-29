@@ -33,6 +33,23 @@ export class ApiClient {
         return res.data;
     }
 
+    static async getSupportedTokens(): Promise<any> {
+        const res = await axios.get(`${baseurl}/rest/tokens`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
+    static async createWallet(address: string, token: string): Promise<any> {
+        const res = await axios.post(`${baseurl}/rest/wallets`, {
+            "address": address,
+            "token": token
+        }, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
     static async login(email: string, password: string): Promise<any> {
         const res = await axios.post(`${baseurl}/rest/auth/login`, {
             "email": email,
