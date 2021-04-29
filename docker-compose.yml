@@ -1,0 +1,6 @@
+version: "3"
+services:
+    httpd:
+        build: .
+        ports:
+            - 8084:80
