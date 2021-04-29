@@ -49,11 +49,7 @@
 		{:then}
 			<div class="border-b dark:border-gray-600">
 				{#each bitpanda_wallets as wallet}
-					<Walletcard
-						bind:coin_name={wallet.token}
-						bind:coin_amount={wallet.balance}
-						bind:coin_fiat={wallet.fiat}
-					/>
+					<Walletcard bind:wallet />
 				{/each}
 			</div>
 			<div>

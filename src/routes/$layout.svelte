@@ -4,6 +4,7 @@
 	import '../app.postcss';
 	import Login from './login.svelte';
 	import { onDestroy } from 'svelte';
+	import Footer from '$lib/Footer.svelte';
 
 	$: isLoggedIn = false;
 
@@ -22,7 +23,7 @@
 {:else}
 	<Login />
 {/if}
-
+<Footer />
 <!--
     Temporary tailwind import fixes for classes that wouldn't be directly used otherwise. 
     Or as others may call it: Real big bullshit time.
