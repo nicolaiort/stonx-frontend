@@ -22,3 +22,9 @@
 {:else}
 	<Login />
 {/if}
+
+<!--
+    Temporary tailwind import fixes for classes that wouldn't be directly used otherwise. 
+    Or as others may call it: Real big bullshit time.
+ -->
+<div class="opacity-50" />

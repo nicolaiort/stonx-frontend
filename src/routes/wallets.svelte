@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AddWalletModal from '$lib/AddWalletModal.svelte';
+	import AddWalletModal from '$lib/modals/AddWalletModal.svelte';
 	import { ApiClient } from '$lib/ApiClient';
 	import Walletcard from '$lib/Walletcard.svelte';
 

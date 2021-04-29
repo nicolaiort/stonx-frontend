@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { ApiClient } from './ApiClient';
+	import { ApiClient } from '$lib/ApiClient';
 	import Select from 'svelte-select';
 
 	export let modal_open = true;
