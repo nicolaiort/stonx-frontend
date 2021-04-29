@@ -50,6 +50,13 @@ export class ApiClient {
         return res.data;
     }
 
+    static async deleteWallet(id: string): Promise<any> {
+        const res = await axios.delete(`${baseurl}/rest/wallets/${id}`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
     static async login(email: string, password: string): Promise<any> {
         const res = await axios.post(`${baseurl}/rest/auth/login`, {
             "email": email,

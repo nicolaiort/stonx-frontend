@@ -11,6 +11,7 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
+			console.log(current_wallets);
 		})
 	);
 </script>
@@ -51,11 +52,7 @@
 			<p>Loading data....</p>
 		{:then}
 			{#each current_wallets as wallet}
-				<Walletcard
-					bind:coin_name={wallet.token}
-					bind:coin_amount={wallet.balance}
-					bind:coin_fiat={wallet.fiat}
-				/>
+				<Walletcard bind:current_wallets bind:wallet />
 			{/each}
 		{/await}
 	</div>
