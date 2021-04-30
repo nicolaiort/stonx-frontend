@@ -30,6 +30,7 @@ Powered by (among many others):
 
 ### Roadmap
 > For supported tokens take a look at [the backend roadmap](https://github.com/Niggl1999/stonx-backend#reamde)
+* Confugure backend via env (or env.js)
 
 ## Dev Setup 🛠
 ```bash
