@@ -12,7 +12,7 @@
 
 		<div class="flex flex-row border-b items-center justify-between pb-2">
 			<!-- Hearder -->
-			<span class="text-xl font-semibold capitalize dark:text-gray-300"> Stonks </span>
+			<span class="text-xl font-semibold capitalize dark:text-gray-300"> Stonx Frontend </span>
 		</div>
 
 		<div class="mt-8">

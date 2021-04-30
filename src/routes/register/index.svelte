@@ -57,7 +57,7 @@
 <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-700">
 	<div class="max-w-md w-full py-12 px-6" role="main">
 		<img style="height:10rem;" class="mx-auto" src="/stonx.jpg" alt="" />
-		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonksclient</p>
+		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonx Frontend</p>
 		<p class="mt-6 text-sm text-center dark:text-gray-300">Sign up</p>
 		{#if error}
 			<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
