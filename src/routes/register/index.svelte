@@ -14,6 +14,7 @@
 		username != '' &&
 		email != '' &&
 		password != '' &&
+		password == repeat_password &&
 		bitpanda_api_token != '' &&
 		validateEmail(email);
 
