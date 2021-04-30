@@ -30,7 +30,13 @@ Powered by (among many others):
 
 ### Roadmap
 > For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
-* Confugure backend via env (or env.js)
+
+* User creation in the frontend
+* User settings
+
+## Config
+You can configure the frontend via a 'env.js' file.
+This file resides in the static folder and can be overwritten by mounting a file following the same scheme into the docker container `./env.js:/usr/share/nginx/html/env.js`
 
 ## Dev Setup 🛠
 ```bash
