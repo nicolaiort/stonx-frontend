@@ -24,8 +24,9 @@
 	<div class="flex justify-between">
 		<!-- Left side -->
 
-		<span class="h-12 w-12 rounded-full object-cover"
+		<span class="mt-2 h-12 w-12 rounded-full object-cover"
 			><img
+				class="h-12 w-12"
 				alt={wallet.token}
 				src={cryptoIcons[wallet.token]?.icon ||
 					'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDI0djI0SDB6Ii8+PHBhdGggZD0iTTEyIDIyQzYuNDc3IDIyIDIgMTcuNTIzIDIgMTJTNi40NzcgMiAxMiAyczEwIDQuNDc3IDEwIDEwLTQuNDc3IDEwLTEwIDEwem0wLTJhOCA4IDAgMSAwIDAtMTYgOCA4IDAgMCAwIDAgMTZ6bS0xLTVoMnYyaC0ydi0yem0yLTEuNjQ1VjE0aC0ydi0xLjVhMSAxIDAgMCAxIDEtMSAxLjUgMS41IDAgMSAwLTEuNDcxLTEuNzk0bC0xLjk2Mi0uMzkzQTMuNTAxIDMuNTAxIDAgMSAxIDEzIDEzLjM1NXoiLz48L3N2Zz4='}

@@ -9,7 +9,7 @@
 	<div class="flex justify-between">
 		<!-- Left side -->
 
-		<span class="h-12 w-12 rounded-full object-cover"
+		<span class="mt-2 h-12 w-12 rounded-full object-cover"
 			><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
 				><path fill="none" d="M0 0h24v24H0z" /><path
 					fill="currentColor"
