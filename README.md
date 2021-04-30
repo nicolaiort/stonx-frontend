@@ -10,17 +10,20 @@ Powered by (among many others):
 * [Localforage](https://localforage.github.io/localForage/)
 * [Marked](https://marked.js.org/)
 
-## Supported assets (frontend)
+## Features
+### Supported assets (powered by stonx-backend)
 > Warning: We currently save your bitpanda api keys in plaintext in the backend's db
 * Bitpanda Wallets (Needs a bitpanda api token that can read your assets)
 * Bitpanda Indices (Needs a bitpanda api token that can read your assets)
 * ETH Wallets (Only needs the public key/address)
 * BTC Wallets (Only needs the public key/address)
 
-## Views
-* [x] Dashboard: View total stats for all assets
-* [x] Bitpanda: Details about your bitpanda assets
-* [x] Wallets: Details about your external Wallets
+### Frontend Views
+| View | Description |
+| - | - |
+| Dashboard | Get a quick overview of your current portfolio status |
+| Bitpanda | See all of your bitpanda assets |
+| Wallets | See all of your custom added wallets and add new wallets |
 
 ## Dev Setup 🛠
 ```bash
