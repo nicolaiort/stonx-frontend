@@ -23,7 +23,9 @@
 	<div class="flex justify-between">
 		<!-- Left side -->
 
-		<span class="h-12 w-12 rounded-full object-cover">TODO:</span>
+		<span class="h-12 w-12 rounded-full object-cover"
+			><img alt={wallet.token} src={`/icons/${wallet.token.toLowerCase()}.svg`} /></span
+		>
 
 		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">
 			<span>Token name</span>

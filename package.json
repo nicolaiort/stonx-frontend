@@ -35,6 +35,7 @@
   "type": "module",
   "dependencies": {
     "axios": "^0.21.1",
+    "ccy-icons": "^1.0.2",
     "localforage": "^1.9.0",
     "marked": "^2.0.3"
   }
