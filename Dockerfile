@@ -1,4 +1,4 @@
-FROM library/node:14
+FROM library/node:15-alpine
 WORKDIR /app
 COPY package.json ./
 RUN yarn
