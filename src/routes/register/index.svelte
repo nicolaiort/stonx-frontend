@@ -110,7 +110,7 @@
 						type="password"
 						required={true}
 						bind:value={password}
-						class="border-gray-300 dark:text-gray-300 dark:placeholder-gray-300 placeholder-gray-500 appearance-none rounded-none relative block w-full px-3 py-2 border rounded-b-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm dark:bg-gray-700"
+						class="border-gray-300 dark:text-gray-300 dark:placeholder-gray-300 placeholder-gray-500 appearance-none rounded-t relative block w-full px-3 py-2 border focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm dark:bg-gray-700"
 						on:keydown={handleKeydown}
 						placeholder="Password"
 					/>
@@ -121,7 +121,7 @@
 						type="password"
 						required={true}
 						bind:value={repeat_password}
-						class="border-gray-300 dark:text-gray-300 dark:placeholder-gray-300 placeholder-gray-500 appearance-none rounded-none relative block w-full px-3 py-2 border rounded-t focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm dark:bg-gray-700"
+						class="border-gray-300 dark:text-gray-300 dark:placeholder-gray-300 placeholder-gray-500 appearance-none rounded-b relative block w-full px-3 py-2 border focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm dark:bg-gray-700"
 						on:keydown={handleKeydown}
 						placeholder="Repeat Password"
 					/>
