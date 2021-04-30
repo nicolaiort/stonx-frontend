@@ -11,6 +11,7 @@
 	$: processed_last_submit = true;
 	$: wallet_address = '';
 	$: wallet_token = '';
+	$: wallet_description = '';
 	$: createbtnenabled = wallet_address != '' && wallet_token != '';
 	$: supported_tokens = [];
 
@@ -22,7 +23,7 @@
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
 			modal_open = false;
-			ApiClient.createWallet(wallet_address, wallet_token).then((result) => {
+			ApiClient.createWallet(wallet_address, wallet_token, wallet_description).then((result) => {
 				processed_last_submit = true;
 				current_wallets.push(result);
 				current_wallets = current_wallets;
@@ -101,6 +102,22 @@
 											bind:value={wallet_address}
 											type="text"
 											name="address"
+											class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-200 rounded-md p-2"
+										/>
+									</div>
+									<div class="col-span-6">
+										<label
+											for="description"
+											class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+											>Description (optional)</label
+										>
+										<input
+											use:focus
+											autocomplete="off"
+											placeholder="description"
+											bind:value={wallet_description}
+											type="text"
+											name="description"
 											class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-200 rounded-md p-2"
 										/>
 									</div>

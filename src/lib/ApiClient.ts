@@ -40,10 +40,11 @@ export class ApiClient {
         return res.data;
     }
 
-    static async createWallet(address: string, token: string): Promise<any> {
+    static async createWallet(address: string, token: string, description?: string): Promise<any> {
         const res = await axios.post(`${baseurl}/rest/wallets`, {
             "address": address,
-            "token": token
+            "token": token,
+            "description": description
         }, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });

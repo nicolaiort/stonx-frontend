@@ -5,7 +5,8 @@
 		id: 'n/a',
 		token: 'n/a',
 		balance: -1,
-		fiat: 0
+		fiat: 0,
+		description: ''
 	};
 	export let current_wallets = [];
 
@@ -33,9 +34,15 @@
 			<span>Current Amount</span>
 			<span class="mt-2 text-black dark:text-gray-200"> {wallet.balance} </span>
 		</div>
+
 		<div class="ml-12 flex flex-col capitalize text-gray-600 dark:text-gray-400">
 			<span>Current Value(Fiat)</span>
 			<span class="mt-2 text-black dark:text-gray-200"> {wallet.fiat.toFixed(2)} €</span>
+		</div>
+
+		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">
+			<span>Description</span>
+			<span class="mt-2 text-black dark:text-gray-200"> {wallet.description} </span>
 		</div>
 	</div>
 
