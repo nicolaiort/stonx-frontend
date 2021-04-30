@@ -42,7 +42,7 @@
 
 		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">
 			<span>Description</span>
-			<span class="mt-2 text-black dark:text-gray-200"> {wallet.description} </span>
+			<span class="mt-2 text-black dark:text-gray-200"> {wallet.description || ''} </span>
 		</div>
 	</div>
 
