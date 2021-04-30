@@ -31,8 +31,9 @@ Powered by (among many others):
 ### Roadmap
 > For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
-* User creation in the frontend
 * User settings
+* Password strength validation
+* Wallet address validation
 
 ## Config
 You can configure the frontend via a 'env.js' file.
