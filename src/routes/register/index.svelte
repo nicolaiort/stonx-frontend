@@ -165,6 +165,14 @@
 					Sign up
 				</button>
 			</div>
+			<div class="mt-2">
+				<a
+					href="/"
+					class="block w-full text-center dark:text-white py-2 px-3 border border-gray-300 rounded-md font-medium hover:border-gray-400 focus:outline-none focus:border-gray-400 sm:text-sm"
+				>
+					Login
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
