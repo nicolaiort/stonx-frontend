@@ -84,17 +84,19 @@
 					/></svg
 				>
 			</Statscard>
-			<Statscard
-				title="Bitpanda Index"
-				value={bitpanda_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
-					><path fill="none" d="M0 0h24v24H0z" /><path
-						fill="currentColor"
-						d="M4 5v14h16V5H4zM3 3h18a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1zm11.793 6.793L13 8h5v5l-1.793-1.793-3.864 3.864-2.121-2.121-2.829 2.828-1.414-1.414 4.243-4.243 2.121 2.122 2.45-2.45z"
-					/></svg
-				></Statscard
-			>
+			{#if bitpanda_indices.length > 0}
+				<Statscard
+					title="Bitpanda Index"
+					value={bitpanda_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"
+						><path fill="none" d="M0 0h24v24H0z" /><path
+							fill="currentColor"
+							d="M4 5v14h16V5H4zM3 3h18a1 1 0 011 1v16a1 1 0 01-1 1H3a1 1 0 01-1-1V4a1 1 0 011-1zm11.793 6.793L13 8h5v5l-1.793-1.793-3.864 3.864-2.121-2.121-2.829 2.828-1.414-1.414 4.243-4.243 2.121 2.122 2.45-2.45z"
+						/></svg
+					></Statscard
+				>
+			{/if}
 			{#each current_tokens as token}
 				<Statscard
 					title={`${token} Wallets`}
