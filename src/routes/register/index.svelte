@@ -2,7 +2,6 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import UserStore from '$lib/UserStore';
 	import * as localForage from 'localforage';
-	import { config } from 'localforage';
 	import { onMount } from 'svelte';
 
 	$: username = '';
@@ -32,9 +31,13 @@
 	});
 
 	async function signup() {
+		error = null;
 		let signupRequest = await ApiClient.signup(email, username, password, bitpanda_api_token);
-		if (signupRequest.status != 200 || signupRequest.status != 201) {
+		if (signupRequest.status != 200 && signupRequest.status != 201) {
 			error = signupRequest.data.message;
+		} else {
+			UserStore.login(signupRequest.data);
+			location.replace('/');
 		}
 	}
 
@@ -58,7 +61,7 @@
 		{#if error}
 			<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
 				<span class="inline-block align-middle mr-8">
-					<b class="capitalize">Encountered a problem while signing you up</b><br />
+					<b>Encountered a problem while signing you up</b><br />
 					{error}
 				</span>
 			</div>
