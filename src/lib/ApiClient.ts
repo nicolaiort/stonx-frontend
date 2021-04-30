@@ -16,6 +16,7 @@ axios.interceptors.response.use(response => {
 
 export class ApiClient {
     static async getBitpandaCrypto(): Promise<any> {
+        // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/bitpanda/assets/crypto`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
@@ -23,6 +24,7 @@ export class ApiClient {
     }
 
     static async getBitpandaIndices(): Promise<any> {
+        // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/bitpanda/assets/index`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
@@ -30,6 +32,7 @@ export class ApiClient {
     }
 
     static async getWallets(): Promise<any> {
+        // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/wallets`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
@@ -37,6 +40,7 @@ export class ApiClient {
     }
 
     static async getSupportedTokens(): Promise<any> {
+        // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/tokens`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
@@ -44,6 +48,7 @@ export class ApiClient {
     }
 
     static async createWallet(address: string, token: string, description?: string): Promise<any> {
+        // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/wallets`, {
             "address": address,
             "token": token,
@@ -55,6 +60,7 @@ export class ApiClient {
     }
 
     static async deleteWallet(id: string): Promise<any> {
+        // @ts-ignore
         const res = await axios.delete(`${config.baseurl_backend}/rest/wallets/${id}`, {
             headers: { Authorization: `Bearer ${UserStore.state.token}` }
         });
@@ -62,6 +68,7 @@ export class ApiClient {
     }
 
     static async login(email: string, password: string): Promise<any> {
+        // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/auth/login`, {
             "email": email,
             "password": password
