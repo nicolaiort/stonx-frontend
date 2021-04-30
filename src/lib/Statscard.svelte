@@ -3,7 +3,7 @@
 	export let value: string = 'Value';
 </script>
 
-<div class="widget p-4 rounded-lg bg-white dark:bg-gray-600 dark:text-gray-200 inline-block">
+<div class="widget ml-2 p-4 rounded-lg bg-white dark:bg-gray-600 dark:text-gray-200 inline-block">
 	<div class="flex flex-row items-center justify-between">
 		<div class="flex flex-col">
 			<div class="text-xs uppercase font-light">{title}</div>
