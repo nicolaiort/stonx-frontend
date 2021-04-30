@@ -16,6 +16,7 @@
 	promises.push(
 		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
+			console.log(bitpanda_wallets);
 		})
 	);
 </script>
@@ -48,8 +49,8 @@
 			<p>Loading data....</p>
 		{:then}
 			<div class="border-b dark:border-gray-600">
-				{#each bitpanda_wallets as wallet}
-					<Walletcard bind:wallet />
+				{#each bitpanda_wallets as current_wallet}
+					<Walletcard bind:wallet={current_wallet} />
 				{/each}
 			</div>
 			<div>
