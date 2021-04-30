@@ -24,6 +24,7 @@ Powered by (among many others):
 | Dashboard | Get a quick overview of your current portfolio status |
 | Bitpanda | See all of your bitpanda assets |
 | Wallets | See all of your custom added wallets and add new wallets |
+| About | As the name suggests: An about page that also lists all npm packages used in the frontend (coming soon) |
 
 ## Dev Setup 🛠
 ```bash
