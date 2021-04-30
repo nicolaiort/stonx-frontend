@@ -73,7 +73,18 @@ export class ApiClient {
             "email": email,
             "password": password
         });
-        console.log("called login")
         return res.data;
+    }
+
+    static async signup(email: string, username: string, password: string, bitpanda_api_key: string): Promise<any> {
+        // @ts-ignore
+        const res = await axios.post(`${config.baseurl_backend}/rest/auth/signup`, {
+            "password": password,
+            "email": email,
+            "username": username,
+            "bitpanda_api_key": bitpanda_api_key
+        }, { validateStatus: null });
+
+        return { data: res.data, status: res.status };
     }
 }
