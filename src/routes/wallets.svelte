@@ -11,7 +11,6 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
-			console.log(current_wallets);
 		})
 	);
 </script>
