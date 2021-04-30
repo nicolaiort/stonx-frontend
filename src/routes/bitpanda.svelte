@@ -16,7 +16,6 @@
 	promises.push(
 		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
-			console.log(bitpanda_wallets);
 		})
 	);
 </script>
