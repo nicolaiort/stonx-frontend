@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ApiClient } from './ApiClient';
+	import * as cryptoIcons from 'base64-cryptocurrency-icons';
 
 	export let wallet = {
 		id: 'n/a',
@@ -24,7 +25,7 @@
 		<!-- Left side -->
 
 		<span class="h-12 w-12 rounded-full object-cover"
-			><img alt={wallet.token} src={`/icons/${wallet.token.toLowerCase()}.svg`} /></span
+			><img alt={wallet.token} src={cryptoIcons[wallet.token].icon} /></span
 		>
 
 		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">

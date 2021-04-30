@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
 	import Statscard from '$lib/Statscard.svelte';
-	import Walletcard from '$lib/Walletcard.svelte';
-	import btcIcon from 'ccy-icons/icons/btc.svg';
+	import * as cryptoIcons from 'base64-cryptocurrency-icons';
 
 	$: bitpanda_indices = [];
 	$: bitpanda_wallets = [];
@@ -104,7 +103,7 @@
 						.reduce((sum, cur) => (sum = sum + cur.fiat), 0)
 						.toFixed(2) + ' €'}
 				>
-					<img height="48" width="48" alt={token} src={`/icons/${token.toLowerCase()}.svg`} />
+					<img height="48" width="48" alt={token} src={cryptoIcons[token].icon} />
 				</Statscard>
 			{/each}
 		{/await}
