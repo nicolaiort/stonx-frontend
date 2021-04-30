@@ -1,7 +1,7 @@
 # stonx-frontend
 
 A simple dashboard for viewing some of your assets.
-Information aggregation is powered by stonx-backend.
+Information aggregation is powered by [stonx-backend](https://github.com/nicolaiort/stonx-backend).
 
 Powered by (among many others):
 * [SvelteKit](https://kit.svelte.dev/)
@@ -29,7 +29,7 @@ Powered by (among many others):
 | About | As the name suggests: An about page that also lists all npm packages used in the frontend (coming soon) |
 
 ### Roadmap
-> For supported tokens take a look at [the backend roadmap](https://github.com/Niggl1999/stonx-backend#reamde)
+> For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 * Confugure backend via env (or env.js)
 
 ## Dev Setup 🛠
