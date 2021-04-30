@@ -14,9 +14,6 @@ Information aggregation is powered by stonx-backend.
 * [x] Bitpanda: Details about your bitpanda assets
 * [x] Wallets: Details about your external Wallets
 
-## TODOs:
-* fix the docker builds
-
 ## Dev Setup 🛠
 ```bash
 yarn
