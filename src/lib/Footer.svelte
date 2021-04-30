@@ -3,5 +3,9 @@
 		<a class="underline" href="/privacy" target="_blank">Privacy</a>
 		-
 		<a class="underline" href="/imprint" target="_blank">Imprint</a>
+		-
+		<a class="underline" href="https://github.com/nicolaiort/stonx-frontend" target="_blank"
+			>GitHub</a
+		>
 	</p>
 </footer>
