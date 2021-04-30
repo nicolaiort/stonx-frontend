@@ -2,6 +2,7 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import UserStore from '$lib/UserStore';
 	import * as localForage from 'localforage';
+	import { config } from 'localforage';
 	import { onMount } from 'svelte';
 
 	$: username = '';
@@ -9,6 +10,7 @@
 	$: password = '';
 	$: repeat_password = '';
 	$: bitpanda_api_token = '';
+	$: error = '';
 	$: signup_enabled =
 		username != '' &&
 		email != '' &&
@@ -30,8 +32,10 @@
 	});
 
 	async function signup() {
-		let login = await ApiClient.login(username, password);
-		UserStore.login(login);
+		let signupRequest = await ApiClient.signup(email, username, password, bitpanda_api_token);
+		if (signupRequest.status != 200 || signupRequest.status != 201) {
+			error = signupRequest.data.message;
+		}
 	}
 
 	function handleKeydown(e) {
@@ -51,6 +55,14 @@
 		<img style="height:10rem;" class="mx-auto" src="/stonx.jpg" alt="" />
 		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonksclient</p>
 		<p class="mt-6 text-sm text-center dark:text-gray-300">Sign up</p>
+		{#if error}
+			<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+				<span class="inline-block align-middle mr-8">
+					<b class="capitalize">Encountered a problem while signing you up</b><br />
+					{error}
+				</span>
+			</div>
+		{/if}
 		<div>
 			<div class="rounded-md shadow-sm">
 				<div class="-mt-px relative mb-2">
