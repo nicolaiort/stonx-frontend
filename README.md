@@ -18,6 +18,7 @@ Powered by (among many others):
 * Bitpanda Indices (Needs a bitpanda api token that can read your assets)
 * ETH Wallets (Only needs the public key/address)
 * BTC Wallets (Only needs the public key/address)
+* DOGE Wallets (Only needs the public key/address)
 
 ### Frontend Views
 | View | Description |
