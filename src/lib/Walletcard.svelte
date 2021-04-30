@@ -48,7 +48,7 @@
 			<span class="mt-2 text-black dark:text-gray-200"> {wallet.fiat.toFixed(2)} €</span>
 		</div>
 
-		<div class="ml-4 flex flex-col capitalize text-gray-600 dark:text-gray-400">
+		<div class="ml-4 flex flex-col text-gray-600 dark:text-gray-400">
 			<span>Description</span>
 			<span class="mt-2 text-black dark:text-gray-200"> {wallet.description || ''} </span>
 		</div>
@@ -76,21 +76,23 @@
 			<span>final date</span>
 			<span class="mt-2 text-green-400 dark:text-green-200"> 20.02.2020 11:00 </span>
 		</div> -->
-		<div class="mr-8 flex flex-col capitalize text-gray-600 dark:text-gray-400 text-center">
-			<span>Actions</span>
-			<button
-				on:click={() => {
-					deleteWallet();
-				}}
-				type="button"
-				class="h-12 w-12 inline-flex justify-center rounded-md shadow-sm px-2 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 fill-current"
-					><path fill="none" d="M0 0h24v24H0z" /><path
-						d="M17 6h5v2h-2v13a1 1 0 01-1 1H5a1 1 0 01-1-1V8H2V6h5V3a1 1 0 011-1h8a1 1 0 011 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"
-					/></svg
+		{#if wallet.id != 'bitpanda/crypto'}
+			<div class="mr-8 flex flex-col capitalize text-gray-600 dark:text-gray-400 text-center">
+				<span>Actions</span>
+				<button
+					on:click={() => {
+						deleteWallet();
+					}}
+					type="button"
+					class="h-12 w-12 inline-flex justify-center rounded-md shadow-sm px-2 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
 				>
-			</button>
-		</div>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-8 w-8 fill-current"
+						><path fill="none" d="M0 0h24v24H0z" /><path
+							d="M17 6h5v2h-2v13a1 1 0 01-1 1H5a1 1 0 01-1-1V8H2V6h5V3a1 1 0 011-1h8a1 1 0 011 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"
+						/></svg
+					>
+				</button>
+			</div>
+		{/if}
 	</div>
 </div>
