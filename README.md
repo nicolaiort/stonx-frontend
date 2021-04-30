@@ -9,6 +9,7 @@ Powered by (among many others):
 * [Axios](https://axios-http.com/)
 * [Localforage](https://localforage.github.io/localForage/)
 * [Marked](https://marked.js.org/)
+* [base64-cryptocurrency-icons](https://github.com/onramper/small-open-datasets/tree/master/base64-cryptocurrency-icons#readme)
 
 ## Features
 ### Supported assets (powered by stonx-backend)
