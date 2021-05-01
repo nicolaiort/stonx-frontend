@@ -33,7 +33,6 @@ Powered by (among many others):
 
 * User settings -> Delete User
 * User settings -> Validate Bitpanda Key
-* Password strength validation
 * Wallet address validation
 
 ## Config
