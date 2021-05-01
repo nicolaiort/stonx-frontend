@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { config } from 'localforage';
 import UserStore from './UserStore';
 
 interface config {
