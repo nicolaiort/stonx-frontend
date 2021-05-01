@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import PasswordStrength, { password_strong_enough_and_equal } from '$lib/PasswordStrength.svelte';
 
 	$: original_data = {
 		username: '',
@@ -19,7 +20,7 @@
 		email != '' &&
 		username != '';
 	$: update_providers_enabled = bitpanda_api_key != '';
-	$: update_password_enabled = password == repeat_password && password != '';
+	$: update_password_enabled = password_strong_enough_and_equal(password, repeat_password);
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
@@ -217,6 +218,10 @@
 								placeholder="Repeat password"
 							/>
 						</div>
+						<PasswordStrength
+							bind:password_change={password}
+							bind:password_confirm={repeat_password}
+						/>
 					</div>
 					<div class="px-4 py-3 text-right sm:px-6">
 						<button
