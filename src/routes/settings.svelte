@@ -14,7 +14,8 @@
 	$: password = '';
 	$: repeat_password = '';
 	$: processed_last_submit = true;
-	$: error = '';
+	$: error_general = '';
+	$: error_providers = '';
 	$: update_general_enabled =
 		(username != original_data.username || email != original_data.email) &&
 		email != '' &&
@@ -42,9 +43,9 @@
 			processed_last_submit = false;
 			ApiClient.updateMe(email, username, undefined, undefined).then((result) => {
 				processed_last_submit = true;
-				error = '';
+				error_general = '';
 				if (result.status != 200) {
-					error = result.data.message;
+					error_general = result.data.message;
 				} else {
 					email = result.data.email;
 					original_data.email = result.data.email;
@@ -58,6 +59,7 @@
 	function updateProviders() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
+			error_providers = '';
 			ApiClient.updateMe(
 				original_data.email,
 				original_data.username,
@@ -65,7 +67,11 @@
 				bitpanda_api_key
 			).then((result) => {
 				processed_last_submit = true;
-				bitpanda_api_key = '';
+				if (result.status != 200) {
+					error_providers = result.data.message;
+				} else {
+					bitpanda_api_key = '';
+				}
 			});
 		}
 	}
@@ -103,11 +109,11 @@
 						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
 							Profile data
 						</h3>
-						{#if error}
+						{#if error_general}
 							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
 								<span class="inline-block align-middle mr-8">
 									<b>Encountered a problem while updating your profile</b><br />
-									{error}
+									{error_general}
 								</span>
 							</div>
 						{/if}
@@ -162,6 +168,14 @@
 						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
 							Data providers
 						</h3>
+						{#if error_providers}
+							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+								<span class="inline-block align-middle mr-8">
+									<b>Encountered a problem while updating your data providers</b><br />
+									{error_providers}
+								</span>
+							</div>
+						{/if}
 						<div class="text-sm w-full">
 							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
 								>Bitpanda API Key</label
