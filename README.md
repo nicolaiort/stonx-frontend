@@ -31,7 +31,7 @@ Powered by (among many others):
 ### Roadmap
 > For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
-* User settings
+* User settings -> Update API Key
 * Password strength validation
 * Wallet address validation
 
