@@ -34,6 +34,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@sotatek-anhdao/coin-address-validator": "^1.0.1",
     "axios": "^0.21.1",
     "base64-cryptocurrency-icons": "^1.1.17",
     "ccy-icons": "^1.0.2",
