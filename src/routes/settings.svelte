@@ -13,6 +13,7 @@
 	$: password = '';
 	$: repeat_password = '';
 	$: processed_last_submit = true;
+	$: error = '';
 	$: update_general_enabled =
 		(username != original_data.username || email != original_data.email) &&
 		email != '' &&
@@ -39,9 +40,12 @@
 			processed_last_submit = false;
 			ApiClient.updateMe(email, username, undefined, undefined).then((result) => {
 				processed_last_submit = true;
-				email = result.data.email;
-				username = result.data.username;
-				console.log('Password updated!');
+				if (result.status != 200) {
+					error = result.data.message;
+				} else {
+					email = result.data.email;
+					username = result.data.username;
+				}
 			});
 		}
 	}
@@ -98,6 +102,14 @@
 								</button>
 							</div>
 						</div> -->
+						{#if error}
+							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+								<span class="inline-block align-middle mr-8">
+									<b>Encountered a problem while updating your profile</b><br />
+									{error}
+								</span>
+							</div>
+						{/if}
 						<div class="text-sm w-full">
 							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
 								>Username</label
