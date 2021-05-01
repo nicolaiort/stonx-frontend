@@ -13,7 +13,10 @@
 	$: password = '';
 	$: repeat_password = '';
 	$: processed_last_submit = true;
-	$: update_general_enabled = false;
+	$: update_general_enabled =
+		(username != original_data.username || email != original_data.email) &&
+		email != '' &&
+		username != '';
 	$: update_password_enabled = password == repeat_password && password != '';
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
@@ -31,7 +34,17 @@
 		return re.test(String(email).toLowerCase());
 	}
 
-	function updateGeneral() {}
+	function updateGeneral() {
+		if (processed_last_submit === true) {
+			processed_last_submit = false;
+			ApiClient.updateMe(email, username, undefined, undefined).then((result) => {
+				processed_last_submit = true;
+				email = result.data.email;
+				username = result.data.username;
+				console.log('Password updated!');
+			});
+		}
+	}
 
 	function updatePassword() {
 		if (processed_last_submit === true) {

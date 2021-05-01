@@ -106,7 +106,7 @@ export class ApiClient {
             "email": email,
             "username": username,
             "bitpanda_api_key": bitpanda_api_key
-        }, { validateStatus: null });
+        }, { headers: { Authorization: `Bearer ${UserStore.state.token}` }, validateStatus: null });
 
         return { data: res.data, status: res.status };
     }
