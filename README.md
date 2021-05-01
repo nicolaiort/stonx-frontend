@@ -34,8 +34,6 @@ Powered by (among many others):
 ### Roadmap
 > For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
-* User settings -> Delete User
-
 ## Config
 You can configure the frontend via a 'env.js' file.
 This file resides in the static folder and can be overwritten by mounting a file following the same scheme into the docker container `./env.js:/usr/share/nginx/html/env.js`
