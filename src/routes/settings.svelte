@@ -84,6 +84,9 @@
 			<div class="mt-5 md:mt-0 md:col-span-2">
 				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
 					<div class="px-4 py-5 space-y-6 sm:p-6">
+						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
+							Profile data
+						</h3>
 						{#if error}
 							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
 								<span class="inline-block align-middle mr-8">
@@ -131,7 +134,7 @@
 							on:click={updateGeneral}
 							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
 						>
-							Save changes
+							Update Profile
 						</button>
 					</div>
 				</div>
@@ -139,11 +142,12 @@
 			<br />
 			<div class="mt-5 md:mt-0 md:col-span-2">
 				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
-					<div class="px-4 py-3 text-left sm:px-6">
-						<label for="new_password" class="font-medium text-gray-700 dark:text-gray-100"
-							>New password</label
-						>
-						<div class="-mt-px relative">
+					<div class="px-4 py-5 space-y-6 sm:p-6">
+						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">Security</h3>
+						<div class="text-sm w-full">
+							<label for="new_password" class="font-medium text-sm text-gray-700 dark:text-gray-100"
+								>New password</label
+							>
 							<input
 								aria-label="Passoword"
 								type="password"
@@ -152,10 +156,10 @@
 								placeholder="Password"
 							/>
 						</div>
-						<label for="new_password" class="font-medium text-gray-700 dark:text-gray-100"
-							>Confirm the new password</label
-						>
-						<div class="-mt-px relative">
+						<div class="text-sm w-full">
+							<label for="new_password" class="font-medium text-sm text-gray-700 dark:text-gray-100"
+								>Confirm the new password</label
+							>
 							<input
 								aria-label="Repeat password"
 								type="password"
