@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { config } from 'localforage';
 import UserStore from './UserStore';
 
 interface config {
@@ -109,5 +110,11 @@ export class ApiClient {
         }, { headers: { Authorization: `Bearer ${UserStore.state.token}` }, validateStatus: null });
 
         return { data: res.data, status: res.status };
+    }
+
+    static async deleteMe(confirm: boolean): Promise<any> {
+        // @ts-ignore
+        const res = await axios.delete(`${config.baseurl_backend}/rest/users/me?confirm=${config.toString()}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
+        return res.data;
     }
 }
