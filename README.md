@@ -35,7 +35,6 @@ Powered by (among many others):
 > For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
 * User settings -> Delete User
-* Wallet address validation
 
 ## Config
 You can configure the frontend via a 'env.js' file.
