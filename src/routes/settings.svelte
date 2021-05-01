@@ -53,6 +53,7 @@
 	function updatePassword() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
+			error = '';
 			ApiClient.updateMe(original_data.email, original_data.username, password, undefined).then(
 				(result) => {
 					processed_last_submit = true;
