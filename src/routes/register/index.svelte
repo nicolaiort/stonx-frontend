@@ -3,6 +3,7 @@
 	import UserStore from '$lib/UserStore';
 	import * as localForage from 'localforage';
 	import { onMount } from 'svelte';
+	import PasswordStrength, { password_strong_enough_and_equal } from '$lib/PasswordStrength.svelte';
 
 	$: username = '';
 	$: email = '';
@@ -13,8 +14,7 @@
 	$: signup_enabled =
 		username != '' &&
 		email != '' &&
-		password != '' &&
-		password == repeat_password &&
+		password_strong_enough_and_equal(password, repeat_password) &&
 		bitpanda_api_token != '' &&
 		validateEmail(email);
 
@@ -145,18 +145,15 @@
 				</div>
 
 				{#if !signup_enabled}
-					<div class="-mt-px relative">
-						<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-							>Problems</label
-						>
-						<ul class="ml-4 list-disc dark:text-white">
-							{#if username == ''}<li>Username can't be empty!</li> {/if}
-							{#if !validateEmail(email)}<li>Email is invalid!</li> {/if}
-							{#if password == ''}<li>Password can't be empty</li> {/if}
-							{#if password != repeat_password}<li>Passwords don't match!</li> {/if}
-							{#if bitpanda_api_token == ''}<li>Bitpanda api token can't be empty!</li> {/if}
-						</ul>
-					</div>
+					<PasswordStrength
+						bind:password_change={password}
+						bind:password_confirm={repeat_password}
+					/>
+					<ul class="ml-4 list-disc dark:text-white">
+						{#if username == ''}<li>Username can't be empty!</li> {/if}
+						{#if !validateEmail(email)}<li>Email is invalid!</li> {/if}
+						{#if bitpanda_api_token == ''}<li>Bitpanda api token can't be empty!</li> {/if}
+					</ul>
 				{/if}
 			</div>
 
