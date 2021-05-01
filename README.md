@@ -29,7 +29,7 @@ Powered by (among many others):
 | About | As the name suggests: An about page that also lists all npm packages used in the frontend (coming soon) |
 
 ### Roadmap
-> For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
+> For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
 * User settings -> Delete User
 * Wallet address validation
