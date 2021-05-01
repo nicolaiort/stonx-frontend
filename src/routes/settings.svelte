@@ -18,6 +18,7 @@
 		(username != original_data.username || email != original_data.email) &&
 		email != '' &&
 		username != '';
+	$: update_providers_enabled = bitpanda_api_key != '';
 	$: update_password_enabled = password == repeat_password && password != '';
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
@@ -40,6 +41,7 @@
 			processed_last_submit = false;
 			ApiClient.updateMe(email, username, undefined, undefined).then((result) => {
 				processed_last_submit = true;
+				error = '';
 				if (result.status != 200) {
 					error = result.data.message;
 				} else {
@@ -52,16 +54,29 @@
 		}
 	}
 
+	function updateProviders() {
+		if (processed_last_submit === true) {
+			processed_last_submit = false;
+			ApiClient.updateMe(
+				original_data.email,
+				original_data.username,
+				undefined,
+				bitpanda_api_key
+			).then((result) => {
+				processed_last_submit = true;
+				bitpanda_api_key = '';
+			});
+		}
+	}
+
 	function updatePassword() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
-			error = '';
 			ApiClient.updateMe(original_data.email, original_data.username, password, undefined).then(
 				(result) => {
 					processed_last_submit = true;
 					password = '';
 					repeat_password = '';
-					console.log('Password updated!');
 				}
 			);
 		}
@@ -135,6 +150,40 @@
 							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
 						>
 							Update Profile
+						</button>
+					</div>
+				</div>
+			</div>
+			<br />
+			<div class="mt-5 md:mt-0 md:col-span-2">
+				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
+					<div class="px-4 py-5 space-y-6 sm:p-6">
+						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
+							Data providers
+						</h3>
+						<div class="text-sm w-full">
+							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
+								>Bitpanda API Key</label
+							>
+							<input
+								autocomplete="off"
+								placeholder="Bitpanda API Key"
+								type="text"
+								bind:value={bitpanda_api_key}
+								name="bitpada_api_key"
+								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
+							/>
+						</div>
+					</div>
+					<div class="px-4 py-3 text-right sm:px-6">
+						<button
+							type="submit"
+							disabled={!update_providers_enabled}
+							class:opacity-50={!update_providers_enabled}
+							on:click={updateProviders}
+							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
+						>
+							Update Providers
 						</button>
 					</div>
 				</div>
