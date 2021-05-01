@@ -12,7 +12,9 @@
 	$: bitpanda_api_key = '';
 	$: password = '';
 	$: repeat_password = '';
-	$: save_enabled = false;
+	$: processed_last_submit = true;
+	$: update_general_enabled = false;
+	$: update_password_enabled = false;
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
@@ -29,7 +31,21 @@
 		return re.test(String(email).toLowerCase());
 	}
 
-	function submit() {}
+	function updateGeneral() {}
+
+	function updatePassword() {
+		if (processed_last_submit === true) {
+			processed_last_submit = false;
+			ApiClient.updateMe(original_data.email, original_data.username, password, undefined).then(
+				(result) => {
+					processed_last_submit = true;
+					password = '';
+					repeat_password = '';
+					console.log('Password updated!');
+				}
+			);
+		}
+	}
 </script>
 
 <div class="mx-10 my-2">
@@ -103,9 +119,9 @@
 					<div class="px-4 py-3 text-right sm:px-6">
 						<button
 							type="submit"
-							disabled={!save_enabled}
-							class:opacity-50={!save_enabled}
-							on:click={submit}
+							disabled={!update_general_enabled}
+							class:opacity-50={!update_general_enabled}
+							on:click={updateGeneral}
 							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
 						>
 							Save changes
@@ -143,22 +159,15 @@
 						</div>
 					</div>
 					<div class="px-4 py-3 text-right sm:px-6">
-						<!-- <button
+						<button
 							type="submit"
 							disabled={!update_password_enabled}
 							class:opacity-50={!update_password_enabled}
-							on:click={changePassword}
+							on:click={updatePassword}
 							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
 						>
-							{$_('update-password')}
+							Update password
 						</button>
-						{#if update_password_enabled}
-							<p>
-								{$_(
-									'after-the-update-youll-get-logged-out-please-login-with-your-new-password-after-that'
-								)}
-							</p>
-						{/if} -->
 					</div>
 				</div>
 			</div>
