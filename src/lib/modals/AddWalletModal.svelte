@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
 	import Select from 'svelte-select';
+	import coinAddressValidator from '@sotatek-anhdao/coin-address-validator';
 
 	export let modal_open = true;
 	export let current_wallets = [];
@@ -12,12 +13,20 @@
 	$: wallet_address = '';
 	$: wallet_token = '';
 	$: wallet_description = '';
+	$: wallet_address_valid = validateAddress(wallet_token, wallet_address);
 	$: createbtnenabled = wallet_address != '' && wallet_token != '';
 	$: supported_tokens = [];
 
 	let token_promise = ApiClient.getSupportedTokens().then((result) => {
 		supported_tokens = result;
 	});
+
+	function validateAddress(token: string, address: string): boolean {
+		if (!token || token == '') {
+			return false;
+		}
+		return coinAddressValidator.validate(address, token.toLowerCase(), 'prod');
+	}
 
 	function submit() {
 		if (processed_last_submit === true) {
@@ -67,8 +76,8 @@
 								</h3>
 								<div class="mt-2 mb-6">
 									<p class="text-sm text-black dark:text-gray-200">
-										Just pick from the supported tokens and enter your wallet's address (warning: we
-										don't verify them)
+										Just pick from the supported tokens and enter your wallet's address (we do our
+										best to verify them). Never enter your private key!
 									</p>
 								</div>
 								<div class="grid grid-cols-6 gap-6">
@@ -104,6 +113,11 @@
 											name="address"
 											class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 dark:bg-gray-600 text-gray-500 dark:text-gray-200 rounded-md p-2"
 										/>
+										{#if !wallet_address_valid}
+											<p class="dark:text-gray-100">
+												Please provide a valid {wallet_token} address.
+											</p>
+										{/if}
 									</div>
 									<div class="col-span-6">
 										<label
