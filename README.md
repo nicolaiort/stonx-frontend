@@ -32,6 +32,7 @@ Powered by (among many others):
 > For supported tokens take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
 * User settings -> Delete User
+* User settings -> Validate Bitpanda Key
 * Password strength validation
 * Wallet address validation
 
