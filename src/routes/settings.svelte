@@ -14,7 +14,7 @@
 	$: repeat_password = '';
 	$: processed_last_submit = true;
 	$: update_general_enabled = false;
-	$: update_password_enabled = false;
+	$: update_password_enabled = password == repeat_password && password != '';
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
