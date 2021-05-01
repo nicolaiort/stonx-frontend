@@ -20,7 +20,7 @@
 	export let password_confirm;
 
 	$: strength = Strength(password_change);
-	$: passwords_match = password_confirm || password_confirm === password_change;
+	$: passwords_match = password_confirm == password_change;
 </script>
 
 <div>
