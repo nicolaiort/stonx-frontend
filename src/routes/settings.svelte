@@ -44,7 +44,9 @@
 					error = result.data.message;
 				} else {
 					email = result.data.email;
+					original_data.email = result.data.email;
 					username = result.data.username;
+					original_data.username = result.data.email;
 				}
 			});
 		}
@@ -82,27 +84,6 @@
 			<div class="mt-5 md:mt-0 md:col-span-2">
 				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
 					<div class="px-4 py-5 space-y-6 sm:p-6">
-						<!-- <div>
-							svelte-ignore a11y-label-has-associated-control
-							<label class="block text-sm font-medium text-gray-700">
-								{$_('profile-picture')}
-							</label>
-							<div class="mt-2 flex items-center">
-								<span class="inline-block h-20 w-20 rounded-full overflow-hidden bg-gray-100">
-									<img
-										alt={$_('profile-picture')}
-										class="h-20 w-20 rounded-full overflow-hidden bg-gray-100"
-										src={editable.profilePic || 'https://lauf-fuer-kaya.de/lfk-logo.png'}
-									/>
-								</span>
-								<button
-									type="button"
-									class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-								>
-									Change
-								</button>
-							</div>
-						</div> -->
 						{#if error}
 							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
 								<span class="inline-block align-middle mr-8">
