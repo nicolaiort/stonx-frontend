@@ -6,6 +6,7 @@
 
 	let username: string = '';
 	let password: string = '';
+	$: error = '';
 	UserStore.init();
 
 	onMount(() => {
@@ -20,7 +21,11 @@
 
 	async function login() {
 		let login = await ApiClient.login(username, password);
-		UserStore.login(login);
+		if (login.status != 200 && login.status != 201) {
+			error = login.data.message;
+		} else {
+			UserStore.login(login);
+		}
 	}
 
 	function handleKeydown(e) {
@@ -35,6 +40,14 @@
 		<img style="height:10rem;" class="mx-auto" src="/stonx.jpg" alt="" />
 		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonx Frontend</p>
 		<p class="mt-6 text-sm text-center dark:text-gray-300">Login</p>
+		{#if error}
+			<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+				<span class="inline-block align-middle mr-8">
+					<b>Encountered a problem while logging you in</b><br />
+					{error}
+				</span>
+			</div>
+		{/if}
 		<div>
 			<div class="rounded-md shadow-sm">
 				<div>
