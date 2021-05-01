@@ -1,6 +1,9 @@
 version: "3"
 services:
     httpd:
-        build: .
+        # build: .
+        image: niggl/stonx-frontend
         ports:
             - 8084:80
+        # volumes: 
+            # - ./env.js:/usr/share/nginx/html/env.js
