@@ -3,7 +3,7 @@
 	export let value: string = 'Value';
 </script>
 
-<div class="flex flex-col bg-white overflow-hidden shadow rounded-lg">
+<div class="flex flex-col bg-white shadow rounded-lg">
 	<div class="flex-grow px-4 py-5 sm:p-6">
 		<div class="flex items-center">
 			<div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
