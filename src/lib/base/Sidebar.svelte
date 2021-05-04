@@ -5,7 +5,7 @@
 </script>
 
 <div hidden={!sidebarOpen} class="md:hidden">
-	<div class="fixed inset-0 flex z-40">
+	<div class="fixed w-full inset-0 flex z-40">
 		<transition
 			enter-active-class="transition-opacity ease-linear duration-300"
 			enter-class="opacity-0"
