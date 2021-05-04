@@ -29,11 +29,11 @@
 </script>
 
 <div>
-	<div class="max-w-7xl px-4 sm:px-6 md:px-8">
+	<div class="w-full px-4 sm:px-6 md:px-8">
 		<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
 	</div>
-	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
-		<dl class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
+		<dl class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
 			{#await promises[0] && promises[1]}
 				<p>Loading data....</p>
 			{:then}
