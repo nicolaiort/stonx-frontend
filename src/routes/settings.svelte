@@ -97,186 +97,138 @@
 </script>
 
 <DeleteUserModal modal_open={show_delete_modal} />
-<div class="mx-10 my-2">
-	<h2 class="my-4 text-4xl font-semibold dark:text-gray-400">User Settings</h2>
-
-	<div
-		class="pb-2 flex items-center justify-between text-gray-600
-				dark:text-gray-400 border-b dark:border-gray-600"
-	>
-		<!-- Header -->
+<div>
+	<div class="max-w-7xl px-4 sm:px-6 md:px-8">
+		<h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
 	</div>
-	<div class="mt-4">
+	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
 		{#await promises[1]}
 			<p>Loading data....</p>
 		{:then}
 			<div class="mt-5 md:mt-0 md:col-span-2">
-				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
-					<div class="px-4 py-5 space-y-6 sm:p-6">
-						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
-							Profile data
-						</h3>
-						{#if error_general}
-							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
-								<span class="inline-block align-middle mr-8">
-									<b>Encountered a problem while updating your profile</b><br />
-									{error_general}
-								</span>
+				<div class="max-w-3xl mb-4">
+					<div class="bg-white shadow sm:rounded-lg">
+						<div class="px-4 py-5 sm:p-6">
+							<h3 class="text-lg leading-6 font-medium text-gray-900">Profile data</h3>
+							<div class="mt-2 max-w-xl text-sm text-gray-500">
+								<p>Change the username or email you want associated with your account.</p>
 							</div>
-						{/if}
-						<div class="text-sm w-full">
-							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
-								>Username</label
-							>
-							<input
-								autocomplete="off"
-								placeholder="Username"
-								type="text"
-								bind:value={username}
-								name="username"
-								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
-							/>
-						</div>
-						<div class="text-sm w-full">
-							<label for="email" class="font-medium text-gray-700 dark:text-gray-100">Email</label>
-							<input
-								autocomplete="off"
-								placeholder="Email"
-								type="email"
-								bind:value={email}
-								name="email"
-								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
-							/>
-						</div>
-						{#if !validateEmail(email)}
-							<span
-								class="flex items-center font-medium tracking-wide text-red-500 dark:text-gray-50 text-xs mt-1 ml-1"
-								>Email is not valid</span
-							>
-						{/if}
-					</div>
-					<div class="px-4 py-3 text-right sm:px-6">
-						<button
-							type="submit"
-							disabled={!update_general_enabled}
-							class:opacity-50={!update_general_enabled}
-							on:click={updateGeneral}
-							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-						>
-							Update Profile
-						</button>
-					</div>
-				</div>
-			</div>
-			<br />
-			<div class="mt-5 md:mt-0 md:col-span-2">
-				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
-					<div class="px-4 py-5 space-y-6 sm:p-6">
-						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
-							Data providers
-						</h3>
-						{#if error_providers}
-							<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
-								<span class="inline-block align-middle mr-8">
-									<b>Encountered a problem while updating your data providers</b><br />
-									{error_providers}
-								</span>
+							{#if error_general}
+								<div class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-500">
+									<span class="inline-block align-middle mr-8">
+										<b>Encountered a problem while updating your profile</b><br />
+										{error_general}
+									</span>
+								</div>
+							{/if}
+							<div class="mt-5 sm:items-center">
+								<div class="max-w-xs w-full">
+									<label for="email">Username</label>
+									<input
+										autocomplete="off"
+										placeholder="Username"
+										type="text"
+										bind:value={username}
+										name="username"
+										class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-lg border border-gray-600 rounded-md"
+									/>
+								</div>
+								<div class="max-w-xs w-full">
+									<label for="email">Email</label>
+									<input
+										autocomplete="off"
+										placeholder="Email"
+										type="email"
+										bind:value={email}
+										name="email"
+										class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-lg border border-gray-600 rounded-md"
+									/>
+								</div>
+								{#if !validateEmail(email)}
+									<span
+										class="flex items-center font-medium tracking-wide text-red-500 text-sm mt-1"
+										>Email is not valid</span
+									>
+								{/if}
 							</div>
-						{/if}
-						<div class="text-sm w-full">
-							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
-								>Bitpanda API Key</label
-							>
-							<input
-								autocomplete="off"
-								placeholder="Bitpanda API Key"
-								type="text"
-								bind:value={bitpanda_api_key}
-								name="bitpada_api_key"
-								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
-							/>
+							<div class="text-right">
+								<button
+									type="submit"
+									disabled={!update_general_enabled}
+									class:opacity-50={!update_general_enabled}
+									on:click={updateGeneral}
+									class="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+								>
+									Save
+								</button>
+							</div>
 						</div>
-					</div>
-					<div class="px-4 py-3 text-right sm:px-6">
-						<button
-							type="submit"
-							disabled={!update_providers_enabled}
-							class:opacity-50={!update_providers_enabled}
-							on:click={updateProviders}
-							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-						>
-							Update Providers
-						</button>
 					</div>
 				</div>
-			</div>
-			<br />
-			<div class="mt-5 md:mt-0 md:col-span-2">
-				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
-					<div class="px-4 py-5 space-y-6 sm:p-6">
-						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">Security</h3>
-						<div class="text-sm w-full">
-							<label for="new_password" class="font-medium text-sm text-gray-700 dark:text-gray-100"
-								>New password</label
-							>
-							<input
-								aria-label="Passoword"
-								type="password"
-								bind:value={password}
-								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
-								placeholder="Password"
-							/>
+				<!-- TODO: Implement a fancier way to add providers -->
+				<div class="max-w-3xl mb-4">
+					<div class="bg-white shadow sm:rounded-lg">
+						<div class="px-4 py-5 sm:p-6">
+							<h3 class="text-lg leading-6 font-medium text-gray-900">Security</h3>
+							<div class="mt-2 max-w-xl text-sm text-gray-500">
+								<p>Change your password.</p>
+							</div>
+							<div class="mt-5 sm:items-center">
+								<div class="max-w-xs w-full">
+									<label for="email">Password</label>
+									<input
+										aria-label="Passoword"
+										type="password"
+										bind:value={password}
+										placeholder="Password"
+										class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-lg border border-gray-600 rounded-md"
+									/>
+								</div>
+								<div class="max-w-xs w-full">
+									<label for="email">Confirm your password</label>
+									<input
+										aria-label="Repeat password"
+										type="password"
+										bind:value={repeat_password}
+										placeholder="Repeat password"
+										class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-lg border border-gray-600 rounded-md"
+									/>
+								</div>
+								<PasswordStrength
+									bind:password_change={password}
+									bind:password_confirm={repeat_password}
+								/>
+							</div>
+							<div class="text-right">
+								<button
+									type="button"
+									disabled={!update_password_enabled}
+									class:opacity-50={!update_password_enabled}
+									on:click={updatePassword}
+									class="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border border-transparent shadow-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+								>
+									Save
+								</button>
+							</div>
 						</div>
-						<div class="text-sm w-full">
-							<label for="new_password" class="font-medium text-sm text-gray-700 dark:text-gray-100"
-								>Confirm the new password</label
-							>
-							<input
-								aria-label="Repeat password"
-								type="password"
-								bind:value={repeat_password}
-								class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 dark:bg-gray-900 dark:text-gray-100 rounded-md p-2"
-								placeholder="Repeat password"
-							/>
-						</div>
-						<PasswordStrength
-							bind:password_change={password}
-							bind:password_confirm={repeat_password}
-						/>
-					</div>
-					<div class="px-4 py-3 text-right sm:px-6">
-						<button
-							type="submit"
-							disabled={!update_password_enabled}
-							class:opacity-50={!update_password_enabled}
-							on:click={updatePassword}
-							class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-						>
-							Update password
-						</button>
 					</div>
 				</div>
-			</div>
-			<br />
-			<div class="mt-5 md:mt-0 md:col-span-2">
-				<div class="shadow sm:rounded-md sm:overflow-hidden bg-gray-600 w-1/2">
-					<div class="px-4 py-5 space-y-6 sm:p-6">
-						<h3 class="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100">
-							Danger zone
-						</h3>
-						<div class="text-sm w-full">
-							<label for="username" class="font-medium text-gray-700 dark:text-gray-100"
-								>Please be carfull - changes here can break your profile</label
-							>
-						</div>
-						<div class="px-4 py-3 text-right sm:px-6">
-							<button
-								type="submit"
-								on:click={deleteMe}
-								class="w-full justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm"
-							>
-								Delete my account
-							</button>
+				<div class="max-w-3xl mb-4">
+					<div class="bg-white shadow sm:rounded-lg">
+						<div class="px-4 py-5 sm:p-6">
+							<h3 class="text-lg leading-6 font-medium text-gray-900">Danger Zone</h3>
+							<div class="mt-2 max-w-xl text-sm text-gray-500">
+								<p>Please be carfull - changes here can break your profile</p>
+							</div>
+							<div class="mt-5 text-right">
+								<button
+									type="button"
+									on:click={deleteMe}
+									class="inline-flex items-center justify-center px-4 py-2 border border-transparent font-medium rounded-md text-red-700 bg-red-100 hover:bg-red-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:text-sm"
+								>
+									Delete account
+								</button>
+							</div>
 						</div>
 					</div>
 				</div>
