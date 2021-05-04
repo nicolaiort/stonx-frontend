@@ -24,10 +24,8 @@
 </script>
 
 <div>
-	<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-		>Problems</label
-	>
-	<ul class="ml-4 list-disc dark:text-white">
+	<label for="password" class="block text-sm font-medium">Problems</label>
+	<ul class="ml-4 list-disc">
 		{#if !strength.contains.includes('lowercase')}
 			<li>Password must contain a lowercase letter!</li>
 		{/if}
