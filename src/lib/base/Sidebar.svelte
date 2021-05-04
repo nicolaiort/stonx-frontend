@@ -41,9 +41,9 @@
 			<div
 				hidden={!sidebarOpen}
 				x-description="Off-canvas menu, show/hide based on off-canvas menu state."
-				class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800"
+				class="relative flex-1 flex flex-col max-w-xs w-full h-full pt-5 pb-4 bg-gray-800"
 			>
-				<div class="absolute top-0 right-0 -mr-12 pt-2">
+				<div class="absolute top-0 right-0 bottom-0 -mr-12 pt-2">
 					<button
 						hidden={!sidebarOpen}
 						on:click={() => {
@@ -71,11 +71,7 @@
 					</button>
 				</div>
 				<div class="flex-shrink-0 flex items-center px-4">
-					<img
-						class="h-8 w-auto"
-						src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
-						alt="Workflow"
-					/>
+					<span class="text-white text-2xl">Stonx</span>
 				</div>
 				<div class="mt-5 flex-1 h-0 overflow-y-auto">
 					<nav class="px-2 space-y-1">
@@ -95,8 +91,8 @@
 	<div class="flex flex-col w-64">
 		<!-- Sidebar component, swap this element with another sidebar if you like -->
 		<div class="flex flex-col h-0 flex-1">
-			<div class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900 text-white text-2xl">
-				Stonx
+			<div class="flex items-center h-16 flex-shrink-0 px-4 bg-gray-900">
+				<span class="text-white text-2xl">Stonx</span>
 			</div>
 			<div class="flex-1 flex flex-col overflow-y-auto">
 				<nav class="flex-1 px-2 py-4 bg-gray-800 space-y-1">
