@@ -31,7 +31,7 @@
 
 	async function signup() {
 		error = null;
-		let signupRequest = await ApiClient.signup(email, username, password, bitpanda_api_token);
+		let signupRequest = await ApiClient.signup(email, username, password);
 		if (signupRequest.status != 200 && signupRequest.status != 201) {
 			error = signupRequest.data.message;
 		} else {

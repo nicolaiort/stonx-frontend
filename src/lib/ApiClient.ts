@@ -84,13 +84,12 @@ export class ApiClient {
         return { status: res.status, data: res.data };
     }
 
-    static async signup(email: string, username: string, password: string, bitpanda_api_key: string): Promise<any> {
+    static async signup(email: string, username: string, password: string): Promise<any> {
         // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/auth/signup`, {
             "password": password,
             "email": email,
-            "username": username,
-            "bitpanda_api_key": bitpanda_api_key
+            "username": username
         }, { validateStatus: null });
 
         return { data: res.data, status: res.status };
