@@ -28,33 +28,10 @@
 	);
 </script>
 
-<div class="mx-10 my-2">
-	<h2 class="my-4 text-4xl font-semibold dark:text-gray-400">Overview</h2>
-
-	<div
-		class="pb-2 flex items-center justify-between text-gray-600
-				dark:text-gray-400 border-b dark:border-gray-600"
-	>
-		<!-- Header -->
-		{#await promises[0] && promises[1] && promises[2]}
-			<p>Loading data....</p>
-		{:then}
-			<div>
-				<span>
-					<span class="text-green-500 dark:text-green-200"> {bitpanda_wallets.length} </span>
-					Coins on bitpanda
-				</span>
-				<span>
-					<span class="text-green-500 dark:text-green-200"> {bitpanda_indices.length} </span>
-					Indices on bitpanda
-				</span>
-				<span>
-					<span class="text-green-500 dark:text-green-200"> {current_wallets.length} </span>
-					Other wallets
-				</span>
-			</div>
-		{/await}
-	</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+	<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
 	<div class="mt-4">
 		{#await promises[0] && promises[1]}
 			<p>Loading data....</p>
