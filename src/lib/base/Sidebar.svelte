@@ -1,5 +1,5 @@
 <script lang="ts">
-	import SidebarItem from './SidebarItem.svelte';
+	import SidebarItems from './SidebarItems.svelte';
 
 	export let sidebarOpen = true;
 </script>
@@ -68,7 +68,7 @@
 				</div>
 				<div class="mt-5 flex-1 h-0 overflow-y-auto">
 					<nav class="px-2 space-y-1">
-						<SidebarItem />
+						<SidebarItems />
 					</nav>
 				</div>
 			</div>
@@ -89,7 +89,7 @@
 			</div>
 			<div class="flex-1 flex flex-col overflow-y-auto">
 				<nav class="flex-1 px-2 py-4 bg-gray-800 space-y-1">
-					<SidebarItem />
+					<SidebarItems />
 				</nav>
 			</div>
 		</div>
