@@ -2,7 +2,7 @@
 	import SidebarItem from './SidebarItem.svelte';
 </script>
 
-<SidebarItem title="Dashboard">
+<SidebarItem title="Dashboard" link="/">
 	<svg
 		class="text-gray-300 mr-3 h-6 w-6"
 		xmlns="http://www.w3.org/2000/svg"
@@ -19,7 +19,7 @@
 		/>
 	</svg>
 </SidebarItem>
-<SidebarItem title="Bitpanda">
+<SidebarItem title="Bitpanda" link="/bitpanda">
 	<svg
 		class="text-gray-300 mr-3 h-6 w-6 fill-current"
 		xmlns="http://www.w3.org/2000/svg"
@@ -34,7 +34,7 @@
 		/></svg
 	>
 </SidebarItem>
-<SidebarItem title="Custom Wallets">
+<SidebarItem title="Custom Wallets" link="/wallets">
 	<svg
 		class="text-gray-300 mr-3 h-6 w-6 fill-current"
 		xmlns="http://www.w3.org/2000/svg"
