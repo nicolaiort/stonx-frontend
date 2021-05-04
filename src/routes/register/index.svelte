@@ -9,13 +9,11 @@
 	$: email = '';
 	$: password = '';
 	$: repeat_password = '';
-	$: bitpanda_api_token = '';
 	$: error = '';
 	$: signup_enabled =
 		username != '' &&
 		email != '' &&
 		password_strong_enough_and_equal(password, repeat_password) &&
-		bitpanda_api_token != '' &&
 		validateEmail(email);
 
 	UserStore.init();
@@ -127,33 +125,17 @@
 					/>
 				</div>
 
-				<div class="-mt-px mb-2 relative">
-					<label for="password" class="block text-sm font-medium text-gray-700 dark:text-gray-300"
-						>Bitpanda Api Token (Scope: Guthaben)</label
-					>
-					<!-- svelte-ignore a11y-autofocus -->
-					<input
-						autofocus
-						aria-label="Bitpanda Api Key"
-						type="password"
-						required={true}
-						class="border-gray-300 dark:text-gray-300 dark:placeholder-gray-300 placeholder-gray-500 appearance-none rounded relative block w-full px-3 py-2 border focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm dark:bg-gray-700"
-						on:keydown={handleKeydown}
-						placeholder="Bitpanda api key"
-						bind:value={bitpanda_api_token}
-					/>
-				</div>
-
 				{#if !signup_enabled}
-					<PasswordStrength
-						bind:password_change={password}
-						bind:password_confirm={repeat_password}
-					/>
-					<ul class="ml-4 list-disc dark:text-white">
-						{#if username == ''}<li>Username can't be empty!</li> {/if}
-						{#if !validateEmail(email)}<li>Email is invalid!</li> {/if}
-						{#if bitpanda_api_token == ''}<li>Bitpanda api token can't be empty!</li> {/if}
-					</ul>
+					<div class="dark:text-white">
+						<PasswordStrength
+							bind:password_change={password}
+							bind:password_confirm={repeat_password}
+						/>
+						<ul class="ml-4 list-disc">
+							{#if username == ''}<li>Username can't be empty!</li> {/if}
+							{#if !validateEmail(email)}<li>Email is invalid!</li> {/if}
+						</ul>
+					</div>
 				{/if}
 			</div>
 
