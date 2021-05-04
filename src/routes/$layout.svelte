@@ -1,10 +1,10 @@
 <script>
-	import Sidebar from '$lib/Sidebar.svelte';
 	import UserStore from '$lib/UserStore';
 	import '../app.postcss';
 	import Login from '$lib/login.svelte';
 	import { onDestroy } from 'svelte';
 	import Footer from '$lib/Footer.svelte';
+	import BaseLayout from '$lib/base/BaseLayout.svelte';
 
 	$: isLoggedIn = false;
 
@@ -17,9 +17,9 @@
 </script>
 
 {#if isLoggedIn}
-	<Sidebar>
+	<BaseLayout>
 		<slot />
-	</Sidebar>
+	</BaseLayout>
 {:else}
 	<Login />
 {/if}
