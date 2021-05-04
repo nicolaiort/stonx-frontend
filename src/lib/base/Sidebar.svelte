@@ -67,7 +67,12 @@
 					<span class="text-white text-2xl">Stonx</span>
 				</div>
 				<div class="mt-5 flex-1 h-0 overflow-y-auto">
-					<nav class="px-2 space-y-1">
+					<nav
+						class="px-2 space-y-1"
+						on:click={() => {
+							sidebarOpen = false;
+						}}
+					>
 						<SidebarItems />
 					</nav>
 				</div>
