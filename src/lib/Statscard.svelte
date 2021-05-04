@@ -1,6 +1,8 @@
 <script lang="ts">
 	export let title: string = 'Title';
 	export let value: string = 'Value';
+	export let link: string = undefined;
+	export let link_text: string = 'Linktext';
 </script>
 
 <div class="flex flex-col bg-white shadow rounded-lg">
@@ -38,10 +40,13 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="bg-gray-50 px-4 py-4 sm:px-6">
-	  <div class="text-sm">
-		<a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only">
-			Total Subscribers stats</span></a>
-	  </div>
-	</div> -->
+	{#if link}
+		<div class="bg-gray-50 px-4 py-4 sm:px-6">
+			<div class="text-sm">
+				<a href={link} class="font-medium text-indigo-600 hover:text-indigo-500">
+					View all {link_text}</a
+				>
+			</div>
+		</div>
+	{/if}
 </div>

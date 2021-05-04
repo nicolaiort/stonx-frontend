@@ -59,6 +59,8 @@
 				</Statscard>
 				<Statscard
 					title="Bitpanda Tokens"
+					link="/bitpanda"
+					link_text="Bitpanda assets"
 					value={bitpanda_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) + ' €'}
 					><svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +77,8 @@
 				{#if bitpanda_indices.length > 0}
 					<Statscard
 						title="Bitpanda Index"
+						link="/bitpanda"
+						link_text="Bitpanda assets"
 						value={bitpanda_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0).toFixed(2) +
 							' €'}
 					>
@@ -93,7 +97,9 @@
 				{/if}
 				{#each current_tokens as token}
 					<Statscard
-						title={` Wallets`}
+						title={`Wallets`}
+						link="/wallets"
+						link_text="Wallets"
 						value={current_wallets
 							.filter((w) => w.token == token)
 							.reduce((sum, cur) => (sum = sum + cur.fiat), 0)
