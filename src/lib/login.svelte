@@ -24,7 +24,7 @@
 		if (login.status != 200 && login.status != 201) {
 			error = login.data.message;
 		} else {
-			UserStore.login(login);
+			UserStore.login(login.data);
 		}
 	}
 
