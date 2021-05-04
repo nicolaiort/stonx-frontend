@@ -20,7 +20,7 @@
 			aria-haspopup="true"
 		>
 			<span class="sr-only">Open user menu</span>
-			<img class="h-12 w-12 rounded-full" src="/stonx.jpg" alt="Profile Pic" />
+			<img class="h-14 w-14 rounded-full" src="/stonx.jpg" alt="Profile Pic" />
 		</button>
 	</div>
 	<transition
