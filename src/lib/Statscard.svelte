@@ -3,12 +3,45 @@
 	export let value: string = 'Value';
 </script>
 
-<div class="widget ml-2 p-4 rounded-lg bg-white dark:bg-gray-600 dark:text-gray-200 inline-block">
-	<div class="flex flex-row items-center justify-between">
-		<div class="flex flex-col mr-2">
-			<div class="text-xs uppercase font-light">{title}</div>
-			<div class="text-xl font-bold">{value}</div>
+<div class="flex flex-col bg-white overflow-hidden shadow rounded-lg">
+	<div class="flex-grow px-4 py-5 sm:p-6">
+		<div class="flex items-center">
+			<div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+				<slot />
+			</div>
+			<div class="ml-5 w-0 flex-1">
+				<dt class="text-sm font-medium text-gray-500 truncate">
+					{title}
+				</dt>
+				<dd class="flex items-baseline">
+					<div class="text-2xl font-semibold text-gray-900">
+						{value}
+					</div>
+
+					<div class="ml-2 flex items-baseline text-sm font-semibold text-green-600">
+						<svg
+							class="self-center flex-shrink-0 h-5 w-5 text-green-500"
+							fill="currentColor"
+							viewBox="0 0 20 20"
+							aria-hidden="true"
+						>
+							<path
+								fill-rule="evenodd"
+								d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						<span class="sr-only"> Increased by </span>
+						Stonx%
+					</div>
+				</dd>
+			</div>
 		</div>
-		<slot />
 	</div>
+	<!-- <div class="bg-gray-50 px-4 py-4 sm:px-6">
+	  <div class="text-sm">
+		<a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span class="sr-only">
+			Total Subscribers stats</span></a>
+	  </div>
+	</div> -->
 </div>
