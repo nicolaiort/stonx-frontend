@@ -4,11 +4,7 @@
 	export let sidebarOpen = true;
 </script>
 
-<div
-	hidden={!sidebarOpen}
-	class="md:hidden"
-	x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state."
->
+<div hidden={!sidebarOpen} class="md:hidden">
 	<div class="fixed inset-0 flex z-40">
 		<transition
 			enter-active-class="transition-opacity ease-linear duration-300"
@@ -23,7 +19,6 @@
 					sidebarOpen = false;
 				}}
 				hidden={!sidebarOpen}
-				x-description="Off-canvas menu overlay, show/hide based on off-canvas menu state."
 				class="fixed inset-0"
 				aria-hidden="true"
 			>
@@ -40,7 +35,6 @@
 		>
 			<div
 				hidden={!sidebarOpen}
-				x-description="Off-canvas menu, show/hide based on off-canvas menu state."
 				class="relative flex-1 flex flex-col max-w-xs w-full h-full pt-5 pb-4 bg-gray-800"
 			>
 				<div class="absolute top-0 right-0 bottom-0 -mr-12 pt-2">
@@ -54,7 +48,6 @@
 						<span class="sr-only">Close sidebar</span>
 						<svg
 							class="h-6 w-6 text-white"
-							x-description="Heroicon name: x"
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"
