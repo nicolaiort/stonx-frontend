@@ -87,6 +87,32 @@ export class ApiClient {
         return res.data;
     }
 
+    static async addExchange(exchange: string, key: string, secret?: string): Promise<any> {
+        switch (exchange) {
+            case "BITPANDA":
+                // @ts-ignore
+                const resBitpanda = await axios.post(`${config.baseurl_backend}/rest/bitpanda`, {
+                    "exchange": exchange.toUpperCase(),
+                    "bitpanda_api_key": key
+                }, {
+                    headers: { Authorization: `Bearer ${UserStore.state.token}` }
+                });
+                return resBitpanda.data;
+            case "BINANCE":
+                // @ts-ignore
+                const resBinance = await axios.post(`${config.baseurl_backend}/rest/binance`, {
+                    "exchange": exchange.toUpperCase(),
+                    "binance_api_key": key,
+                    "binance_api_secret": secret
+                }, {
+                    headers: { Authorization: `Bearer ${UserStore.state.token}` }
+                });
+                return resBinance.data;
+            default:
+                throw new Error("Exchange not supported.");
+        }
+    }
+
     static async login(email: string, password: string): Promise<any> {
         // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/auth/login`, {
