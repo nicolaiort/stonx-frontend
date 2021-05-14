@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
 	import Statscard from '$lib/Statscard.svelte';
+	import UserStore from '$lib/UserStore';
 	import * as cryptoIcons from 'base64-cryptocurrency-icons';
 
 	$: bitpanda_indices = [];
@@ -10,16 +11,18 @@
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
-	promises.push(
-		ApiClient.getBitpandaIndices().then((res) => {
-			bitpanda_indices = res;
-		})
-	);
-	promises.push(
-		ApiClient.getBitpandaCrypto().then((res) => {
-			bitpanda_wallets = res;
-		})
-	);
+	if (UserStore.state.exchanges.includes('BITPANDA')) {
+		promises.push(
+			ApiClient.getBitpandaIndices().then((res) => {
+				bitpanda_indices = res;
+			})
+		);
+		promises.push(
+			ApiClient.getBitpandaCrypto().then((res) => {
+				bitpanda_wallets = res;
+			})
+		);
+	}
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
@@ -34,7 +37,7 @@
 	</div>
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
 		<dl class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-			{#await promises[0] && promises[1]}
+			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}
 				<Statscard
