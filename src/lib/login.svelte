@@ -37,7 +37,7 @@
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-700">
 	<div class="max-w-md w-full py-12 px-6" role="main">
-		<img style="height:10rem;" class="mx-auto" src="/stonx.jpg" alt="" />
+		<img style="height:10rem;" class="mx-auto" src="/stonx.webp" alt="" />
 		<p class="mt-6 text-lg text-center font-bold dark:text-gray-300">Stonx Frontend</p>
 		<p class="mt-6 text-sm text-center dark:text-gray-300">Login</p>
 		{#if error}
