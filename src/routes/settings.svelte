@@ -102,7 +102,7 @@
 		<h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
 	</div>
 	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
-		{#await promises[1]}
+		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
 			<div class="mt-5 md:mt-0 md:col-span-2">

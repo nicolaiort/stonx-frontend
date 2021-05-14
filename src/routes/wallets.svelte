@@ -33,7 +33,7 @@
 		</button>
 	</div>
 	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
-		{#await promises[0] && promises[1]}
+		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
 			{#each current_wallets as wallet}
