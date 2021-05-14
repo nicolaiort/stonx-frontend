@@ -91,7 +91,7 @@ export class ApiClient {
         switch (exchange) {
             case "BITPANDA":
                 // @ts-ignore
-                const resBitpanda = await axios.post(`${config.baseurl_backend}/rest/bitpanda`, {
+                const resBitpanda = await axios.post(`${config.baseurl_backend}/rest/exchanges/bitpanda`, {
                     "exchange": exchange.toUpperCase(),
                     "bitpanda_api_key": key
                 }, {
@@ -100,7 +100,7 @@ export class ApiClient {
                 return resBitpanda.data;
             case "BINANCE":
                 // @ts-ignore
-                const resBinance = await axios.post(`${config.baseurl_backend}/rest/binance`, {
+                const resBinance = await axios.post(`${config.baseurl_backend}/rest/exchanges/binance`, {
                     "exchange": exchange.toUpperCase(),
                     "binance_api_key": key,
                     "binance_api_secret": secret
