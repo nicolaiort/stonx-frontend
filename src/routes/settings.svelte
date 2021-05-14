@@ -15,7 +15,6 @@
 	$: repeat_password = '';
 	$: processed_last_submit = true;
 	$: error_general = '';
-	$: error_providers = '';
 	$: update_general_enabled =
 		(username != original_data.username || email != original_data.email) &&
 		email != '' &&
