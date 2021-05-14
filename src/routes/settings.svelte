@@ -11,7 +11,6 @@
 	};
 	$: email = '';
 	$: username = '';
-	$: bitpanda_api_key = '';
 	$: password = '';
 	$: repeat_password = '';
 	$: processed_last_submit = true;
@@ -21,7 +20,6 @@
 		(username != original_data.username || email != original_data.email) &&
 		email != '' &&
 		username != '';
-	$: update_providers_enabled = bitpanda_api_key != '';
 	$: update_password_enabled = password_strong_enough_and_equal(password, repeat_password);
 	$: show_delete_modal = false;
 
@@ -58,36 +56,14 @@
 		}
 	}
 
-	function updateProviders() {
-		if (processed_last_submit === true) {
-			processed_last_submit = false;
-			error_providers = '';
-			ApiClient.updateMe(
-				original_data.email,
-				original_data.username,
-				undefined,
-				bitpanda_api_key
-			).then((result) => {
-				processed_last_submit = true;
-				if (result.status != 200) {
-					error_providers = result.data.message;
-				} else {
-					bitpanda_api_key = '';
-				}
-			});
-		}
-	}
-
 	function updatePassword() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
-			ApiClient.updateMe(original_data.email, original_data.username, password, undefined).then(
-				(result) => {
-					processed_last_submit = true;
-					password = '';
-					repeat_password = '';
-				}
-			);
+			ApiClient.updateMe(original_data.email, original_data.username, password).then((result) => {
+				processed_last_submit = true;
+				password = '';
+				repeat_password = '';
+			});
 		}
 	}
 
