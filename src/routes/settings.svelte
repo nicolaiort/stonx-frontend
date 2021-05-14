@@ -7,7 +7,7 @@
 		username: '',
 		email: '',
 		password: '',
-		bitpanda_api_key: ''
+		exchanges: []
 	};
 	$: email = '';
 	$: username = '';
@@ -165,7 +165,17 @@
 						</div>
 					</div>
 				</div>
-				<!-- TODO: Implement a fancier way to add providers -->
+				<div class="max-w-3xl mb-4">
+					<div class="bg-white shadow sm:rounded-lg">
+						<div class="px-4 py-5 sm:p-6">
+							<h3 class="text-lg leading-6 font-medium text-gray-900">Exchanges</h3>
+							<div class="mt-2 max-w-xl text-sm text-gray-500">
+								<p>Connect to a new exchange or remove an existing connection.</p>
+							</div>
+							{original_data.exchanges}
+						</div>
+					</div>
+				</div>
 				<div class="max-w-3xl mb-4">
 					<div class="bg-white shadow sm:rounded-lg">
 						<div class="px-4 py-5 sm:p-6">
