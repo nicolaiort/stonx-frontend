@@ -31,6 +31,14 @@ export class ApiClient {
         return res.data;
     }
 
+    static async getBinanceSpot(): Promise<any> {
+        // @ts-ignore
+        const res = await axios.get(`${config.baseurl_backend}/rest/binance/wallets/spot`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
     static async getWallets(): Promise<any> {
         // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/wallets`, {
