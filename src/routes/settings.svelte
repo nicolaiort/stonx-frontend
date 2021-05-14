@@ -80,7 +80,7 @@
 	<DeleteUserModal modal_open={show_delete_modal} />
 	<AddExchangeModal
 		add_exchange_modal_open={show_add_exchange_modal}
-		current_exchanges={original_data.exchanges}
+		bind:current_exchanges={original_data.exchanges}
 	/>
 	<div>
 		<div class="max-w-7xl px-4 sm:px-6 md:px-8">
