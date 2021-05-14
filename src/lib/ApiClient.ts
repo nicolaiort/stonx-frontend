@@ -95,16 +95,14 @@ export class ApiClient {
         return { data: res.data, status: res.status };
     }
 
-    static async updateMe(email: string, username: string, password?: string, bitpanda_api_key?: string): Promise<any> {
+    static async updateMe(email: string, username: string, password?: string): Promise<any> {
         if (password == "") { password = undefined; }
-        if (bitpanda_api_key == "") { bitpanda_api_key = undefined; }
 
         // @ts-ignore
         const res = await axios.put(`${config.baseurl_backend}/rest/users/me`, {
             "password": password,
             "email": email,
-            "username": username,
-            "bitpanda_api_key": bitpanda_api_key
+            "username": username
         }, { headers: { Authorization: `Bearer ${UserStore.state.token}` }, validateStatus: null });
 
         return { data: res.data, status: res.status };
