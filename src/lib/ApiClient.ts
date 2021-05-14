@@ -57,17 +57,13 @@ export class ApiClient {
 
     static async getSupportedTokens(): Promise<any> {
         // @ts-ignore
-        const res = await axios.get(`${config.baseurl_backend}/rest/status/tokens`, {
-            headers: { Authorization: `Bearer ${UserStore.state.token}` }
-        });
+        const res = await axios.get(`${config.baseurl_backend}/rest/status/tokens`);
         return res.data;
     }
 
     static async getSupportedExchanges(): Promise<any> {
         // @ts-ignore
-        const res = await axios.get(`${config.baseurl_backend}/rest/status/exchanges`, {
-            headers: { Authorization: `Bearer ${UserStore.state.token}` }
-        });
+        const res = await axios.get(`${config.baseurl_backend}/rest/status/exchanges`);
         return res.data;
     }
 
