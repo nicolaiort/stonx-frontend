@@ -35,8 +35,6 @@ Powered by (among many others):
 > For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
 * Overhaul the way exchange configs work
-* Add Binance spot assets to dashboard
-* Add Binance spot assets page
 * View timeseries data
 
 ## Config
