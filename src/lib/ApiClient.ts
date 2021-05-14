@@ -113,6 +113,14 @@ export class ApiClient {
         }
     }
 
+    static async deleteExchange(exchange: string): Promise<any> {
+        // @ts-ignore
+        const res = await axios.delete(`${config.baseurl_backend}/rest/exchanges/${exchange}`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
     static async login(email: string, password: string): Promise<any> {
         // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/auth/login`, {
