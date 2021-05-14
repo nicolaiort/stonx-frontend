@@ -10,12 +10,14 @@ Powered by (among many others):
 * [Localforage](https://localforage.github.io/localForage/)
 * [Marked](https://marked.js.org/)
 * [base64-cryptocurrency-icons](https://github.com/onramper/small-open-datasets/tree/master/base64-cryptocurrency-icons#readme)
+* [@sotatek-anhdao/coin-address-validator](https://www.npmjs.com/package/@sotatek-anhdao/coin-address-validator)
 
 ## Features
 ### Supported assets (powered by stonx-backend)
 > Warning: We currently save your bitpanda api keys in plaintext in the backend's db
 * Bitpanda Wallets (Needs a bitpanda api token that can read your assets)
 * Bitpanda Indices (Needs a bitpanda api token that can read your assets)
+* Binance Spot (Needs a binance api token that can read your assets)
 * ETH Wallets (Only needs the public key/address)
 * BTC Wallets (Only needs the public key/address)
 * DOGE Wallets (Only needs the public key/address)
