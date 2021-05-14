@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import UserStore from '$lib/UserStore';
 	import Select from 'svelte-select';
 
 	export let add_exchange_modal_open = true;
+	export let current_exchanges = [];
 	let supportedExchanges = [];
 	$: processed_last_submit = true;
 
@@ -12,7 +14,8 @@
 	$: submit_enabled = check_submit(exchange, api_key, api_secret);
 
 	let exchange_promise = ApiClient.getSupportedExchanges().then((res) => {
-		supportedExchanges = res;
+		supportedExchanges = res.filter((x) => !current_exchanges.includes(x));
+		console.log(current_exchanges);
 	});
 
 	function check_submit(exchange, key, secret) {
@@ -45,6 +48,9 @@
 		processed_last_submit = false;
 		ApiClient.addExchange(exchange, api_key, api_secret).then((data) => {
 			processed_last_submit = true;
+			current_exchanges.push(data);
+			current_exchanges = current_exchanges;
+			UserStore.addExchange(data);
 			close();
 		});
 	}

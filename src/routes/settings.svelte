@@ -74,16 +74,19 @@
 	}
 </script>
 
-<DeleteUserModal modal_open={show_delete_modal} />
-<AddExchangeModal add_exchange_modal_open={show_add_exchange_modal} />
-<div>
-	<div class="max-w-7xl px-4 sm:px-6 md:px-8">
-		<h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
-	</div>
-	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
-		{#await Promise.all(promises)}
-			<p>Loading data....</p>
-		{:then}
+{#await Promise.all(promises)}
+	<p>Loading data....</p>
+{:then}
+	<DeleteUserModal modal_open={show_delete_modal} />
+	<AddExchangeModal
+		add_exchange_modal_open={show_add_exchange_modal}
+		current_exchanges={original_data.exchanges}
+	/>
+	<div>
+		<div class="max-w-7xl px-4 sm:px-6 md:px-8">
+			<h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
+		</div>
+		<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
 			<div class="mt-5 md:mt-0 md:col-span-2">
 				<div class="max-w-3xl mb-4">
 					<div class="bg-white shadow sm:rounded-lg">
@@ -277,6 +280,6 @@
 					</div>
 				</div>
 			</div>
-		{/await}
+		</div>
 	</div>
-</div>
+{/await}
