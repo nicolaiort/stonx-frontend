@@ -15,7 +15,6 @@
 
 	let exchange_promise = ApiClient.getSupportedExchanges().then((res) => {
 		supportedExchanges = res.filter((x) => !current_exchanges.includes(x));
-		console.log(current_exchanges);
 	});
 
 	function check_submit(exchange, key, secret) {
