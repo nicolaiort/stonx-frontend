@@ -55,13 +55,13 @@ export class ApiClient {
         return res.data;
     }
 
-    static async getSupportedTokens(): Promise<any> {
+    static async getSupportedTokens(): Promise<any[]> {
         // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/status/tokens`);
         return res.data;
     }
 
-    static async getSupportedExchanges(): Promise<any> {
+    static async getSupportedExchanges(): Promise<any[]> {
         // @ts-ignore
         const res = await axios.get(`${config.baseurl_backend}/rest/status/exchanges`);
         return res.data;
