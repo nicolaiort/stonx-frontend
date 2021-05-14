@@ -41,7 +41,7 @@
 	function updateGeneral() {
 		if (processed_last_submit === true) {
 			processed_last_submit = false;
-			ApiClient.updateMe(email, username, undefined, undefined).then((result) => {
+			ApiClient.updateMe(email, username, undefined).then((result) => {
 				processed_last_submit = true;
 				error_general = '';
 				if (result.status != 200) {
@@ -50,7 +50,7 @@
 					email = result.data.email;
 					original_data.email = result.data.email;
 					username = result.data.username;
-					original_data.username = result.data.email;
+					original_data.username = result.data.username;
 				}
 			});
 		}
