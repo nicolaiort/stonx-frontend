@@ -52,6 +52,18 @@ const userStore = () => {
                 return state;
             });
             location.replace("/");
+        },
+        addExchange(exchange) {
+            update((state) => {
+                state.exchanges.push(exchange);
+                return state;
+            });
+        },
+        removeExchange(exchange) {
+            update((state) => {
+                state.exchanges = state.exchanges.filter((x) => x != exchange);
+                return state;
+            });
         }
     };
 
