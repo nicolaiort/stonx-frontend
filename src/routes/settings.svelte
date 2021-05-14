@@ -23,6 +23,7 @@
 		username != '';
 	$: update_password_enabled = password_strong_enough_and_equal(password, repeat_password);
 	$: show_delete_modal = false;
+	$: show_add_exchange_modal = false;
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
@@ -74,7 +75,7 @@
 </script>
 
 <DeleteUserModal modal_open={show_delete_modal} />
-<AddExchangeModal />
+<AddExchangeModal add_exchange_modal_open={show_add_exchange_modal} />
 <div>
 	<div class="max-w-7xl px-4 sm:px-6 md:px-8">
 		<h1 class="text-2xl font-semibold text-gray-900">Settings</h1>
@@ -188,7 +189,11 @@
 									</ExchangeCard>
 								{/if}
 								{#if !original_data.exchanges.includes('BINANCE') || !original_data.exchanges.includes('BITPANDA')}
-									<button>
+									<button
+										on:click={() => {
+											show_add_exchange_modal = true;
+										}}
+									>
 										<ExchangeCard title="Add">
 											<svg
 												class="h-12 mx-auto fill-current"
