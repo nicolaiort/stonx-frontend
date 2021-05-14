@@ -1,20 +1,47 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import Select from 'svelte-select';
 
 	export let add_exchange_modal_open = true;
-
 	let supportedExchanges = [];
+
+	$: exchange = '';
+	$: api_key = '';
+	$: api_secret = '';
+	$: submit_enabled = check_submit(exchange, api_key, api_secret);
 
 	let exchange_promise = ApiClient.getSupportedExchanges().then((res) => {
 		supportedExchanges = res;
 	});
 
+	function check_submit(exchange, key, secret) {
+		if (!exchange || exchange == '') {
+			return false;
+		}
+		if (!key || key == '') {
+			return false;
+		}
+		if (exchange == 'BINANCE' && (!secret || secret == '')) {
+			return false;
+		}
+		return true;
+	}
+
 	function close() {
 		add_exchange_modal_open = false;
+		exchange = '';
+		api_key = '';
+		api_secret = '';
+	}
+
+	function submit() {
+		close();
 	}
 </script>
 
 {#await exchange_promise}
+	<!--  -->
+{:then}
 	<div
 		class:overflow-hidden={add_exchange_modal_open}
 		hidden={!add_exchange_modal_open}
@@ -47,7 +74,7 @@
 				leave-to-class="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
 			>
 				<div
-					class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
+					class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6"
 					role="dialog"
 					aria-modal="true"
 					aria-labelledby="modal-headline"
@@ -58,7 +85,6 @@
 							type="button"
 							class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 						>
-							<span class="sr-only">Close</span>
 							<svg
 								class="h-6 w-6"
 								xmlns="http://www.w3.org/2000/svg"
@@ -76,7 +102,7 @@
 							</svg>
 						</button>
 					</div>
-					<div class="sm:flex sm:items-start">
+					<div class="sm:items-start">
 						<div
 							class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"
 						>
@@ -93,32 +119,68 @@
 							<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
 								Add Exchange
 							</h3>
-							<div class="mt-2">
-								<p class="text-sm text-gray-500">
-									Are you sure you want to deactivate your account? All of your data will be
-									permanently removed from our servers forever. This action cannot be undone.
-								</p>
+							<div class="grid grid-cols-6 gap-6">
+								<div class="col-span-6">
+									<label for="exchange" class="block text-sm font-medium text-gray-700"
+										>Exchange</label
+									>
+									<Select
+										containerClasses="rounded-l-md mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 dark:bg-grey-600 text-gray-500 dark:text-grey-300 rounded-md p-2"
+										bind:items={supportedExchanges}
+										on:select={(selectedValue) => (exchange = selectedValue.detail.value)}
+										showChevron={true}
+										MultiSelection={false}
+									/>
+								</div>
+								<div class="col-span-6">
+									<label for="key" class="block text-sm font-medium text-gray-700">API Key</label>
+									<input
+										autocomplete="off"
+										placeholder="API Key"
+										bind:value={api_key}
+										type="text"
+										name="key"
+										class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 rounded-md p-2"
+									/>
+								</div>
+								{#if exchange == 'BINANCE'}
+									<div class="col-span-6">
+										<label for="secret" class="block text-sm font-medium text-gray-700"
+											>API Secret</label
+										>
+										<input
+											autocomplete="off"
+											placeholder="API Secret"
+											bind:value={api_secret}
+											type="text"
+											name="secret"
+											class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm rounded-l-md sm:text-sm border-gray-300 border bg-gray-50 text-gray-500 rounded-md p-2"
+										/>
+									</div>
+								{/if}
+							</div>
+							<div class="mt-5 sm:mt-4">
+								<button
+									on:click={close}
+									type="button"
+									class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
+								>
+									Cancel
+								</button>
+								<button
+									on:click={submit}
+									disabled={!submit_enabled}
+									class:opacity-50={!submit_enabled}
+									type="button"
+									class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm"
+								>
+									Add Exchange
+								</button>
 							</div>
 						</div>
 					</div>
-					<div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-						<button
-							on:click={close}
-							type="button"
-							class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-						>
-							Deactivate
-						</button>
-						<button
-							on:click={close}
-							type="button"
-							class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:w-auto sm:text-sm"
-						>
-							Cancel
-						</button>
-					</div>
-				</div>
-			</transition>
+				</div></transition
+			>
 		</div>
 	</div>
 {/await}
