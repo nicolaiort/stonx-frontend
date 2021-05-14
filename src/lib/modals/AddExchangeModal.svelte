@@ -4,6 +4,7 @@
 
 	export let add_exchange_modal_open = true;
 	let supportedExchanges = [];
+	$: processed_last_submit = true;
 
 	$: exchange = '';
 	$: api_key = '';
@@ -15,6 +16,9 @@
 	});
 
 	function check_submit(exchange, key, secret) {
+		if (!processed_last_submit) {
+			return false;
+		}
 		if (!exchange || exchange == '') {
 			return false;
 		}
@@ -35,7 +39,14 @@
 	}
 
 	function submit() {
-		close();
+		if (!processed_last_submit) {
+			return;
+		}
+		processed_last_submit = false;
+		ApiClient.addExchange(exchange, api_key, api_secret).then((data) => {
+			processed_last_submit = true;
+			close();
+		});
 	}
 </script>
 
