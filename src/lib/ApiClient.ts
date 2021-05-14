@@ -63,6 +63,14 @@ export class ApiClient {
         return res.data;
     }
 
+    static async getSupportedExchanges(): Promise<any> {
+        // @ts-ignore
+        const res = await axios.get(`${config.baseurl_backend}/rest/status/exchanges`, {
+            headers: { Authorization: `Bearer ${UserStore.state.token}` }
+        });
+        return res.data;
+    }
+
     static async createWallet(address: string, token: string, description?: string): Promise<any> {
         // @ts-ignore
         const res = await axios.post(`${config.baseurl_backend}/rest/wallets`, {
