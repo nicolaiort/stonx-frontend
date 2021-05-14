@@ -30,7 +30,7 @@ const userStore = () => {
                 state.exchanges = authresponse.exchanges;
                 state.isLoggedIn = true;
                 //
-                localForage.setItem("userdata", authresponse);
+                localForage.setItem("userdata", state);
                 //
                 state.refreshInterval = setInterval(() => {
                     //this.refreshAuth();
@@ -56,12 +56,14 @@ const userStore = () => {
         addExchange(exchange) {
             update((state) => {
                 state.exchanges.push(exchange);
+                localForage.setItem("userdata", state)
                 return state;
             });
         },
         removeExchange(exchange) {
             update((state) => {
                 state.exchanges = state.exchanges.filter((x) => x != exchange);
+                localForage.setItem("userdata", state)
                 return state;
             });
         }

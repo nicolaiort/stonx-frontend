@@ -1,6 +1,14 @@
 <script>
 	import SidebarItem from './SidebarItem.svelte';
 	import UserStore from '$lib/UserStore';
+	import { onDestroy } from 'svelte';
+
+	$: exchanges = UserStore.state.exchanges;
+	const unsubscribe = UserStore.subscribe((value) => {
+		exchanges = value.exchanges;
+	});
+
+	onDestroy(unsubscribe);
 </script>
 
 <SidebarItem title="Dashboard" link="/">
@@ -20,7 +28,7 @@
 		/>
 	</svg>
 </SidebarItem>
-{#if UserStore.state.exchanges.includes('BITPANDA')}
+{#if exchanges.includes('BITPANDA')}
 	<SidebarItem title="Bitpanda" link="/bitpanda">
 		<svg
 			class="text-gray-300 mr-3 h-6 w-6 fill-current"
@@ -37,7 +45,7 @@
 		>
 	</SidebarItem>
 {/if}
-{#if UserStore.state.exchanges.includes('BINANCE')}
+{#if exchanges.includes('BINANCE')}
 	<SidebarItem title="Binance Spot" link="/binance">
 		<svg
 			class="text-gray-300 mr-3 h-6 w-6 fill-current"
