@@ -3,6 +3,7 @@
 	import UserStore from '$lib/UserStore';
 
 	export let delete_exchange_modal_open = true;
+	export let current_exchanges = [];
 	export let exchange = '';
 	$: processed_last_submit = true;
 
@@ -19,6 +20,7 @@
 		ApiClient.deleteExchange(exchange).then((data) => {
 			processed_last_submit = true;
 			UserStore.removeExchange(data);
+			current_exchanges = current_exchanges.filter((x) => x != exchange);
 			close();
 		});
 	}

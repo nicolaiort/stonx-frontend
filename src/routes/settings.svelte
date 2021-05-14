@@ -2,6 +2,7 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import ExchangeCard from '$lib/ExchangeCard.svelte';
 	import AddExchangeModal from '$lib/modals/AddExchangeModal.svelte';
+	import DeleteExchangeModal from '$lib/modals/DeleteExchangeModal.svelte';
 	import DeleteUserModal from '$lib/modals/DeleteUserModal.svelte';
 	import PasswordStrength, { password_strong_enough_and_equal } from '$lib/PasswordStrength.svelte';
 
@@ -24,6 +25,8 @@
 	$: update_password_enabled = password_strong_enough_and_equal(password, repeat_password);
 	$: show_delete_modal = false;
 	$: show_add_exchange_modal = false;
+	$: exchange_to_delete = '';
+	$: show_delete_exchange_modal = !(exchange_to_delete == '' || !exchange_to_delete);
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
@@ -81,6 +84,11 @@
 	<AddExchangeModal
 		add_exchange_modal_open={show_add_exchange_modal}
 		bind:current_exchanges={original_data.exchanges}
+	/>
+	<DeleteExchangeModal
+		delete_exchange_modal_open={show_delete_exchange_modal}
+		bind:current_exchanges={original_data.exchanges}
+		bind:exchange={exchange_to_delete}
 	/>
 	<div>
 		<div class="max-w-7xl px-4 sm:px-6 md:px-8">
@@ -158,7 +166,7 @@
 								class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 text-black"
 							>
 								{#if original_data.exchanges.includes('BITPANDA')}
-									<ExchangeCard title="BitPanda">
+									<ExchangeCard title="BitPanda" bind:exchange_to_delete>
 										<svg
 											class="h-12 mx-auto fill-current"
 											xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +183,7 @@
 									</ExchangeCard>
 								{/if}
 								{#if original_data.exchanges.includes('BINANCE')}
-									<ExchangeCard title="Binance">
+									<ExchangeCard title="Binance" bind:exchange_to_delete>
 										<svg
 											class="h-12 mx-auto fill-current"
 											xmlns="http://www.w3.org/2000/svg"
