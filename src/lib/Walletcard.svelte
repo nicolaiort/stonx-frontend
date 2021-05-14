@@ -76,7 +76,7 @@
 			<span>final date</span>
 			<span class="mt-2 text-green-400 dark:text-green-200"> 20.02.2020 11:00 </span>
 		</div> -->
-		{#if wallet.id != 'bitpanda/crypto'}
+		{#if !wallet.id.startsWith('bitpanda') && !wallet.id.startsWith('binance')}
 			<div class="mr-8 flex flex-col capitalize text-gray-600 dark:text-gray-400 text-center">
 				<span>Actions</span>
 				<button
