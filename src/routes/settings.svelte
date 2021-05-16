@@ -82,11 +82,11 @@
 {:then}
 	<DeleteUserModal modal_open={show_delete_modal} />
 	<AddExchangeModal
-		add_exchange_modal_open={show_add_exchange_modal}
+		bind:add_exchange_modal_open={show_add_exchange_modal}
 		bind:current_exchanges={original_data.exchanges}
 	/>
 	<DeleteExchangeModal
-		delete_exchange_modal_open={show_delete_exchange_modal}
+		bind:delete_exchange_modal_open={show_delete_exchange_modal}
 		bind:current_exchanges={original_data.exchanges}
 		bind:exchange={exchange_to_delete}
 	/>
@@ -203,6 +203,7 @@
 									<button
 										on:click={() => {
 											show_add_exchange_modal = true;
+											console.log(show_add_exchange_modal);
 										}}
 									>
 										<ExchangeCard title="Add">
