@@ -4,9 +4,10 @@
 	import * as localForage from 'localforage';
 	import { onMount } from 'svelte';
 
-	let username: string = '';
-	let password: string = '';
+	$: username = '';
+	$: password = '';
 	$: error = '';
+	$: submit_enabled = !(!username || username == '') && !(!password || password == '');
 	UserStore.init();
 
 	onMount(() => {
@@ -83,6 +84,8 @@
 			<div class="mt-5">
 				<button
 					on:click={login}
+					disabled={!submit_enabled}
+					class:opacity-50={!submit_enabled}
 					type="submit"
 					class="relative block w-full py-2 px-3 border border-transparent rounded-md text-white font-semibold bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-900 focus:outline-none focus:shadow-outline sm:text-sm"
 				>
