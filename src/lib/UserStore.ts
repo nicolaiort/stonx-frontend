@@ -28,6 +28,9 @@ const userStore = () => {
                 state.email = authresponse.email;
                 state.username = authresponse.username || authresponse.email;
                 state.exchanges = authresponse.exchanges;
+                console.log(`Initialized`)
+                console.log(`Array ${state.exchanges}`)
+                console.log(`Input ${authresponse.exchanges}`)
                 state.isLoggedIn = true;
                 //
                 localForage.setItem("userdata", state);
@@ -56,14 +59,18 @@ const userStore = () => {
         addExchange(exchange) {
             update((state) => {
                 state.exchanges.push(exchange);
+                console.log(`Added ${exchange}`)
+                console.log(`Array ${state.exchanges}`)
                 localForage.setItem("userdata", state)
                 return state;
             });
         },
         removeExchange(exchange) {
             update((state) => {
-                state.exchanges = state.exchanges.filter((x) => x != exchange);
+                state.exchanges = state.exchanges.filter((x) => x != exchange.toUpperCase());
                 localForage.setItem("userdata", state)
+                console.log(`Removed ${exchange}`)
+                console.log(`Array ${state.exchanges}`)
                 return state;
             });
         }

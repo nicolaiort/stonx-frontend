@@ -12,6 +12,8 @@
 	onMount(() => {
 		localForage.getItem('userdata', (err, value: any) => {
 			if (value) {
+				console.log(`From userstorage`);
+				console.log(`Array ${value.exchanges}`);
 				if (value.token) {
 					UserStore.login(value);
 				}
@@ -24,6 +26,8 @@
 		if (login.status != 200 && login.status != 201) {
 			error = login.data.message;
 		} else {
+			console.log('login data');
+			console.log(login.data);
 			UserStore.login(login.data);
 		}
 	}

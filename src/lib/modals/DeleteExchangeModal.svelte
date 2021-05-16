@@ -19,8 +19,9 @@
 		processed_last_submit = false;
 		ApiClient.deleteExchange(exchange).then((data) => {
 			processed_last_submit = true;
-			UserStore.removeExchange(data);
-			current_exchanges = current_exchanges.filter((x) => x != exchange);
+			UserStore.removeExchange(exchange);
+			current_exchanges = current_exchanges.filter((x) => x != exchange.toUpperCase());
+			console.log(current_exchanges);
 			close();
 		});
 	}
