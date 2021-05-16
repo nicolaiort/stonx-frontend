@@ -150,7 +150,7 @@
 							<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
 								Add Exchange
 							</h3>
-							<div class="grid grid-cols-6 gap-6">
+							<div class="grid grid-cols-6 gap-6 mt-4">
 								<div class="col-span-6">
 									<label for="exchange" class="block text-sm font-medium text-gray-700"
 										>Exchange</label
