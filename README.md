@@ -27,8 +27,9 @@ Powered by (among many others):
 | - | - |
 | Dashboard | Get a quick overview of your current portfolio status |
 | Bitpanda | See all of your bitpanda assets |
+| Binance | See all of your binance spot assets |
 | Wallets | See all of your custom added wallets and add new wallets |
-| Setting | User settings - Update your email, username, password and bitpanda api key |
+| Setting | User settings - Update your email, username, password and connect to exchanges |
 | About | As the name suggests: An about page that also lists all npm packages used in the frontend (coming soon) |
 | Login | As the name suggests: The login screen. You have to provide an email address and password in order to log in |
 | Register/Signup | As the name suggests: The signup screen. You have to provide an email address, username, password and bitpanda api key to sign up. |
