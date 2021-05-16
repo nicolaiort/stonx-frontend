@@ -17,6 +17,21 @@
 		supportedExchanges = res.filter((x) => !current_exchanges.includes(x));
 	});
 
+	(() => {
+		document.onkeydown = (e) => {
+			e = e || (window.event as KeyboardEvent);
+			if (e.key === 'Escape') {
+				close();
+			}
+			if (e.keyCode === 13) {
+				if (submit_enabled === true) {
+					submit_enabled = false;
+					submit();
+				}
+			}
+		};
+	})();
+
 	function check_submit(exchange, key, secret) {
 		if (!processed_last_submit) {
 			return false;

@@ -3,6 +3,18 @@
 	import UserStore from '$lib/UserStore';
 	export let modal_open = true;
 
+	(() => {
+		document.onkeydown = (e) => {
+			e = e || (window.event as KeyboardEvent);
+			if (e.key === 'Escape') {
+				close();
+			}
+			if (e.keyCode === 13) {
+				submit();
+			}
+		};
+	})();
+
 	function submit() {
 		ApiClient.deleteMe(true).then((result) => {
 			close();

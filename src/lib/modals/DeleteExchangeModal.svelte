@@ -7,6 +7,18 @@
 	export let exchange = '';
 	$: processed_last_submit = true;
 
+	(() => {
+		document.onkeydown = (e) => {
+			e = e || (window.event as KeyboardEvent);
+			if (e.key === 'Escape') {
+				close();
+			}
+			if (e.keyCode === 13) {
+				submit();
+			}
+		};
+	})();
+
 	function close() {
 		delete_exchange_modal_open = false;
 		exchange = '';

@@ -21,6 +21,21 @@
 		supported_tokens = result;
 	});
 
+	(() => {
+		document.onkeydown = (e) => {
+			e = e || (window.event as KeyboardEvent);
+			if (e.key === 'Escape') {
+				close();
+			}
+			if (e.keyCode === 13) {
+				if (createbtnenabled === true) {
+					createbtnenabled = false;
+					submit();
+				}
+			}
+		};
+	})();
+
 	function validateAddress(token: string, address: string): boolean {
 		if (!token || token == '') {
 			return false;
