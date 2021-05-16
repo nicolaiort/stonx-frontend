@@ -97,18 +97,6 @@
 					</button>
 				</div>
 				<div class="sm:items-start">
-					<div
-						class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10"
-					>
-						<svg
-							class="h-6 w-6 mx-auto fill-current"
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 24 24"
-							><path fill="none" d="M0 0h24v24H0z" /><path
-								d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
-							/></svg
-						>
-					</div>
 					<div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
 						<h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
 							Delte Exchange {exchange.toUpperCase()}
