@@ -36,7 +36,6 @@ Powered by (among many others):
 ### Roadmap
 > For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
-* Overhaul the way exchange configs work
 * View timeseries data
 
 ## Config
