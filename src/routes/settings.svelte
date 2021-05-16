@@ -80,7 +80,7 @@
 {#await Promise.all(promises)}
 	<p>Loading data....</p>
 {:then}
-	<DeleteUserModal modal_open={show_delete_modal} />
+	<DeleteUserModal bind:delete_user_modal_open={show_delete_modal} />
 	<AddExchangeModal
 		bind:add_exchange_modal_open={show_add_exchange_modal}
 		bind:current_exchanges={original_data.exchanges}
