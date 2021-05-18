@@ -34,7 +34,7 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
-			current_tokens = current_wallets.map((w) => w.token).filter((v, i, a) => a.indexOf(v) === i);
+			current_tokens = current_wallets?.map((w) => w.token).filter((v, i, a) => a.indexOf(v) === i);
 		})
 	);
 </script>
@@ -45,7 +45,7 @@
 	</div>
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
 		<dl
-			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5"
+			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
 		>
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
