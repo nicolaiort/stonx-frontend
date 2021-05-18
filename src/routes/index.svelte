@@ -53,6 +53,7 @@
 					value={(
 						bitpanda_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0) +
 						bitpanda_indices.reduce((sum, cur) => (sum = sum + cur.fiat), 0) +
+						binance_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0) +
 						current_wallets.reduce((sum, cur) => (sum = sum + cur.fiat), 0)
 					).toFixed(2) + ' €'}
 				>
