@@ -44,7 +44,9 @@
 		<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
 	</div>
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
-		<dl class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+		<dl
+			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl:grid-cols-5"
+		>
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}
