@@ -132,4 +132,5 @@ package-lock.json
 
 # Svelte
 .svelte
+.svelte-kit
 build

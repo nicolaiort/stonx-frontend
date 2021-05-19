@@ -129,3 +129,8 @@ dist
 yarn.lock
 package-lock.json
 *.sqlite
+
+# Svelte
+.svelte
+.svelte-kit
+build
