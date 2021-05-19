@@ -145,7 +145,7 @@
 					type="submit"
 					disabled={!signup_enabled}
 					class:opacity-50={!signup_enabled}
-					class="relative block w-full py-2 px-3 border border-transparent rounded-b-md text-white font-semibold bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-900 focus:outline-none focus:shadow-outline sm:text-sm"
+					class="relative block w-full py-2 px-3 border border-transparent rounded-md text-white font-semibold bg-gray-800 hover:bg-gray-700 dark:hover:bg-gray-600 focus:bg-gray-900 focus:outline-none focus:shadow-outline sm:text-sm"
 				>
 					<span class="absolute left-0 inset-y pl-3">
 						<svg class="h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
