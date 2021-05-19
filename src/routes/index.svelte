@@ -135,7 +135,7 @@
 				{/if}
 				{#each current_tokens as token}
 					<Statscard
-						title={`Wallets`}
+						title={`${token.toUpperCase()} Wallets`}
 						link="/wallets"
 						link_text="Wallets"
 						value={current_wallets
