@@ -60,7 +60,7 @@
 		</div>
 	</div>
 	{#if link}
-		<div class="bg-gray-50 px-4 py-4 sm:px-6">
+		<div class="bg-gray-50 px-4 py-4 sm:px-6 rounded-b-lg">
 			<div class="text-sm">
 				<a href={link} class="font-medium text-indigo-600 hover:text-indigo-500">
 					View all {link_text}</a
