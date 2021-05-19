@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
+	import { IconService } from '$lib/IconService';
 	import Statscard from '$lib/Statscard.svelte';
 	import UserStore from '$lib/UserStore';
 	import * as cryptoIcons from 'base64-cryptocurrency-icons';
@@ -142,7 +143,7 @@
 							.reduce((sum, cur) => (sum = sum + cur.fiat), 0)
 							.toFixed(2) + ' €'}
 					>
-						<img height="48" width="48" alt={token} src={cryptoIcons[token].icon} />
+						<img height="48" width="48" alt={token} src={IconService.getTokenIconBase64(token)} />
 					</Statscard>
 				{/each}
 			{/await}
