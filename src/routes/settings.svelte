@@ -203,7 +203,6 @@
 									<button
 										on:click={() => {
 											show_add_exchange_modal = true;
-											console.log(show_add_exchange_modal);
 										}}
 									>
 										<ExchangeCard title="Add">

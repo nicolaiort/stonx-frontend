@@ -33,7 +33,6 @@
 			processed_last_submit = true;
 			UserStore.removeExchange(exchange);
 			current_exchanges = current_exchanges.filter((x) => x != exchange.toUpperCase());
-			console.log(current_exchanges);
 			close();
 		});
 	}
