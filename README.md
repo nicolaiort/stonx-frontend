@@ -38,6 +38,8 @@ Powered by (among many others):
 > For supported tokens and some other data related features take a look at [the backend roadmap](https://github.com/nicolaiort/stonx-backend#readme)
 
 * Update the add wallet modal styling
+* Darkmode everywhere
+* Initial Signup
 * Update the wallet cards
 * View timeseries data
 
