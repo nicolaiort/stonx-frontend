@@ -40,7 +40,13 @@
 		if (!token || token == '') {
 			return false;
 		}
-		return coinAddressValidator.validate(address, token.toLowerCase(), 'prod');
+		try {
+			const valid = coinAddressValidator.validate(address, token.toLowerCase(), 'prod');
+			return valid;
+		} catch (error) {
+			console.log("Can't validata address");
+			return true;
+		}
 	}
 
 	function submit() {
