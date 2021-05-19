@@ -15,6 +15,12 @@
 		if (cryptoIcons[token]) {
 			return cryptoIcons[token].icon;
 		}
+		if (token.endsWith('UP')) {
+			return getCryptoIcon(token.slice(0, -2));
+		}
+		if (token.endsWith('DOWN')) {
+			return getCryptoIcon(token.slice(0, -4));
+		}
 		switch (token) {
 			case 'IOTA':
 				return cryptoIcons['MIOTA']?.icon;
