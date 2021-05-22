@@ -15,34 +15,35 @@
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
-	if (UserStore.state.exchanges.includes('BITPANDA')) {
-		promises.push(
-			ApiClient.getBitpandaIndices().then((res) => {
-				bitpanda_indices = res;
-			})
-		);
-		promises.push(
-			ApiClient.getBitpandaCrypto().then((res) => {
-				bitpanda_wallets = res;
-			})
-		);
-	}
-	if (UserStore.state.exchanges.includes('BINANCE')) {
-		promises.push(
-			ApiClient.getBinanceSpot().then((res) => {
-				binance_wallets = res;
-			})
-		);
-	}
-	promises.push(
-		ApiClient.getWallets().then((res) => {
-			current_wallets = res;
-			current_tokens = current_wallets?.map((w) => w.token).filter((v, i, a) => a.indexOf(v) === i);
-		})
-	);
+	// if (UserStore.state.exchanges.includes('BITPANDA')) {
+	// 	promises.push(
+	// 		ApiClient.getBitpandaIndices().then((res) => {
+	// 			bitpanda_indices = res;
+	// 		})
+	// 	);
+	// 	promises.push(
+	// 		ApiClient.getBitpandaCrypto().then((res) => {
+	// 			bitpanda_wallets = res;
+	// 		})
+	// 	);
+	// }
+	// if (UserStore.state.exchanges.includes('BINANCE')) {
+	// 	promises.push(
+	// 		ApiClient.getBinanceSpot().then((res) => {
+	// 			binance_wallets = res;
+	// 		})
+	// 	);
+	// }
+	// promises.push(
+	// 	ApiClient.getWallets().then((res) => {
+	// 		current_wallets = res;
+	// 		current_tokens = current_wallets?.map((w) => w.token).filter((v, i, a) => a.indexOf(v) === i);
+	// 	})
+	// );
 	promises.push(
 		ApiClient.getTotalTimeSeries('TODAY').then((res) => {
 			portfolio_timeseries = res;
+			console.log(portfolio_timeseries);
 		})
 	);
 </script>
@@ -51,6 +52,11 @@
 	<div class="w-full px-4 sm:px-6 md:px-8">
 		<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
 	</div>
+	{#await Promise.all(promises)}
+		<p>Loading data....</p>
+	{:then}
+		<Chart bind:values={portfolio_timeseries} />
+	{/await}
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
 		<dl
 			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
@@ -58,7 +64,6 @@
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}
-				<Chart bind:values={portfolio_timeseries} />
 				<Statscard
 					title="Total"
 					value={(
