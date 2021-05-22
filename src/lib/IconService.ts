@@ -14,6 +14,9 @@ export class IconService {
         if (token.endsWith('DOWN')) {
             return this.getTokenIconBase64(token.slice(0, -4));
         }
+        if (token.startsWith('BCI')) {
+            return this.getIndexIconBase64(token);
+        }
         switch (token) {
             case 'IOTA':
                 return cryptoIcons['MIOTA']?.icon;
