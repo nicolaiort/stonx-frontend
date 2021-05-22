@@ -2,6 +2,7 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import { IconService } from '$lib/IconService';
 	import Statscard from '$lib/Statscard.svelte';
+	import Chart from '$lib/Chart.svelte';
 	import UserStore from '$lib/UserStore';
 	import * as cryptoIcons from 'base64-cryptocurrency-icons';
 
@@ -48,6 +49,7 @@
 		<dl
 			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
 		>
+			<Chart />
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}
