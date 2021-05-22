@@ -164,4 +164,9 @@ export class ApiClient {
         // @ts-ignore
         return (await axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
+
+    static async getWalletTimeSeries(asset: string, id: string, range: string): Promise<any> {
+        // @ts-ignore
+        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/wallets/${asset.toUpperCase()}/${id}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+    }
 }
