@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Chart from 'svelte-frappe-charts';
 	export let values_fiat = {
 		day: [],
