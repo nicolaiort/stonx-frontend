@@ -30,19 +30,19 @@
 	};
 
 	function getTimeSeries(wallet) {
-		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'TODAY').then((res) => {
+		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'TODAY').then((res) => {
 			timeseries.day = res;
 		});
-		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISWEEK').then((res) => {
+		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISWEEK').then((res) => {
 			timeseries.week = res;
 		});
-		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISMONTH').then((res) => {
+		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISMONTH').then((res) => {
 			timeseries.month = res;
 		});
-		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISYEAR').then((res) => {
+		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISYEAR').then((res) => {
 			timeseries.year = res;
 		});
-		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'ALL').then((res) => {
+		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'ALL').then((res) => {
 			timeseries.all = res;
 		});
 	}

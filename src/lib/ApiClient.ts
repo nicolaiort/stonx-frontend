@@ -169,12 +169,8 @@ export class ApiClient {
         // @ts-ignore
         return (await axios.get(`${config.baseurl_backend}/rest/timeseries/wallets/${asset.toUpperCase()}/${id}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
-    static async getBitpandaWalletTimeSeries(asset: string, range: string): Promise<any> {
+    static async getBitpandaAssetTimeSeries(asset: string, range: string): Promise<any> {
         // @ts-ignore
         return (await axios.get(`${config.baseurl_backend}/rest/timeseries/bitpanda/wallets/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
-    }
-    static async getBitpandaIndexTimeSeries(asset: string, range: string): Promise<any> {
-        // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/bitpanda/indices/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
 }
