@@ -1,9 +1,14 @@
-<script lang="ts">
-	import Chart from 'svelte-lightweight-charts/components/chart.svelte';
-	import AreaSeries from 'svelte-lightweight-charts/components/area-series.svelte';
-	export const values = [];
+<script>
+	import Chart from 'svelte-frappe-charts';
+
+	let data = {
+		labels: ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'],
+		datasets: [
+			{
+				values: [10, 12, 3, 9, 8, 15, 9]
+			}
+		]
+	};
 </script>
 
-<Chart>
-	<AreaSeries data={values} />
-</Chart>
+<Chart {data} type="line" />

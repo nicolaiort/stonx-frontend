@@ -11,6 +11,7 @@
 	$: binance_wallets = [];
 	$: current_wallets = [];
 	$: current_tokens = [];
+	$: portfolio_timeseries = [];
 
 	let promises: Promise<any>[] = new Array<Promise<any>>();
 
@@ -39,6 +40,11 @@
 			current_tokens = current_wallets?.map((w) => w.token).filter((v, i, a) => a.indexOf(v) === i);
 		})
 	);
+	promises.push(
+		ApiClient.getTotalTimeSeries('TODAY').then((res) => {
+			portfolio_timeseries = res;
+		})
+	);
 </script>
 
 <div>
@@ -49,10 +55,10 @@
 		<dl
 			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
 		>
-			<Chart />
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}
+				<Chart bind:values={portfolio_timeseries} />
 				<Statscard
 					title="Total"
 					value={(
