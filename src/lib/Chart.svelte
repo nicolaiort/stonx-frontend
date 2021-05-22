@@ -53,10 +53,10 @@
 </script>
 
 <div class="bg-gray-100">
-	<div class="w-full mx-auto py-12 px-4 sm:px-6 lg:px-8">
+	<div class="w-full mx-auto py-12 md:px-6 sm:px-0 lg:px-8">
 		<div class="mx-auto">
 			<div class="bg-white overflow-hidden shadow rounded-lg">
-				<div class="px-4 pt-4 sm:p-6">
+				<div class="md:px-4 pt-4 sm:px-0 sm:py-6">
 					<Chart {data} type="line" class="w-full" />
 				</div>
 				<div class="border-gray-200 px-4 py-4 sm:px-6">
