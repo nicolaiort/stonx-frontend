@@ -54,27 +54,26 @@
 		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
-			<div class="flex">
-				<ul class="space-y-3 w-1/4">
-					{#each current_wallets as wallet}
-						<li
-							class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-							class:bg-gray-200={wallet.id == selected_wallet_id}
-							on:click={() => {
-								selected_wallet_id = wallet.id;
-								getTimeSeries(wallet);
-							}}
-						>
-							<Walletcard bind:current_wallets bind:wallet />
-						</li>
-					{/each}
-				</ul>
-				<aside class="h-screen sticky top-0 w-3/4">
+			<div class="flex h-full">
+				<div class="w-1/4 overflow-hidden">
+					<ul class="space-y-3 overflow-y-scroll">
+						{#each current_wallets as wallet}
+							<li
+								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
+								class:bg-gray-200={wallet.id == selected_wallet_id}
+								on:click={() => {
+									selected_wallet_id = wallet.id;
+									getTimeSeries(wallet);
+								}}
+							>
+								<Walletcard bind:current_wallets bind:wallet />
+							</li>
+						{/each}
+					</ul>
+				</div>
+				<div class="w-3/4 overflow-hidden">
 					<Chart bind:values_fiat={timeseries} />
-				</aside>
-			</div>
-			<div class="flex">
-				<div class="w-1/4 overflow-hidden" />
+				</div>
 			</div>
 		{/await}
 	</div>
