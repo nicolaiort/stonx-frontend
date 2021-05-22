@@ -17,10 +17,12 @@
 	promises.push(
 		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
+			selected_wallet_asset = res[0];
+			getTimeSeries(res[0]);
 		})
 	);
 
-	$: selected_wallet_id = 'none';
+	$: selected_wallet_asset = 'none';
 	$: timeseries = {
 		day: [],
 		week: [],
@@ -62,9 +64,9 @@
 						{#each bitpanda_wallets as current_wallet}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={current_wallet.token == selected_wallet_id}
+								class:bg-gray-200={current_wallet.token == selected_wallet_asset}
 								on:click={() => {
-									selected_wallet_id = current_wallet.token;
+									selected_wallet_asset = current_wallet.token;
 									getTimeSeries(current_wallet);
 								}}
 							>
@@ -74,9 +76,9 @@
 						{#each bitpanda_indices as index}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={index.token == selected_wallet_id}
+								class:bg-gray-200={index.token == selected_wallet_asset}
 								on:click={() => {
-									selected_wallet_id = index.token;
+									selected_wallet_asset = index.token;
 									getTimeSeries(index);
 								}}
 							>
