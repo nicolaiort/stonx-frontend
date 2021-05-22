@@ -2,7 +2,6 @@
 	import { ApiClient } from '$lib/ApiClient';
 	import Walletcard from '$lib/Walletcard.svelte';
 	import Chart from '$lib/Chart.svelte';
-	import IndexCard from '$lib/IndexCard.svelte';
 
 	$: bitpanda_indices = [];
 	$: bitpanda_wallets = [];
