@@ -48,8 +48,8 @@
 		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
-			<div class="flex h-full">
-				<div class="w-1/4 overflow-hidden">
+			<div class="grid grid-cols-4 gap-4">
+				<div>
 					<ul class="space-y-3 overflow-y-scroll">
 						{#each binance_wallets as current_wallet}
 							<li
@@ -65,7 +65,7 @@
 						{/each}
 					</ul>
 				</div>
-				<div class="w-3/4 overflow-hidden">
+				<div class="col-span-3">
 					<Chart bind:values_fiat={timeseries} />
 				</div>
 			</div>
