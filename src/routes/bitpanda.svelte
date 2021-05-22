@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { ApiClient } from '$lib/ApiClient';
-	import IndexCard from '$lib/IndexCard.svelte';
 	import Walletcard from '$lib/Walletcard.svelte';
+	import Chart from '$lib/Chart.svelte';
+	import IndexCard from '$lib/IndexCard.svelte';
 
 	$: bitpanda_indices = [];
 	$: bitpanda_wallets = [];
@@ -18,6 +19,33 @@
 			bitpanda_wallets = res;
 		})
 	);
+
+	$: selected_wallet_id = 'none';
+	$: timeseries = {
+		day: [],
+		week: [],
+		month: [],
+		year: [],
+		all: []
+	};
+
+	function getTimeSeries(wallet) {
+		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'TODAY').then((res) => {
+			timeseries.day = res;
+		});
+		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISWEEK').then((res) => {
+			timeseries.week = res;
+		});
+		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISMONTH').then((res) => {
+			timeseries.month = res;
+		});
+		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'THISYEAR').then((res) => {
+			timeseries.year = res;
+		});
+		ApiClient.getBitpandaWalletTimeSeries(wallet.token, 'ALL').then((res) => {
+			timeseries.all = res;
+		});
+	}
 </script>
 
 <div>
@@ -28,15 +56,38 @@
 		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
-			<div class="border-b dark:border-gray-600">
-				{#each bitpanda_wallets as current_wallet}
-					<Walletcard bind:wallet={current_wallet} />
-				{/each}
-			</div>
-			<div>
-				{#each bitpanda_indices as index}
-					<IndexCard bind:index_name={index.token} bind:index_amount={index.balance} />
-				{/each}
+			<div class="flex h-full">
+				<div class="w-1/4 overflow-hidden">
+					<ul class="space-y-3 overflow-y-scroll">
+						{#each bitpanda_wallets as current_wallet}
+							<li
+								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
+								class:bg-gray-200={current_wallet.token == selected_wallet_id}
+								on:click={() => {
+									selected_wallet_id = current_wallet.token;
+									getTimeSeries(current_wallet);
+								}}
+							>
+								<Walletcard bind:wallet={current_wallet} />
+							</li>
+						{/each}
+						{#each bitpanda_indices as index}
+							<li
+								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
+								class:bg-gray-200={index.token == selected_wallet_id}
+								on:click={() => {
+									selected_wallet_id = index.token;
+									getTimeSeries(index);
+								}}
+							>
+								<Walletcard bind:wallet={index} />
+							</li>
+						{/each}
+					</ul>
+				</div>
+				<div class="w-3/4 overflow-hidden">
+					<Chart bind:values_fiat={timeseries} />
+				</div>
 			</div>
 		{/await}
 	</div>
