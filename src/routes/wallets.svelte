@@ -30,6 +30,18 @@
 		ApiClient.getWalletTimeSeries(wallet.token, wallet.id, 'TODAY').then((res) => {
 			timeseries.day = res;
 		});
+		ApiClient.getWalletTimeSeries(wallet.token, wallet.id, 'THISWEEK').then((res) => {
+			timeseries.week = res;
+		});
+		ApiClient.getWalletTimeSeries(wallet.token, wallet.id, 'THISMONTH').then((res) => {
+			timeseries.month = res;
+		});
+		ApiClient.getWalletTimeSeries(wallet.token, wallet.id, 'THISYEAR').then((res) => {
+			timeseries.year = res;
+		});
+		ApiClient.getWalletTimeSeries(wallet.token, wallet.id, 'ALL').then((res) => {
+			timeseries.all = res;
+		});
 	}
 </script>
 
