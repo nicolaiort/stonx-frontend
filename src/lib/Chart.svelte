@@ -83,7 +83,7 @@
 									Week
 								</button>
 							{/if}
-							{#if values_fiat.week.month > 0}
+							{#if values_fiat.month.length > 0}
 								<button
 									type="button"
 									on:click={() => {
