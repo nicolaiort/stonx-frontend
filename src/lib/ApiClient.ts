@@ -174,4 +174,9 @@ export class ApiClient {
         // @ts-ignore
         return (await axios.get(`${config.baseurl_backend}/rest/timeseries/bitpanda/wallets/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
+
+    static async getBinanceSpotAssetTimeSeries(asset: string, range: string): Promise<any> {
+        // @ts-ignore
+        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/binance/spot/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+    }
 }
