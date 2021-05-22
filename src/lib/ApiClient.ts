@@ -156,7 +156,7 @@ export class ApiClient {
 
     static async deleteMe(confirm: boolean): Promise<any> {
         // @ts-ignore
-        const res = await axios.delete(`${config.baseurl_backend}/rest/users/me?confirm=${config.toString()}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
+        const res = await axios.delete(`${config.baseurl_backend}/rest/users/me?confirm=${confirm.toString()}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
         return res.data;
     }
 
