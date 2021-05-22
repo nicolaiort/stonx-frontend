@@ -162,6 +162,6 @@ export class ApiClient {
 
     static async getTotalTimeSeries(range: string): Promise<any> {
         // @ts-ignore
-        return axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
+        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
 }
