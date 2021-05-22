@@ -162,7 +162,6 @@ export class ApiClient {
 
     static async getTotalTimeSeries(range: string): Promise<any> {
         // @ts-ignore
-        const res = await axios.delete(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
-        return res.data.map((d) => { return { time: d.timestamp, value: d.fiat_value }; });
+        return axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } });
     }
 }
