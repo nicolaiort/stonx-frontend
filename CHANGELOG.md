@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.2](https://github.com/nicolaiort/stonx-frontend/compare/0.2.1...0.2.2)
+
+- Fixed custom wallet deletion [`efbbc4b`](https://github.com/nicolaiort/stonx-frontend/commit/efbbc4b81b400e4c997b2ec599b3d0f839c2c742)
+
 #### [0.2.1](https://github.com/nicolaiort/stonx-frontend/compare/0.2.0...0.2.1)
 
+> 24 May 2021
+
 - Updated dev dependencies [`ccc47a4`](https://github.com/nicolaiort/stonx-frontend/commit/ccc47a423d9ebca12b954e992ba229ec702137c5)
+- 🚀RELEASE 0.2.1 [`d5e6802`](https://github.com/nicolaiort/stonx-frontend/commit/d5e68020119ec226b40e8f18bba4287ccaaa3bc9)
 - Updated dependencies [`16d25e7`](https://github.com/nicolaiort/stonx-frontend/commit/16d25e754f9b861e20513dde31942756b224a51e)
 
 #### [0.2.0](https://github.com/nicolaiort/stonx-frontend/compare/0.1.1...0.2.0)
