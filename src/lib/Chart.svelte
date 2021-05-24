@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Chart from 'svelte-frappe-charts';
-	export let values_fiat = {
+	export let values = {
 		day: [],
 		week: [],
 		month: [],
@@ -9,9 +9,9 @@
 	};
 
 	$: timespan = 'TODAY';
-	$: data = getData(values_fiat, timespan);
+	$: data_fiat = getData(values, timespan, true);
 
-	function getData(values, timespan) {
+	function getData(values, timespan, fiat) {
 		let data;
 		switch (timespan) {
 			case 'TODAY':
@@ -45,7 +45,13 @@
 			}),
 			datasets: [
 				{
-					values: data.map((l) => l.fiat_value)
+					values: data.map((l) => {
+						if (fiat) {
+							return l.fiat_value;
+						} else {
+							return l.balance;
+						}
+					})
 				}
 			]
 		};
@@ -55,7 +61,7 @@
 <div class="mx-auto w-full">
 	<div class="bg-white overflow-hidden shadow rounded-lg">
 		<div class="md:px-4 pt-4 sm:px-0 sm:py-6">
-			<Chart {data} type="line" class="w-full" />
+			<Chart {data_fiat} type="line" class="w-full" />
 		</div>
 		<div class="border-gray-200 px-4 py-4 sm:px-6">
 			<div class="bg-white flex items-center justify-center">
