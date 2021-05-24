@@ -26,6 +26,7 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
+			console.log(current_wallets);
 			selected_asset = res[0];
 			getTimeSeries(selected_asset);
 		})
@@ -79,7 +80,7 @@
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
 								class:bg-gray-300={wallet.id == selected_asset.id}
 								on:click={() => {
-									selected_asset.id = wallet.id;
+									selected_asset = wallet;
 									getTimeSeries(wallet);
 								}}
 							>
