@@ -41,7 +41,6 @@
     "@sotatek-anhdao/coin-address-validator": "1.0.1",
     "axios": "0.21.1",
     "base64-cryptocurrency-icons": "1.1.17",
-    "ccy-icons": "1.0.2",
     "check-password-strength": "2.0.3",
     "localforage": "1.9.0",
     "marked": "2.0.3"
