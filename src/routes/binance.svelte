@@ -62,9 +62,9 @@
 						{#each binance_wallets as wallet}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={wallet.id == selected_asset.id}
+								class:bg-gray-300={wallet.id == selected_asset.id}
 								on:click={() => {
-									selected_asset.id = wallet.id;
+									selected_asset = wallet;
 									getTimeSeries(wallet);
 								}}
 							>

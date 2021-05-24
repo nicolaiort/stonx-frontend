@@ -5,7 +5,7 @@
 	import Chart from '$lib/Chart.svelte';
 
 	$: current_wallets = [];
-	$: selected_wallet = {
+	$: selected_asset = {
 		id: 'n/a',
 		token: 'n/a',
 		balance: -1,
@@ -26,8 +26,8 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
-			selected_wallet = res[0];
-			getTimeSeries(selected_wallet);
+			selected_asset = res[0];
+			getTimeSeries(selected_asset);
 		})
 	);
 
@@ -77,9 +77,9 @@
 						{#each current_wallets as wallet}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={wallet.id == selected_wallet.id}
+								class:bg-gray-300={wallet.id == selected_asset.id}
 								on:click={() => {
-									selected_wallet.id = wallet.id;
+									selected_asset.id = wallet.id;
 									getTimeSeries(wallet);
 								}}
 							>
