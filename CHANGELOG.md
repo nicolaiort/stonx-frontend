@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.1](https://github.com/nicolaiort/stonx-frontend/compare/0.2.0...0.2.1)
+
+- Updated dev dependencies [`ccc47a4`](https://github.com/nicolaiort/stonx-frontend/commit/ccc47a423d9ebca12b954e992ba229ec702137c5)
+- Updated dependencies [`16d25e7`](https://github.com/nicolaiort/stonx-frontend/commit/16d25e754f9b861e20513dde31942756b224a51e)
+
 #### [0.2.0](https://github.com/nicolaiort/stonx-frontend/compare/0.1.1...0.2.0)
+
+> 24 May 2021
 
 - Now only showing buttons that can be used [`0ed194b`](https://github.com/nicolaiort/stonx-frontend/commit/0ed194b8abe8688c9e8b7a673492e01e951be7f8)
 - Implemented basic chart card [`da5a90e`](https://github.com/nicolaiort/stonx-frontend/commit/da5a90e18cee15f6592f67adaad2d81824d701a9)
@@ -14,6 +21,7 @@ All notable changes to this project will be documented in this file. Dates are d
 - Pinned all dependencies [`530ee01`](https://github.com/nicolaiort/stonx-frontend/commit/530ee01bf9a40d7a5910c29277d2e18f33a2d967)
 - Switched binance view over to the new scheme [`6c5005c`](https://github.com/nicolaiort/stonx-frontend/commit/6c5005cc186b1aabd2d496fb4de14bc279e6f13f)
 - Major wallet restyling [`b1094d2`](https://github.com/nicolaiort/stonx-frontend/commit/b1094d2eab375d3cbc89339fb546a223024934cf)
+- 🚀RELEASE 0.2.0 [`e1cc484`](https://github.com/nicolaiort/stonx-frontend/commit/e1cc4843318df916636dbb652317ddfd1b45ab83)
 - Updated bitpanda styleing [`0045383`](https://github.com/nicolaiort/stonx-frontend/commit/004538369c038ba65cb045c8785674429f27cc40)
 - Restyleing [`dc821c0`](https://github.com/nicolaiort/stonx-frontend/commit/dc821c0acd30eee161200c7e097e676fca733497)
 - Another chart lib [`87422f8`](https://github.com/nicolaiort/stonx-frontend/commit/87422f84b9deac83e1983c883405a232a57aca12)
@@ -31,13 +39,16 @@ All notable changes to this project will be documented in this file. Dates are d
 - Added binance timeseries function [`4ed6c85`](https://github.com/nicolaiort/stonx-frontend/commit/4ed6c853994ef07f080bb85c284bdd5ce78991c7)
 - Added wallet timeseries calling function to apiclient [`602aea3`](https://github.com/nicolaiort/stonx-frontend/commit/602aea39fc72a833c29edadda10c4499aa15ec4a)
 - Updated the date format [`0980d03`](https://github.com/nicolaiort/stonx-frontend/commit/0980d035289b002465876c9fb8d67065b5530759)
+- Fixed docker builds [`20c1b59`](https://github.com/nicolaiort/stonx-frontend/commit/20c1b5932cd1b558acbf4b210a28f77bac43269a)
 - Adjusted chart styling for small screens [`b787578`](https://github.com/nicolaiort/stonx-frontend/commit/b7875780404b51102d2dd3c55624092bc9e3bd10)
 - Iconservice automgicly resolves misguided requests [`5fb93e5`](https://github.com/nicolaiort/stonx-frontend/commit/5fb93e5b4368289ccb0489048b2b97f275bb5df5)
 - Fixed apiclient request [`70afed7`](https://github.com/nicolaiort/stonx-frontend/commit/70afed7ed80b9f59eceea514464be3243d39fc77)
+- Update svelte to newer version to fix builds [`8efc2ec`](https://github.com/nicolaiort/stonx-frontend/commit/8efc2ec9ad0cacbd191cc96be2a8acc6c5145c29)
 - Quick bugfix [`eb51d56`](https://github.com/nicolaiort/stonx-frontend/commit/eb51d56e10ce904a0e33a6a91a27ec3f790c232c)
 - switched to typeing [`9e4757b`](https://github.com/nicolaiort/stonx-frontend/commit/9e4757b9d301fe4e323330834e5289e58c37892c)
 - typo [`4fd241b`](https://github.com/nicolaiort/stonx-frontend/commit/4fd241be5222d950b44f18897c2f8745c4c9a454)
 - Now only returning data [`3819fe5`](https://github.com/nicolaiort/stonx-frontend/commit/3819fe57ec5969ad584b85cb83f71796dad14adb)
+- removed useless dependency [`8b7be5c`](https://github.com/nicolaiort/stonx-frontend/commit/8b7be5c0948c1b131f3eaa0e52ccd17cf9cba9a3)
 - removed old import [`808738f`](https://github.com/nicolaiort/stonx-frontend/commit/808738f04a22f5205891df0639e9ddc6a17d398d)
 - formatting [`bfd588f`](https://github.com/nicolaiort/stonx-frontend/commit/bfd588ff21355e04676eaa443fe189ab7c657d92)
 
