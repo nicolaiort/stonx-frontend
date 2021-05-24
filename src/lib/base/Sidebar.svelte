@@ -97,6 +97,15 @@
 				<nav class="flex-1 px-2 py-4 bg-gray-800 space-y-1">
 					<SidebarItems />
 				</nav>
+				<div class="px-2 py-4 bg-gray-800 space-y-1 text-gray-100 w-full">
+					<div class="items-center mx-auto px-6">
+						<a class="underline" href="/privacy" target="_blank">Privacy</a> -
+						<a class="underline" href="/imprint" target="_blank">Imprint</a> -
+						<a class="underline" href="https://github.com/nicolaiort/stonx-frontend" target="_blank"
+							>GitHub</a
+						>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
