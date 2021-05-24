@@ -16,12 +16,18 @@
 	promises.push(
 		ApiClient.getBitpandaCrypto().then((res) => {
 			bitpanda_wallets = res;
-			selected_wallet_asset = res[0];
-			getTimeSeries(res[0]);
+			selected_asset = res[0];
+			getTimeSeries(selected_asset);
 		})
 	);
 
-	$: selected_wallet_asset = 'none';
+	$: selected_asset = {
+		id: 'n/a',
+		token: 'n/a',
+		balance: -1,
+		fiat: 0,
+		description: ''
+	};
 	$: timeseries = {
 		day: [],
 		week: [],
@@ -50,43 +56,43 @@
 </script>
 
 <div>
-	<div class="max-w-7xl px-4 sm:px-6 md:px-8">
+	<div class="w-full px-4 sm:px-6 md:px-8">
 		<h1 class="text-2xl font-semibold text-gray-900">Bitpanda</h1>
 	</div>
-	<div class="max-w-7xl py-5 px-4 sm:px-6 lg:px-8">
+	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
 		{#await Promise.all(promises)}
 			<p>Loading data....</p>
 		{:then}
-			<div class="grid grid-cols-4 gap-4">
-				<div>
-					<ul class="space-y-3 overflow-y-scroll">
-						{#each bitpanda_wallets as current_wallet}
+			<div class="w-full h-full py-5 px-4 sm:px-6 lg:px8 flex">
+				<div class="w-1/4 mr-4">
+					<ul class="space-y-3">
+						{#each bitpanda_wallets as wallet}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={current_wallet.token == selected_wallet_asset}
+								class:bg-gray-200={wallet.id == selected_asset.id}
 								on:click={() => {
-									selected_wallet_asset = current_wallet.token;
-									getTimeSeries(current_wallet);
+									selected_asset.id = wallet.id;
+									getTimeSeries(wallet);
 								}}
 							>
-								<Walletcard bind:wallet={current_wallet} />
+								<Walletcard bind:wallet />
 							</li>
 						{/each}
-						{#each bitpanda_indices as index}
+						{#each bitpanda_indices as wallet}
 							<li
 								class="bg-white shadow overflow-hidden px-4 py-4 sm:px-6 sm:rounded-md"
-								class:bg-gray-200={index.token == selected_wallet_asset}
+								class:bg-gray-200={wallet.id == selected_asset.id}
 								on:click={() => {
-									selected_wallet_asset = index.token;
-									getTimeSeries(index);
+									selected_asset.id = wallet.id;
+									getTimeSeries(wallet);
 								}}
 							>
-								<Walletcard bind:wallet={index} />
+								<Walletcard bind:wallet />
 							</li>
 						{/each}
 					</ul>
 				</div>
-				<div class="col-span-3">
+				<div class="w-3/4">
 					<Chart bind:values_fiat={timeseries} />
 				</div>
 			</div>
