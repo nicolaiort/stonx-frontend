@@ -3,7 +3,6 @@
 	import '../app.postcss';
 	import Login from '$lib/login.svelte';
 	import { onDestroy } from 'svelte';
-	import Footer from '$lib/Footer.svelte';
 	import BaseLayout from '$lib/base/BaseLayout.svelte';
 
 	$: isLoggedIn = false;
