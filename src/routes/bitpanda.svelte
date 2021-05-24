@@ -93,7 +93,7 @@
 					</ul>
 				</div>
 				<div class="w-3/4">
-					<Chart bind:values_fiat={timeseries} />
+					<Chart bind:values={timeseries} />
 				</div>
 			</div>
 		{/await}
