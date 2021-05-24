@@ -66,7 +66,7 @@
 		<div class="border-gray-200 px-4 py-4 sm:px-6">
 			<div class="bg-white flex items-center justify-center">
 				<span class="relative z-0 inline-flex shadow-sm rounded-md">
-					{#if values_fiat.day.length > 0}
+					{#if values.day.length > 0}
 						<button
 							type="button"
 							on:click={() => {
@@ -78,7 +78,7 @@
 							Day
 						</button>
 					{/if}
-					{#if values_fiat.week.length > 0}
+					{#if values.week.length > 0}
 						<button
 							type="button"
 							on:click={() => {
@@ -90,7 +90,7 @@
 							Week
 						</button>
 					{/if}
-					{#if values_fiat.month.length > 0}
+					{#if values.month.length > 0}
 						<button
 							type="button"
 							on:click={() => {
@@ -102,7 +102,7 @@
 							Month
 						</button>
 					{/if}
-					{#if values_fiat.year.length > 0}
+					{#if values.year.length > 0}
 						<button
 							type="button"
 							on:click={() => {
@@ -114,7 +114,7 @@
 							Year
 						</button>
 					{/if}
-					{#if values_fiat.all.length > 0}
+					{#if values.all.length > 0}
 						<button
 							type="button"
 							on:click={() => {
