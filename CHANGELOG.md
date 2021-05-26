@@ -2,7 +2,14 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.4](https://github.com/nicolaiort/stonx-frontend/compare/0.2.3...0.2.4)
+
+- Added new function [`cabad14`](https://github.com/nicolaiort/stonx-frontend/commit/cabad147cfc6dd40fbdc8ab1c8c5fc47396739e3)
+- Removed useless js file [`5a6b909`](https://github.com/nicolaiort/stonx-frontend/commit/5a6b909601d1b272ab1ab15e1fd2a17e65ca0a69)
+
 #### [0.2.3](https://github.com/nicolaiort/stonx-frontend/compare/0.2.2...0.2.3)
+
+> 26 May 2021
 
 - Manually build charts [`573aa75`](https://github.com/nicolaiort/stonx-frontend/commit/573aa752a5a3027a7e562b1b5d32a6256dd2218e)
 - Removed useless index file [`370e851`](https://github.com/nicolaiort/stonx-frontend/commit/370e851bca70d33a9e8829052282d8b36ff15b39)
@@ -10,6 +17,7 @@ All notable changes to this project will be documented in this file. Dates are d
 - Changed the way that the chartdata get's mapped [`fc66431`](https://github.com/nicolaiort/stonx-frontend/commit/fc66431b483e2358ecd06f26cf8c56eb478e5e26)
 - Updated index chart styleing [`911dbc2`](https://github.com/nicolaiort/stonx-frontend/commit/911dbc2bdd904b5e8c96249f4729c5fcde5c2e49)
 - Fixed old reference [`cb472d7`](https://github.com/nicolaiort/stonx-frontend/commit/cb472d7ef6df51c5fec6111a19cfa6194588fdc3)
+- 🚀RELEASE 0.2.3 [`e944665`](https://github.com/nicolaiort/stonx-frontend/commit/e944665449e4c613a7c7335e989b768c171237e8)
 - Re-enabled all charts [`a8e0b80`](https://github.com/nicolaiort/stonx-frontend/commit/a8e0b801310aec6de6b2ba912e4654f2d561f5d7)
 - Removed useless dependencies [`b20b274`](https://github.com/nicolaiort/stonx-frontend/commit/b20b274b1cb161a5cc9f5fcde0346eda8aee5118)
 - Temp- disabled charts b/c they crash ^^ [`8085b76`](https://github.com/nicolaiort/stonx-frontend/commit/8085b76a38c4ee385e13969bcb3da9d30c40638d)
