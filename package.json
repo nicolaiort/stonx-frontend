@@ -27,7 +27,6 @@
     "release-it": "14.6.2",
     "rimraf": "3.0.2",
     "svelte": "3.38.2",
-    "svelte-frappe-charts": "1.8.2",
     "svelte-preprocess": "4.7.3",
     "svelte-select": "3.17.0",
     "svelte-use-click-outside": "1.0.0",
@@ -44,8 +43,7 @@
     "chart.js": "^3.3.0",
     "check-password-strength": "2.0.3",
     "localforage": "1.9.0",
-    "marked": "2.0.5",
-    "svelte-chartjs": "^1.0.1"
+    "marked": "2.0.5"
   },
   "release-it": {
     "git": {
