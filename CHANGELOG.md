@@ -2,9 +2,26 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.3](https://github.com/nicolaiort/stonx-frontend/compare/0.2.2...0.2.3)
+
+- Manually build charts [`573aa75`](https://github.com/nicolaiort/stonx-frontend/commit/573aa752a5a3027a7e562b1b5d32a6256dd2218e)
+- Changed the way that the chartdata get's mapped [`fc66431`](https://github.com/nicolaiort/stonx-frontend/commit/fc66431b483e2358ecd06f26cf8c56eb478e5e26)
+- Updated index chart styleing [`911dbc2`](https://github.com/nicolaiort/stonx-frontend/commit/911dbc2bdd904b5e8c96249f4729c5fcde5c2e49)
+- Fixed old reference [`cb472d7`](https://github.com/nicolaiort/stonx-frontend/commit/cb472d7ef6df51c5fec6111a19cfa6194588fdc3)
+- Re-enabled all charts [`a8e0b80`](https://github.com/nicolaiort/stonx-frontend/commit/a8e0b801310aec6de6b2ba912e4654f2d561f5d7)
+- Removed useless dependencies [`b20b274`](https://github.com/nicolaiort/stonx-frontend/commit/b20b274b1cb161a5cc9f5fcde0346eda8aee5118)
+- Temp- disabled charts b/c they crash ^^ [`8085b76`](https://github.com/nicolaiort/stonx-frontend/commit/8085b76a38c4ee385e13969bcb3da9d30c40638d)
+- Fixed chart bindings [`c49e727`](https://github.com/nicolaiort/stonx-frontend/commit/c49e727bcac72c457c6de91cd4e7eb206047d9b7)
+- Chart no longer forces aspect ratio [`699bb07`](https://github.com/nicolaiort/stonx-frontend/commit/699bb07e34b5f710000cfe3aed7123f00bead09b)
+- Pinned dependency [`684fb19`](https://github.com/nicolaiort/stonx-frontend/commit/684fb1929ae2666d0a2d54dcb2cb62d293e5fe5d)
+- disabled dashboard chart [`15cb09d`](https://github.com/nicolaiort/stonx-frontend/commit/15cb09d81e19f26472d86864f2158e2002e3c43d)
+
 #### [0.2.2](https://github.com/nicolaiort/stonx-frontend/compare/0.2.1...0.2.2)
 
+> 24 May 2021
+
 - Fixed custom wallet deletion [`efbbc4b`](https://github.com/nicolaiort/stonx-frontend/commit/efbbc4b81b400e4c997b2ec599b3d0f839c2c742)
+- 🚀RELEASE 0.2.2 [`ad6a2d1`](https://github.com/nicolaiort/stonx-frontend/commit/ad6a2d13d2463ba13c81ae9c5d8819f7b59054c2)
 
 #### [0.2.1](https://github.com/nicolaiort/stonx-frontend/compare/0.2.0...0.2.1)
 
