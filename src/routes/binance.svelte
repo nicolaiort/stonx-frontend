@@ -74,7 +74,7 @@
 					</ul>
 				</div>
 				<div class="w-3/4">
-					<Chart bind:values={timeseries} />
+					<!-- <Chart bind:values={timeseries} /> -->
 				</div>
 			</div>
 		{/await}
