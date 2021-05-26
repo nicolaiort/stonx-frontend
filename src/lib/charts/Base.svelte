@@ -1,6 +1,5 @@
 <script>
 	import { onMount, afterUpdate, onDestroy } from 'svelte';
-	import { clean } from './utils';
 	import { Chart, registerables } from 'chart.js/dist/chart.esm';
 
 	//  Expected data
@@ -41,6 +40,17 @@
 	onDestroy(() => {
 		chart = null;
 	});
+
+	function clean($$props, extra_keys) {
+		let keys = ['children', '$$scope', '$$slots'].concat(extra_keys);
+		const rest = {};
+		for (const key of Object.keys($$props)) {
+			if (!keys.includes(key)) {
+				rest[key] = $$props[key];
+			}
+		}
+		return rest;
+	}
 </script>
 
 <canvas bind:this={chartRef} {...props} />
