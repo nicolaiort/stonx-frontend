@@ -41,9 +41,11 @@
     "@sotatek-anhdao/coin-address-validator": "1.0.1",
     "axios": "0.21.1",
     "base64-cryptocurrency-icons": "1.1.17",
+    "chart.js": "^3.3.0",
     "check-password-strength": "2.0.3",
     "localforage": "1.9.0",
-    "marked": "2.0.5"
+    "marked": "2.0.5",
+    "svelte-chartjs": "^1.0.1"
   },
   "release-it": {
     "git": {

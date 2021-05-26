@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Chart from 'svelte-frappe-charts';
+	import Line from '$lib/charts/Line.svelte';
 	export let values = {
 		day: [],
 		week: [],
@@ -9,7 +9,7 @@
 	};
 
 	$: timespan = 'TODAY';
-	$: data_fiat = getData(values, timespan, true);
+	$: dataLine = getData(values, timespan, true);
 
 	function getData(values, timespan, fiat) {
 		let data;
@@ -45,7 +45,25 @@
 			}),
 			datasets: [
 				{
-					values: data.map((l) => {
+					label: 'Fiat value',
+					fill: true,
+					lineTension: 0.3,
+					backgroundColor: 'rgba(225, 204,230, .3)',
+					borderColor: 'rgb(205, 130, 158)',
+					borderCapStyle: 'butt',
+					borderDash: [],
+					borderDashOffset: 0.0,
+					borderJoinStyle: 'miter',
+					pointBorderColor: 'rgb(205, 130,1 58)',
+					pointBackgroundColor: 'rgb(255, 255, 255)',
+					pointBorderWidth: 10,
+					pointHoverRadius: 5,
+					pointHoverBackgroundColor: 'rgb(0, 0, 0)',
+					pointHoverBorderColor: 'rgba(220, 220, 220,1)',
+					pointHoverBorderWidth: 2,
+					pointRadius: 1,
+					pointHitRadius: 10,
+					data: data.map((l) => {
 						if (fiat) {
 							return l.fiat_value;
 						} else {
@@ -61,7 +79,7 @@
 <div class="mx-auto w-full">
 	<div class="bg-white overflow-hidden shadow rounded-lg">
 		<div class="md:px-4 pt-4 sm:px-0 sm:py-6">
-			<Chart {data_fiat} type="line" class="w-full" />
+			<Line data={dataLine} options={{ responsive: true }} />
 		</div>
 		<div class="border-gray-200 px-4 py-4 sm:px-6">
 			<div class="bg-white flex items-center justify-center">
