@@ -5,6 +5,8 @@ All notable changes to this project will be documented in this file. Dates are d
 #### [0.2.3](https://github.com/nicolaiort/stonx-frontend/compare/0.2.2...0.2.3)
 
 - Manually build charts [`573aa75`](https://github.com/nicolaiort/stonx-frontend/commit/573aa752a5a3027a7e562b1b5d32a6256dd2218e)
+- Removed useless index file [`370e851`](https://github.com/nicolaiort/stonx-frontend/commit/370e851bca70d33a9e8829052282d8b36ff15b39)
+- 🚀RELEASE 0.2.3 [`1bd645e`](https://github.com/nicolaiort/stonx-frontend/commit/1bd645e1cd0f36c7826120a83a245139eebe8994)
 - Changed the way that the chartdata get's mapped [`fc66431`](https://github.com/nicolaiort/stonx-frontend/commit/fc66431b483e2358ecd06f26cf8c56eb478e5e26)
 - Updated index chart styleing [`911dbc2`](https://github.com/nicolaiort/stonx-frontend/commit/911dbc2bdd904b5e8c96249f4729c5fcde5c2e49)
 - Fixed old reference [`cb472d7`](https://github.com/nicolaiort/stonx-frontend/commit/cb472d7ef6df51c5fec6111a19cfa6194588fdc3)
@@ -12,6 +14,9 @@ All notable changes to this project will be documented in this file. Dates are d
 - Removed useless dependencies [`b20b274`](https://github.com/nicolaiort/stonx-frontend/commit/b20b274b1cb161a5cc9f5fcde0346eda8aee5118)
 - Temp- disabled charts b/c they crash ^^ [`8085b76`](https://github.com/nicolaiort/stonx-frontend/commit/8085b76a38c4ee385e13969bcb3da9d30c40638d)
 - Fixed chart bindings [`c49e727`](https://github.com/nicolaiort/stonx-frontend/commit/c49e727bcac72c457c6de91cd4e7eb206047d9b7)
+- Build now pre-cleans more stuff [`f309458`](https://github.com/nicolaiort/stonx-frontend/commit/f30945816a56eb0d1b6b358d4370fbdcf311be1f)
+- Version rollback before release [`f7fe32b`](https://github.com/nicolaiort/stonx-frontend/commit/f7fe32bfc03de69483580c397d484fde24292c1f)
+- Changed the chartjs import for builds [`082594b`](https://github.com/nicolaiort/stonx-frontend/commit/082594b33460adf3da359a7bb75538c89e512cbd)
 - Chart no longer forces aspect ratio [`699bb07`](https://github.com/nicolaiort/stonx-frontend/commit/699bb07e34b5f710000cfe3aed7123f00bead09b)
 - Pinned dependency [`684fb19`](https://github.com/nicolaiort/stonx-frontend/commit/684fb1929ae2666d0a2d54dcb2cb62d293e5fe5d)
 - disabled dashboard chart [`15cb09d`](https://github.com/nicolaiort/stonx-frontend/commit/15cb09d81e19f26472d86864f2158e2002e3c43d)
