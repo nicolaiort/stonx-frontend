@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "svelte-kit dev",
-    "build": "rimraf ./build && svelte-kit build",
+    "build": "rimraf ./build ./svelte-kit ./svelte && svelte-kit build",
     "preview": "svelte-kit preview",
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
     "format": "prettier --write .",
