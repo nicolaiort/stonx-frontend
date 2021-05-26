@@ -61,7 +61,7 @@
 	{#await Promise.all(promises)}
 		<p>Loading data....</p>
 	{:then}
-		<Chart bind:values_fiat={portfolio_timeseries} />
+		<!-- <Chart bind:values_fiat={portfolio_timeseries} /> -->
 	{/await}
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
 		<dl
