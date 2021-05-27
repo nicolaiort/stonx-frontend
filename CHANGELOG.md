@@ -2,9 +2,25 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.3.0](https://github.com/nicolaiort/stonx-frontend/compare/0.2.7...0.3.0)
+
+- Fixed chart responsiveness [`221932e`](https://github.com/nicolaiort/stonx-frontend/commit/221932e7255296a8eaba53e465d9a084d4950f7b)
+- Added new Doughnut-style diversity chart [`d95d4b5`](https://github.com/nicolaiort/stonx-frontend/commit/d95d4b51cba930c50be0fba934b4bc3c6ef63034)
+- Added colors to diversity chart [`161ce75`](https://github.com/nicolaiort/stonx-frontend/commit/161ce75932b3beff5581e2fa796153ea1e21ad86)
+- Added titles to charts [`c5557d1`](https://github.com/nicolaiort/stonx-frontend/commit/c5557d1a738ed9ac4662b25c62b48ad4639507f2)
+- Fixed typo [`a690cf0`](https://github.com/nicolaiort/stonx-frontend/commit/a690cf07c678226d8b34c28a84de57b46be3100e)
+- Fixed linechart styleing [`22a6569`](https://github.com/nicolaiort/stonx-frontend/commit/22a6569e7e4d75febbc75bbb3dacfc0a4b3f7091)
+- Added dashboard chart responsiveness [`ab2e7d1`](https://github.com/nicolaiort/stonx-frontend/commit/ab2e7d16b53454fd1f2ed8b3de6f157ad721aaa6)
+- Added apiclient function for getting diversity data [`ecdc593`](https://github.com/nicolaiort/stonx-frontend/commit/ecdc5936d9767b6dd8c254c489fa620638451b35)
+- You can now change the responsiveness behaviour from the ourside [`6f14c1e`](https://github.com/nicolaiort/stonx-frontend/commit/6f14c1e0237d3166b05c6d39ce4894dbe0c8b276)
+- Removed unused attribute [`c5a59d5`](https://github.com/nicolaiort/stonx-frontend/commit/c5a59d5fc4c2b37b7de9b243602f91c8fcc91594)
+
 #### [0.2.7](https://github.com/nicolaiort/stonx-frontend/compare/0.2.6...0.2.7)
 
+> 27 May 2021
+
 - Dashboard now loads all time-series entrys [`6e77555`](https://github.com/nicolaiort/stonx-frontend/commit/6e7755501df7c8c652282a3d621a990698be1b75)
+- 🚀RELEASE 0.2.7 [`ca86a52`](https://github.com/nicolaiort/stonx-frontend/commit/ca86a52dcdb8fa08286bdc579a44271f99b7e2ff)
 - Fixed copy mistake for randomly loading bitpanda data for binance [`37d8bbd`](https://github.com/nicolaiort/stonx-frontend/commit/37d8bbd8f281f9d4f6c9cfc4c4761d6c3f8c8d66)
 
 #### [0.2.6](https://github.com/nicolaiort/stonx-frontend/compare/0.2.5...0.2.6)
