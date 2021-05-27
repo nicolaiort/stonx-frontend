@@ -40,8 +40,11 @@
 
 <div class="mx-auto w-full">
 	<div class="bg-white overflow-hidden shadow rounded-lg">
-		<div class="md:px-4 pt-4 sm:px-0 sm:py-6">
-			<Doughnut data={dataLine} options={{ responsive: true, maintainAspectRatio: responsive }} />
+		<div class="pt-4">
+			<p class="text-center text-lg font-bold">Portfilio Diversity (in Fiat)</p>
+			<div class="md:px-4 sm:px-0 sm:py-6">
+				<Doughnut data={dataLine} options={{ responsive: true, maintainAspectRatio: responsive }} />
+			</div>
 		</div>
 	</div>
 </div>
