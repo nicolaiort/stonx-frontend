@@ -36,12 +36,12 @@
 		return {
 			labels: data.map((l) => {
 				if (timespan == 'TODAY') {
-					return new Date(l.timestamp).toLocaleTimeString('de-DE', {
+					return new Date(parseInt(l.timestamp)).toLocaleTimeString('de-DE', {
 						hour: '2-digit',
 						minute: '2-digit'
 					});
 				}
-				return new Date(l.timestamp).toLocaleDateString();
+				return new Date(parseInt(l.timestamp)).toLocaleDateString();
 			}),
 			datasets: [
 				{
