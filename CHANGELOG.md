@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.5](https://github.com/nicolaiort/stonx-frontend/compare/0.2.4...0.2.5)
+
+- Fixed timeseries timestamp conversion bug [`03f169c`](https://github.com/nicolaiort/stonx-frontend/commit/03f169c0772569634cb80c3d9d802881893a604d)
+
 #### [0.2.4](https://github.com/nicolaiort/stonx-frontend/compare/0.2.3...0.2.4)
 
+> 26 May 2021
+
 - Added new function [`cabad14`](https://github.com/nicolaiort/stonx-frontend/commit/cabad147cfc6dd40fbdc8ab1c8c5fc47396739e3)
+- 🚀RELEASE 0.2.4 [`00821d2`](https://github.com/nicolaiort/stonx-frontend/commit/00821d27457c833f257aa8338b5905cd614de79c)
 - Removed useless js file [`5a6b909`](https://github.com/nicolaiort/stonx-frontend/commit/5a6b909601d1b272ab1ab15e1fd2a17e65ca0a69)
 
 #### [0.2.3](https://github.com/nicolaiort/stonx-frontend/compare/0.2.2...0.2.3)
