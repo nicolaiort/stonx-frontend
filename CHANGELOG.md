@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.6](https://github.com/nicolaiort/stonx-frontend/compare/0.2.5...0.2.6)
+
+- Now rounding edges of the timeseries switches if no other entrys are availdable [`9e6befc`](https://github.com/nicolaiort/stonx-frontend/commit/9e6befcecaf352c53b14cf91aa0dd304fd6f3e78)
+- Removed useless console log [`460c4c2`](https://github.com/nicolaiort/stonx-frontend/commit/460c4c2a963119aad0b4bd0d15b8676c1bcfca75)
+
 #### [0.2.5](https://github.com/nicolaiort/stonx-frontend/compare/0.2.4...0.2.5)
 
+> 27 May 2021
+
+- 🚀RELEASE 0.2.5 [`c605f2b`](https://github.com/nicolaiort/stonx-frontend/commit/c605f2bf0ff36daee0ac8350843d0668db88c76f)
 - Fixed timeseries timestamp conversion bug [`03f169c`](https://github.com/nicolaiort/stonx-frontend/commit/03f169c0772569634cb80c3d9d802881893a604d)
 
 #### [0.2.4](https://github.com/nicolaiort/stonx-frontend/compare/0.2.3...0.2.4)
