@@ -79,9 +79,9 @@
 
 <div class="mx-auto h-full">
 	<div class="bg-white overflow-hidden shadow rounded-lg h-full">
-		<div class="pt-4">
+		<div class="pt-4 h-3/4">
 			<p class="text-center text-lg font-bold">Portfilio Value (in Fiat)</p>
-			<div class="md:px-4 sm:px-0 sm:py-6">
+			<div class="md:px-4 sm:px-0 sm:py-6 h-full">
 				<Line data={dataLine} options={{ responsive: true, maintainAspectRatio: responsive }} />
 			</div>
 		</div>

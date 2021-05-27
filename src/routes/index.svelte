@@ -77,8 +77,8 @@
 		<dl
 			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
 		>
-			<div class="col-span-3 h-5/6">
-				<Chart bind:values={portfolio_timeseries} />
+			<div class="col-span-3 h-6/6">
+				<Chart bind:values={portfolio_timeseries} responsive={true} />
 			</div>
 			<div class="col-span-1 h-5/6">
 				<DiversityChart bind:values={diversity} />
