@@ -179,4 +179,8 @@ export class ApiClient {
         // @ts-ignore
         return (await axios.get(`${config.baseurl_backend}/rest/timeseries/binance/spot/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
     }
+    static async getPortfolioDiversity(): Promise<any> {
+        // @ts-ignore
+        return (await axios.get(`${config.baseurl_backend}/rest/portfolio/diversity`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+    }
 }
