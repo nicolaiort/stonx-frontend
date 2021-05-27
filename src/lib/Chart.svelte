@@ -90,6 +90,7 @@
 							on:click={() => {
 								timespan = 'TODAY';
 							}}
+							class:rounded-r-md={values.week?.length == 0}
 							class:bg-gray-100={timespan == 'TODAY'}
 							class="relative inline-flex items-center px-4 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
 						>
@@ -102,6 +103,7 @@
 							on:click={() => {
 								timespan = 'THISWEEK';
 							}}
+							class:rounded-r-md={values.month?.length == 0}
 							class:bg-gray-100={timespan == 'THISWEEK'}
 							class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
 						>
@@ -114,6 +116,7 @@
 							on:click={() => {
 								timespan = 'THISMONTH';
 							}}
+							class:rounded-r-md={values.year?.length == 0}
 							class:bg-gray-100={timespan == 'THISMONTH'}
 							class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
 						>
@@ -126,6 +129,7 @@
 							on:click={() => {
 								timespan = 'THISYEAR';
 							}}
+							class:rounded-r-md={values.all?.length == 0}
 							class:bg-gray-100={timespan == 'THISYEAR'}
 							class="-ml-px relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
 						>
