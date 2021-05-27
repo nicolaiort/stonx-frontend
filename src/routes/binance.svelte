@@ -30,19 +30,19 @@
 	};
 
 	function getTimeSeries(wallet) {
-		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'TODAY').then((res) => {
+		ApiClient.getBinanceSpotAssetTimeSeries(wallet.token, 'TODAY').then((res) => {
 			timeseries.day = res;
 		});
-		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISWEEK').then((res) => {
+		ApiClient.getBinanceSpotAssetTimeSeries(wallet.token, 'THISWEEK').then((res) => {
 			timeseries.week = res;
 		});
-		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISMONTH').then((res) => {
+		ApiClient.getBinanceSpotAssetTimeSeries(wallet.token, 'THISMONTH').then((res) => {
 			timeseries.month = res;
 		});
-		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'THISYEAR').then((res) => {
+		ApiClient.getBinanceSpotAssetTimeSeries(wallet.token, 'THISYEAR').then((res) => {
 			timeseries.year = res;
 		});
-		ApiClient.getBitpandaAssetTimeSeries(wallet.token, 'ALL').then((res) => {
+		ApiClient.getBinanceSpotAssetTimeSeries(wallet.token, 'ALL').then((res) => {
 			timeseries.all = res;
 		});
 	}
