@@ -52,6 +52,19 @@
 			portfolio_timeseries.day = res;
 		})
 	);
+
+	ApiClient.getTotalTimeSeries('THISWEEK').then((res) => {
+		portfolio_timeseries.week = res;
+	});
+	ApiClient.getTotalTimeSeries('THISMONTH').then((res) => {
+		portfolio_timeseries.month = res;
+	});
+	ApiClient.getTotalTimeSeries('THISYEAR').then((res) => {
+		portfolio_timeseries.year = res;
+	});
+	ApiClient.getTotalTimeSeries('ALL').then((res) => {
+		portfolio_timeseries.all = res;
+	});
 </script>
 
 <div>
