@@ -26,7 +26,6 @@
 	promises.push(
 		ApiClient.getWallets().then((res) => {
 			current_wallets = res;
-			console.log(current_wallets);
 			selected_asset = res[0];
 			getTimeSeries(selected_asset);
 		})
