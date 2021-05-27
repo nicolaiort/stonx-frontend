@@ -80,13 +80,13 @@
 <div class="mx-auto h-full">
 	<div class="bg-white overflow-hidden shadow rounded-lg h-full">
 		<div class="pt-4 h-3/4">
-			<p class="text-center text-lg font-bold">Portfilio Value (in Fiat)</p>
+			<p class="text-center text-lg font-bold">Portfolio Value (in Fiat)</p>
 			<div class="md:px-4 sm:px-0 sm:py-6 h-full">
 				<Line data={dataLine} options={{ responsive: true, maintainAspectRatio: responsive }} />
 			</div>
 		</div>
-		<div class="border-gray-200 px-4 py-4 sm:px-6">
-			<div class="bg-white flex items-center justify-center">
+		<div class="border-gray-200 px-4 py-4 sm:px-6 h-1/3">
+			<div class="bg-white flex items-center justify-center h-full">
 				<span class="relative z-0 inline-flex shadow-sm rounded-md">
 					{#if values.day.length > 0}
 						<button
