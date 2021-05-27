@@ -2,8 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.2.7](https://github.com/nicolaiort/stonx-frontend/compare/0.2.6...0.2.7)
+
+- Dashboard now loads all time-series entrys [`6e77555`](https://github.com/nicolaiort/stonx-frontend/commit/6e7755501df7c8c652282a3d621a990698be1b75)
+- Fixed copy mistake for randomly loading bitpanda data for binance [`37d8bbd`](https://github.com/nicolaiort/stonx-frontend/commit/37d8bbd8f281f9d4f6c9cfc4c4761d6c3f8c8d66)
+
 #### [0.2.6](https://github.com/nicolaiort/stonx-frontend/compare/0.2.5...0.2.6)
 
+> 27 May 2021
+
+- 🚀RELEASE 0.2.6 [`c7fe181`](https://github.com/nicolaiort/stonx-frontend/commit/c7fe1818e5037280df53cff4f19307779a061c22)
 - Now rounding edges of the timeseries switches if no other entrys are availdable [`9e6befc`](https://github.com/nicolaiort/stonx-frontend/commit/9e6befcecaf352c53b14cf91aa0dd304fd6f3e78)
 - Removed useless console log [`460c4c2`](https://github.com/nicolaiort/stonx-frontend/commit/460c4c2a963119aad0b4bd0d15b8676c1bcfca75)
 
