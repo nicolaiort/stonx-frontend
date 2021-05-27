@@ -4,6 +4,22 @@
 	export const responsive: boolean = false;
 
 	$: dataLine = getData(values);
+	const colors = [
+		'#f3558e',
+		'#17b978',
+		'#3498db',
+		'#3f3b3b',
+		'#775ada',
+		'#7ed6df',
+		'#21e6c1',
+		'#c0392b',
+		'#d35400',
+		'#7f8c8d',
+		'#6ab04c',
+		'#4834d4',
+		'#ff1f5a',
+		'#eac100'
+	];
 
 	function getData(values) {
 		return {
@@ -14,7 +30,8 @@
 				{
 					data: values.map((l) => {
 						return l.fiat;
-					})
+					}),
+					backgroundColor: colors
 				}
 			]
 		};
