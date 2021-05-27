@@ -3,6 +3,7 @@
 	import { IconService } from '$lib/IconService';
 	import Statscard from '$lib/Statscard.svelte';
 	import Chart from '$lib/Chart.svelte';
+	import DiversityChart from '$lib/DiversityChart.svelte';
 	import UserStore from '$lib/UserStore';
 	import * as cryptoIcons from 'base64-cryptocurrency-icons';
 
@@ -11,6 +12,7 @@
 	$: binance_wallets = [];
 	$: current_wallets = [];
 	$: current_tokens = [];
+	$: diversity = [];
 	$: portfolio_timeseries = {
 		day: [],
 		week: [],
@@ -47,12 +49,9 @@
 		})
 	);
 
-	promises.push(
-		ApiClient.getTotalTimeSeries('TODAY').then((res) => {
-			portfolio_timeseries.day = res;
-		})
-	);
-
+	ApiClient.getTotalTimeSeries('TODAY').then((res) => {
+		portfolio_timeseries.day = res;
+	});
 	ApiClient.getTotalTimeSeries('THISWEEK').then((res) => {
 		portfolio_timeseries.week = res;
 	});
@@ -65,6 +64,9 @@
 	ApiClient.getTotalTimeSeries('ALL').then((res) => {
 		portfolio_timeseries.all = res;
 	});
+	ApiClient.getPortfolioDiversity().then((res) => {
+		diversity = res;
+	});
 </script>
 
 <div>
@@ -72,16 +74,15 @@
 		<h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
 	</div>
 	<div class="w-full py-5 px-4 sm:px-6 lg:px-8">
-		{#await Promise.all(promises)}
-			<p>Loading chart data....</p>
-		{:then}
-			<div class="mb-5">
-				<Chart bind:values={portfolio_timeseries} />
-			</div>
-		{/await}
 		<dl
 			class="grid grid-cols-1 gap-5 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 3xl-grid-cols-5"
 		>
+			<div class="col-span-3 h-5/6">
+				<Chart bind:values={portfolio_timeseries} />
+			</div>
+			<div class="col-span-1 h-5/6">
+				<DiversityChart bind:values={diversity} />
+			</div>
 			{#await Promise.all(promises)}
 				<p>Loading data....</p>
 			{:then}

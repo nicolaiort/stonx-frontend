@@ -77,9 +77,9 @@
 	}
 </script>
 
-<div class="mx-auto w-full">
-	<div class="bg-white overflow-hidden shadow rounded-lg">
-		<div class="md:px-4 pt-4 sm:px-0 sm:py-6">
+<div class="mx-auto h-full">
+	<div class="bg-white overflow-hidden shadow rounded-lg h-full">
+		<div class="md:px-4 pt-4 sm:px-0 sm:py-6 h-full">
 			<Line data={dataLine} options={{ responsive: true, maintainAspectRatio: responsive }} />
 		</div>
 		<div class="border-gray-200 px-4 py-4 sm:px-6">
