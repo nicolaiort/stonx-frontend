@@ -162,25 +162,35 @@ export class ApiClient {
 
     static async getTotalTimeSeries(range: string): Promise<any> {
         // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        let timeseries = (await axios.get(`${config.baseurl_backend}/rest/timeseries/portfolio/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        timeseries.sort((a, b) => a - b);
+        return timeseries;
     }
 
     static async getWalletTimeSeries(asset: string, id: string, range: string): Promise<any> {
         // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/wallets/${asset.toUpperCase()}/${id}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        let timeseries = (await axios.get(`${config.baseurl_backend}/rest/timeseries/wallets/${asset.toUpperCase()}/${id}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        timeseries.sort((a, b) => a - b);
+        return timeseries;
     }
 
     static async getBitpandaAssetTimeSeries(asset: string, range: string): Promise<any> {
         // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/bitpanda/wallets/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        let timeseries = (await axios.get(`${config.baseurl_backend}/rest/timeseries/bitpanda/wallets/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        timeseries.sort((a, b) => a - b);
+        return timeseries;
     }
 
     static async getBinanceSpotAssetTimeSeries(asset: string, range: string): Promise<any> {
         // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/timeseries/binance/spot/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        let timeseries = (await axios.get(`${config.baseurl_backend}/rest/timeseries/binance/spot/${asset.toUpperCase()}/${range}`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        timeseries.sort((a, b) => a - b);
+        return timeseries;
     }
     static async getPortfolioDiversity(): Promise<any> {
         // @ts-ignore
-        return (await axios.get(`${config.baseurl_backend}/rest/portfolio/diversity`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        let timeseries = (await axios.get(`${config.baseurl_backend}/rest/portfolio/diversity`, { headers: { Authorization: `Bearer ${UserStore.state.token}` } })).data;
+        timeseries.sort((a, b) => a - b);
+        return timeseries;
     }
 }
