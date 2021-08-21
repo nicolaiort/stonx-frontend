@@ -2,9 +2,16 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.3.2](https://github.com/nicolaiort/stonx-frontend/compare/0.3.1...0.3.2)
+
+- Upgrade nodejs [`e11fb7c`](https://github.com/nicolaiort/stonx-frontend/commit/e11fb7caf405762c6563c9e0a72e655ba582c4db)
+
 #### [0.3.1](https://github.com/nicolaiort/stonx-frontend/compare/0.3.0...0.3.1)
 
+> 21 August 2021
+
 - Fixed bug that prevented proper timeseries sorting [`62d132f`](https://github.com/nicolaiort/stonx-frontend/commit/62d132f913805ad714d5379b0dd9d3bf72893e5b)
+- 🚀RELEASE 0.3.1 [`ff4905e`](https://github.com/nicolaiort/stonx-frontend/commit/ff4905e64416e72557f9fafe71861c9ab245546e)
 
 #### [0.3.0](https://github.com/nicolaiort/stonx-frontend/compare/0.2.7...0.3.0)
 
