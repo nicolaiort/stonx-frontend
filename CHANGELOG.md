@@ -2,11 +2,18 @@
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.
 
+#### [0.3.1](https://github.com/nicolaiort/stonx-frontend/compare/0.3.0...0.3.1)
+
+- Fixed bug that prevented proper timeseries sorting [`62d132f`](https://github.com/nicolaiort/stonx-frontend/commit/62d132f913805ad714d5379b0dd9d3bf72893e5b)
+
 #### [0.3.0](https://github.com/nicolaiort/stonx-frontend/compare/0.2.7...0.3.0)
+
+> 27 May 2021
 
 - Fixed chart responsiveness [`221932e`](https://github.com/nicolaiort/stonx-frontend/commit/221932e7255296a8eaba53e465d9a084d4950f7b)
 - Added new Doughnut-style diversity chart [`d95d4b5`](https://github.com/nicolaiort/stonx-frontend/commit/d95d4b51cba930c50be0fba934b4bc3c6ef63034)
 - Added colors to diversity chart [`161ce75`](https://github.com/nicolaiort/stonx-frontend/commit/161ce75932b3beff5581e2fa796153ea1e21ad86)
+- 🚀RELEASE 0.3.0 [`207d759`](https://github.com/nicolaiort/stonx-frontend/commit/207d759353e4b2d3b219680e75f7f47d81bf61df)
 - Added titles to charts [`c5557d1`](https://github.com/nicolaiort/stonx-frontend/commit/c5557d1a738ed9ac4662b25c62b48ad4639507f2)
 - Fixed typo [`a690cf0`](https://github.com/nicolaiort/stonx-frontend/commit/a690cf07c678226d8b34c28a84de57b46be3100e)
 - Fixed linechart styleing [`22a6569`](https://github.com/nicolaiort/stonx-frontend/commit/22a6569e7e4d75febbc75bbb3dacfc0a4b3f7091)
